@@ -4,17 +4,19 @@
   <meta charset="utf-8">
   
   
-  <title>归档: 2022/9 | jiz的个人博客</title>
+  <title>关于C语言--变量 | jiz的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="记录笔记和生活">
-<meta property="og:type" content="website">
-<meta property="og:title" content="jiz的个人博客">
-<meta property="og:url" content="http://example.com/archives/2022/09/index.html">
+  <meta name="description" content="1.&lt;类型名称&gt;  &lt;变量名称&gt;&#x3D; &lt;初始值&gt; 如：int price&#x3D; 0; ​        int amount &#x3D; 100; 1.1组合变量定义的时候，也可以在这个定义中单个赋值。 ​     int price &#x3D; 0, amount &#x3D; 100;   或者  int price,amount&amp;#x3D">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于C语言--变量">
+<meta property="og:url" content="http://example.com/2022/09/05/%E5%85%B3%E4%BA%8EC%E8%AF%AD%E8%A8%80-%E5%8F%98%E9%87%8F/index.html">
 <meta property="og:site_name" content="jiz的个人博客">
-<meta property="og:description" content="记录笔记和生活">
+<meta property="og:description" content="1.&lt;类型名称&gt;  &lt;变量名称&gt;&#x3D; &lt;初始值&gt; 如：int price&#x3D; 0; ​        int amount &#x3D; 100; 1.1组合变量定义的时候，也可以在这个定义中单个赋值。 ​     int price &#x3D; 0, amount &#x3D; 100;   或者  int price,amount&amp;#x3D">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-09-05T09:44:00.000Z">
+<meta property="article:modified_time" content="2022-09-05T10:20:51.640Z">
 <meta property="article:author" content="jiz">
-<meta property="article:tag" content="个人博客">
+<meta property="article:tag" content="C语言">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="jiz的个人博客" type="application/atom+xml">
@@ -76,58 +78,65 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/09/05/%E5%85%B3%E4%BA%8EC%E8%AF%AD%E8%A8%80-%E5%8F%98%E9%87%8F/" class="archive-article-date">
-  <time class="dt-published" datetime="2022-09-05T09:44:00.000Z" itemprop="datePublished">9月 5</time>
+        <section id="main"><article id="post-关于C语言-变量" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/09/05/%E5%85%B3%E4%BA%8EC%E8%AF%AD%E8%A8%80-%E5%8F%98%E9%87%8F/" class="article-date">
+  <time class="dt-published" datetime="2022-09-05T09:44:00.000Z" itemprop="datePublished">2022-09-05</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/05/%E5%85%B3%E4%BA%8EC%E8%AF%AD%E8%A8%80-%E5%8F%98%E9%87%8F/">关于C语言--变量</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      关于C语言--变量
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/09/05/%E5%85%B3%E4%BA%8Ec%E8%AF%AD%E8%A8%80/" class="archive-article-date">
-  <time class="dt-published" datetime="2022-09-05T06:53:45.000Z" itemprop="datePublished">9月 5</time>
-</a>
+    <div class="e-content article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/05/%E5%85%B3%E4%BA%8Ec%E8%AF%AD%E8%A8%80/">关于c语言-格式和计算</a>
-    </h1>
-  
+        <p>1.<strong>&lt;类型名称&gt;  &lt;变量名称&gt;&#x3D; &lt;初始值&gt;</strong></p>
+<p>如：int price&#x3D; 0;</p>
+<p>​        int amount &#x3D; 100;</p>
+<p>1.1<strong>组合变量定义的时候，也可以在这个定义中单个赋值。</strong></p>
+<p>​     int price &#x3D; 0, amount &#x3D; 100;   或者  int price,amount&#x3D;0; </p>
+<p>1.2 <strong>不一定要在最初赋值但一定要在使用前赋值。C99协议变量可以在任何地方定义</strong></p>
+<ol start="2">
+<li><h6 id="const"><a href="#const" class="headerlink" title="const"></a><strong>const</strong></h6><p>const是一个修饰符，加在int的前面，用来给这个变量加上一个const（不变的）的属性。这个const的属性表示这个变量的值一旦初始化，就不能再修改了。</p>
+<p>如果你把锁定了的变量放在左边这会报错</p>
+</li>
+</ol>
 
-    </header>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/09/05/%E5%85%B3%E4%BA%8EC%E8%AF%AD%E8%A8%80-%E5%8F%98%E9%87%8F/" data-id="cl7on1rsn0000lwvnee0973u5" data-title="关于C语言--变量" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2022/09/05/%E5%85%B3%E4%BA%8Ec%E8%AF%AD%E8%A8%80/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">关于c语言-格式和计算</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 
 </section>
