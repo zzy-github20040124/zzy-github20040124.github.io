@@ -78,6 +78,63 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-复合赋值" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/09/07/%E5%A4%8D%E5%90%88%E8%B5%8B%E5%80%BC/" class="article-date">
+  <time class="dt-published" datetime="2022-09-07T05:41:20.000Z" itemprop="datePublished">2022-09-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/09/07/%E5%A4%8D%E5%90%88%E8%B5%8B%E5%80%BC/">关于C语言-复合赋值</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p> <strong>1.复合赋值</strong></p>
+<p>total+&#x3D;(sun+100)&#x2F;2  和相同  total&#x3D;total+(sun+100)&#x2F;2</p>
+<p><strong>2.递增递减运算符</strong></p>
+<p>++”和“–”是两个很特殊的运算符，它们是单目运算符，这个算子还必须是变量。这两个运算符分别叫做递增和递减运算符，他们的作用就是给这个变量+1或者-1。</p>
+<p><strong>count++;</strong><br><strong>count +&#x3D;；</strong><br><strong>count &#x3D; count + 1;</strong></p>
+<p><u>++和–可以放在变量的前面，叫做前缀形式，也可以放在变量的后面，叫做后缀形式。</u><br><u>a++的值是a加|以前的值，而++a的值是加了1以后的值，无论哪个，a自己的值都加了1了。</u></p>
+<p>按我自己的理解就是:</p>
+<p><strong>a&#x3D;0</strong>  </p>
+<p><strong>printf(“a++&#x3D;%d”,a++)</strong></p>
+<p><strong>printf(“a&#x3D;%d”,a)</strong></p>
+<p><strong>输出：a++&#x3D;0  a&#x3D;1</strong></p>
+<p><strong>printf(“++a&#x3D;%d”,++a)</strong></p>
+<p><strong>printf(“a&#x3D;%d”,a)</strong></p>
+<p><strong>输出：++a&#x3D;1  a&#x3D;1</strong></p>
+<p><strong>3.运算优先级</strong></p>
+<p><em>单目&gt;乘除&gt;加减&gt;对比&gt;赋值</em></p>
+<p><strong>运算一定要遵循运算优先级,对比如果正确则输出1反之输出2</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/09/07/%E5%A4%8D%E5%90%88%E8%B5%8B%E5%80%BC/" data-id="cl7rj9qy40000esvn6hw9c8zp" data-title="关于C语言-复合赋值" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-关于C语言-变量" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/09/05/%E5%85%B3%E4%BA%8EC%E8%AF%AD%E8%A8%80-%E5%8F%98%E9%87%8F/" class="article-date">
@@ -92,7 +149,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/09/05/%E5%85%B3%E4%BA%8EC%E8%AF%AD%E8%A8%80-%E5%8F%98%E9%87%8F/">关于C语言--变量</a>
+      <a class="p-name article-title" href="/2022/09/05/%E5%85%B3%E4%BA%8EC%E8%AF%AD%E8%A8%80-%E5%8F%98%E9%87%8F/">关于C语言--变量，浮点数和变量交换</a>
     </h1>
   
 
@@ -101,21 +158,32 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <p>1.<strong>&lt;类型名称&gt;  &lt;变量名称&gt;&#x3D; &lt;初始值&gt;</strong></p>
-<p>如：int price&#x3D; 0;</p>
+<p>如：int price&#x3D; 0;**</p>
 <p>​        int amount &#x3D; 100;</p>
 <p>1.1<strong>组合变量定义的时候，也可以在这个定义中单个赋值。</strong></p>
 <p>​     int price &#x3D; 0, amount &#x3D; 100;   或者  int price,amount&#x3D;0; </p>
 <p>1.2 <strong>不一定要在最初赋值但一定要在使用前赋值。C99协议变量可以在任何地方定义</strong></p>
 <ol start="2">
 <li><h6 id="const"><a href="#const" class="headerlink" title="const"></a><strong>const</strong></h6><p>const是一个修饰符，加在int的前面，用来给这个变量加上一个const（不变的）的属性。这个const的属性表示这个变量的值一旦初始化，就不能再修改了。</p>
-<p>如果你把锁定了的变量放在左边这会报错</p>
+<p>如果你把锁定了的变量放在左边这会报错。</p>
+</li>
+<li><p><strong>浮点数.</strong></p>
+<p>在浮点数里scranf()中获取数值要用%lf，但用printf()依然用%f，</p>
+<p><strong>3.1 double</strong><br>inch是定义为int类型的变量，如果把int换成double，我们就把它改为double类型的浮点数变量了。<br>double的意思是“双”，它本来是“双精度浮点数”的第一个单词，人们用来表示浮点数类型。除了double，还有float（意思就是浮点！）表示单精度浮点数。</p>
+</li>
+<li><p><strong>交换变量</strong></p>
+<p><em>交换变量需要一个新的容器（另一个变量）。</em></p>
+<p>如：a&#x3D;1 b&#x3D;2 直接 a&#x3D;b b&#x3D;a 不能直接交换而是会顺序运算。</p>
+<p><em>正确应该引进一个新变量c</em></p>
+<p>如： a&#x3D;1 b&#x3D;2 引进一个c  </p>
+<p>a&#x3D;c a&#x3D;b b&#x3D;c  就可以完成交换。</p>
 </li>
 </ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/09/05/%E5%85%B3%E4%BA%8EC%E8%AF%AD%E8%A8%80-%E5%8F%98%E9%87%8F/" data-id="cl7on1rsn0000lwvnee0973u5" data-title="关于C语言--变量" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2022/09/05/%E5%85%B3%E4%BA%8EC%E8%AF%AD%E8%A8%80-%E5%8F%98%E9%87%8F/" data-id="cl7on1rsn0000lwvnee0973u5" data-title="关于C语言--变量，浮点数和变量交换" class="article-share-link">分享</a>
       
       
       
@@ -434,7 +502,11 @@
       <ul>
         
           <li>
-            <a href="/2022/09/05/%E5%85%B3%E4%BA%8EC%E8%AF%AD%E8%A8%80-%E5%8F%98%E9%87%8F/">关于C语言--变量</a>
+            <a href="/2022/09/07/%E5%A4%8D%E5%90%88%E8%B5%8B%E5%80%BC/">关于C语言-复合赋值</a>
+          </li>
+        
+          <li>
+            <a href="/2022/09/05/%E5%85%B3%E4%BA%8EC%E8%AF%AD%E8%A8%80-%E5%8F%98%E9%87%8F/">关于C语言--变量，浮点数和变量交换</a>
           </li>
         
           <li>
@@ -447,10 +519,6 @@
         
           <li>
             <a href="/2022/08/27/web/">关于自学web的一些笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2022/08/27/blog/">jiz的第一篇博客</a>
           </li>
         
       </ul>

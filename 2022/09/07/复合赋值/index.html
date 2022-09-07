@@ -4,19 +4,19 @@
   <meta charset="utf-8">
   
   
-  <title>Hello World | jiz的个人博客</title>
+  <title>关于C语言-复合赋值 | jiz的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="1.复合赋值 total+&#x3D;(sun+100)&#x2F;2  和相同  total&#x3D;total+(sun+100)&#x2F;2 2.递增递减运算符 ++”和“–”是两个很特殊的运算符，它们是单目运算符，这个算子还必须是变量。这两个运算符分别叫做递增和递减运算符，他们的作用就是给这个变量+1或者-1。 count++;count +&#x3D;；count &#x3D; c">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://example.com/2022/08/27/hello-world/index.html">
+<meta property="og:title" content="关于C语言-复合赋值">
+<meta property="og:url" content="http://example.com/2022/09/07/%E5%A4%8D%E5%90%88%E8%B5%8B%E5%80%BC/index.html">
 <meta property="og:site_name" content="jiz的个人博客">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="1.复合赋值 total+&#x3D;(sun+100)&#x2F;2  和相同  total&#x3D;total+(sun+100)&#x2F;2 2.递增递减运算符 ++”和“–”是两个很特殊的运算符，它们是单目运算符，这个算子还必须是变量。这两个运算符分别叫做递增和递减运算符，他们的作用就是给这个变量+1或者-1。 count++;count +&#x3D;；count &#x3D; c">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-08-27T03:38:37.247Z">
-<meta property="article:modified_time" content="2022-08-27T03:38:37.247Z">
+<meta property="article:published_time" content="2022-09-07T05:41:20.000Z">
+<meta property="article:modified_time" content="2022-09-07T11:23:52.715Z">
 <meta property="article:author" content="jiz">
-<meta property="article:tag" content="个人博客">
+<meta property="article:tag" content="C语言">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="jiz的个人博客" type="application/atom+xml">
@@ -78,10 +78,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-复合赋值" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/08/27/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2022-08-27T03:38:37.247Z" itemprop="datePublished">2022-08-27</time>
+    <a href="/2022/09/07/%E5%A4%8D%E5%90%88%E8%B5%8B%E5%80%BC/" class="article-date">
+  <time class="dt-published" datetime="2022-09-07T05:41:20.000Z" itemprop="datePublished">2022-09-07</time>
 </a>
     
   </div>
@@ -92,7 +92,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      Hello World
+      关于C语言-复合赋值
     </h1>
   
 
@@ -100,42 +100,44 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+        <p> <strong>1.复合赋值</strong></p>
+<p>total+&#x3D;(sun+100)&#x2F;2  和相同  total&#x3D;total+(sun+100)&#x2F;2</p>
+<p><strong>2.递增递减运算符</strong></p>
+<p>++”和“–”是两个很特殊的运算符，它们是单目运算符，这个算子还必须是变量。这两个运算符分别叫做递增和递减运算符，他们的作用就是给这个变量+1或者-1。</p>
+<p><strong>count++;</strong><br><strong>count +&#x3D;；</strong><br><strong>count &#x3D; count + 1;</strong></p>
+<p><u>++和–可以放在变量的前面，叫做前缀形式，也可以放在变量的后面，叫做后缀形式。</u><br><u>a++的值是a加|以前的值，而++a的值是加了1以后的值，无论哪个，a自己的值都加了1了。</u></p>
+<p>按我自己的理解就是:</p>
+<p><strong>a&#x3D;0</strong>  </p>
+<p><strong>printf(“a++&#x3D;%d”,a++)</strong></p>
+<p><strong>printf(“a&#x3D;%d”,a)</strong></p>
+<p><strong>输出：a++&#x3D;0  a&#x3D;1</strong></p>
+<p><strong>printf(“++a&#x3D;%d”,++a)</strong></p>
+<p><strong>printf(“a&#x3D;%d”,a)</strong></p>
+<p><strong>输出：++a&#x3D;1  a&#x3D;1</strong></p>
+<p><strong>3.运算优先级</strong></p>
+<p><em>单目&gt;乘除&gt;加减&gt;对比&gt;赋值</em></p>
+<p><strong>运算一定要遵循运算优先级,对比如果正确则输出1反之输出2</strong></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/27/hello-world/" data-id="cl7detik20001bcvn9ernclkf" data-title="Hello World" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2022/09/07/%E5%A4%8D%E5%90%88%E8%B5%8B%E5%80%BC/" data-id="cl7rj9qy40000esvn6hw9c8zp" data-title="关于C语言-复合赋值" class="article-share-link">分享</a>
       
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
+
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2022/08/27/blog/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">前一篇</strong>
-      <div class="article-nav-title">
-        
-          jiz的第一篇博客
-        
-      </div>
-    </a>
   
+    <a href="/2022/09/05/%E5%85%B3%E4%BA%8EC%E8%AF%AD%E8%A8%80-%E5%8F%98%E9%87%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">关于C语言--变量，浮点数和变量交换</div>
+    </a>
   
 </nav>
 

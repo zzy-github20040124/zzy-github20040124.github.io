@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>关于C语言--变量 | jiz的个人博客</title>
+  <title>关于C语言--变量，浮点数和变量交换 | jiz的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="1.&lt;类型名称&gt;  &lt;变量名称&gt;&#x3D; &lt;初始值&gt; 如：int price&#x3D; 0; ​        int amount &#x3D; 100; 1.1组合变量定义的时候，也可以在这个定义中单个赋值。 ​     int price &#x3D; 0, amount &#x3D; 100;   或者  int price,amount&amp;#x3D">
+  <meta name="description" content="1.&lt;类型名称&gt;  &lt;变量名称&gt;&#x3D; &lt;初始值&gt; 如：int price&#x3D; 0;** ​        int amount &#x3D; 100; 1.1组合变量定义的时候，也可以在这个定义中单个赋值。 ​     int price &#x3D; 0, amount &#x3D; 100;   或者  int price,amount&amp;#x">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于C语言--变量">
+<meta property="og:title" content="关于C语言--变量，浮点数和变量交换">
 <meta property="og:url" content="http://example.com/2022/09/05/%E5%85%B3%E4%BA%8EC%E8%AF%AD%E8%A8%80-%E5%8F%98%E9%87%8F/index.html">
 <meta property="og:site_name" content="jiz的个人博客">
-<meta property="og:description" content="1.&lt;类型名称&gt;  &lt;变量名称&gt;&#x3D; &lt;初始值&gt; 如：int price&#x3D; 0; ​        int amount &#x3D; 100; 1.1组合变量定义的时候，也可以在这个定义中单个赋值。 ​     int price &#x3D; 0, amount &#x3D; 100;   或者  int price,amount&amp;#x3D">
+<meta property="og:description" content="1.&lt;类型名称&gt;  &lt;变量名称&gt;&#x3D; &lt;初始值&gt; 如：int price&#x3D; 0;** ​        int amount &#x3D; 100; 1.1组合变量定义的时候，也可以在这个定义中单个赋值。 ​     int price &#x3D; 0, amount &#x3D; 100;   或者  int price,amount&amp;#x">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-09-05T09:44:00.000Z">
-<meta property="article:modified_time" content="2022-09-05T10:20:51.640Z">
+<meta property="article:modified_time" content="2022-09-07T05:25:10.726Z">
 <meta property="article:author" content="jiz">
 <meta property="article:tag" content="C语言">
 <meta name="twitter:card" content="summary">
@@ -92,7 +92,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      关于C语言--变量
+      关于C语言--变量，浮点数和变量交换
     </h1>
   
 
@@ -101,21 +101,32 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <p>1.<strong>&lt;类型名称&gt;  &lt;变量名称&gt;&#x3D; &lt;初始值&gt;</strong></p>
-<p>如：int price&#x3D; 0;</p>
+<p>如：int price&#x3D; 0;**</p>
 <p>​        int amount &#x3D; 100;</p>
 <p>1.1<strong>组合变量定义的时候，也可以在这个定义中单个赋值。</strong></p>
 <p>​     int price &#x3D; 0, amount &#x3D; 100;   或者  int price,amount&#x3D;0; </p>
 <p>1.2 <strong>不一定要在最初赋值但一定要在使用前赋值。C99协议变量可以在任何地方定义</strong></p>
 <ol start="2">
 <li><h6 id="const"><a href="#const" class="headerlink" title="const"></a><strong>const</strong></h6><p>const是一个修饰符，加在int的前面，用来给这个变量加上一个const（不变的）的属性。这个const的属性表示这个变量的值一旦初始化，就不能再修改了。</p>
-<p>如果你把锁定了的变量放在左边这会报错</p>
+<p>如果你把锁定了的变量放在左边这会报错。</p>
+</li>
+<li><p><strong>浮点数.</strong></p>
+<p>在浮点数里scranf()中获取数值要用%lf，但用printf()依然用%f，</p>
+<p><strong>3.1 double</strong><br>inch是定义为int类型的变量，如果把int换成double，我们就把它改为double类型的浮点数变量了。<br>double的意思是“双”，它本来是“双精度浮点数”的第一个单词，人们用来表示浮点数类型。除了double，还有float（意思就是浮点！）表示单精度浮点数。</p>
+</li>
+<li><p><strong>交换变量</strong></p>
+<p><em>交换变量需要一个新的容器（另一个变量）。</em></p>
+<p>如：a&#x3D;1 b&#x3D;2 直接 a&#x3D;b b&#x3D;a 不能直接交换而是会顺序运算。</p>
+<p><em>正确应该引进一个新变量c</em></p>
+<p>如： a&#x3D;1 b&#x3D;2 引进一个c  </p>
+<p>a&#x3D;c a&#x3D;b b&#x3D;c  就可以完成交换。</p>
 </li>
 </ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/09/05/%E5%85%B3%E4%BA%8EC%E8%AF%AD%E8%A8%80-%E5%8F%98%E9%87%8F/" data-id="cl7on1rsn0000lwvnee0973u5" data-title="关于C语言--变量" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2022/09/05/%E5%85%B3%E4%BA%8EC%E8%AF%AD%E8%A8%80-%E5%8F%98%E9%87%8F/" data-id="cl7on1rsn0000lwvnee0973u5" data-title="关于C语言--变量，浮点数和变量交换" class="article-share-link">分享</a>
       
       
       
@@ -126,6 +137,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2022/09/07/%E5%A4%8D%E5%90%88%E8%B5%8B%E5%80%BC/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          关于C语言-复合赋值
+        
+      </div>
+    </a>
   
   
     <a href="/2022/09/05/%E5%85%B3%E4%BA%8Ec%E8%AF%AD%E8%A8%80/" id="article-nav-older" class="article-nav-link-wrap">
@@ -182,7 +202,11 @@
       <ul>
         
           <li>
-            <a href="/2022/09/05/%E5%85%B3%E4%BA%8EC%E8%AF%AD%E8%A8%80-%E5%8F%98%E9%87%8F/">关于C语言--变量</a>
+            <a href="/2022/09/07/%E5%A4%8D%E5%90%88%E8%B5%8B%E5%80%BC/">关于C语言-复合赋值</a>
+          </li>
+        
+          <li>
+            <a href="/2022/09/05/%E5%85%B3%E4%BA%8EC%E8%AF%AD%E8%A8%80-%E5%8F%98%E9%87%8F/">关于C语言--变量，浮点数和变量交换</a>
           </li>
         
           <li>
@@ -195,10 +219,6 @@
         
           <li>
             <a href="/2022/08/27/web/">关于自学web的一些笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2022/08/27/blog/">jiz的第一篇博客</a>
           </li>
         
       </ul>
