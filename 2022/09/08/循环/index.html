@@ -6,17 +6,17 @@
   
   <title>循环 | jiz的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="记录笔记和生活">
+  <meta name="description" content="1.while函数的格式 需要执行的语句 while（判断条件）{ ​      需要执行的语句（直到条件不再符合这个判断）} （反正在whlie函数前应该再加一个相同的执行语句，就是在进入循环前需要把被执行的语句重复一遍在进入循环） 1.1do…while do{需要执行的语句;}while（判断条件）; 与单while的区别是不用在前面多加一个相同的执行语句。 2.for循环 for(初始动作">
 <meta property="og:type" content="article">
 <meta property="og:title" content="循环">
 <meta property="og:url" content="http://example.com/2022/09/08/%E5%BE%AA%E7%8E%AF/index.html">
 <meta property="og:site_name" content="jiz的个人博客">
-<meta property="og:description" content="记录笔记和生活">
+<meta property="og:description" content="1.while函数的格式 需要执行的语句 while（判断条件）{ ​      需要执行的语句（直到条件不再符合这个判断）} （反正在whlie函数前应该再加一个相同的执行语句，就是在进入循环前需要把被执行的语句重复一遍在进入循环） 1.1do…while do{需要执行的语句;}while（判断条件）; 与单while的区别是不用在前面多加一个相同的执行语句。 2.for循环 for(初始动作">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-09-08T07:42:58.000Z">
-<meta property="article:modified_time" content="2022-09-08T07:42:58.483Z">
+<meta property="article:modified_time" content="2022-09-09T06:10:15.553Z">
 <meta property="article:author" content="jiz">
-<meta property="article:tag" content="个人博客">
+<meta property="article:tag" content="C语言">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="jiz的个人博客" type="application/atom+xml">
@@ -100,7 +100,60 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <p><strong>1.while函数的格式</strong></p>
+<p>需要执行的语句</p>
+<p>while（判断条件）{</p>
+<p>​      需要执行的语句（直到条件不再符合这个判断）}</p>
+<p>（反正在whlie函数前应该再加一个相同的执行语句，就是在进入循环前需要把被执行的语句重复一遍在进入循环）</p>
+<p><strong>1.1do…while</strong></p>
+<p>do{需要执行的语句;}while（判断条件）;</p>
+<p>与单while的区别是不用在前面多加一个相同的执行语句。</p>
+<p><strong>2.for循环</strong></p>
+<p>for(初始动作;循环继续的条件;循环每一轮要做的事){</p>
+<p>​     需要执行的语句</p>
+<p>}</p>
+<p><strong>3.总结</strong></p>
+<p><strong>循环的计算和选择</strong></p>
+<ul>
+<li>如果有固定次数，用for</li>
+<li>如果必须执行一次，用do_while</li>
+<li>其他情况用while</li>
+</ul>
+<p><strong>循环控制</strong></p>
+<ul>
+<li>break 跳出循环</li>
+<li>continue 跳过剩下的语句进入下一轮</li>
+<li>break和continue只在它所在的那层循环作用</li>
+</ul>
+<p><strong>从嵌套循环跳出</strong></p>
+<p>在多层循环下使用goto</p>
+<p>操作：层内goto out;  配合层外out:使用，然后加上return 0;</p>
+<ul>
+<li><p>求符合给定条件的整数集</p>
+</li>
+<li><p>给定不超过6的正整数，考虑从a开始的连续4个数字，输出所有能用它们组成的无重复的3位数</p>
+</li>
+<li><p>格式：从小到大，每行6个整数，中间用空格隔开 但行末不能有多余空格</p>
+</li>
+<li><p>样例：输入2，输出234,235,243,245…</p>
+</li>
+<li><p>思路：需要3位数，也就是3重循环，每一位都可能是a,a+1,a+2,a+3</p>
+</li>
+<li><p>3重循环 如果满足i,j,k互不相等的条件，则输出3位数</p>
+</li>
+<li><p>定义count用于记录次数，count&#x3D;&#x3D;6则换行，然后count值清零进入下次循环，如果count不等于6，else输出空格</p>
+</li>
+</ul>
+<p>注意事项：</p>
+<ul>
+<li>编程语言里0就是false，非0就是true，在！面前只有true和false</li>
+<li>if 为false时候 大括号里的语句不执行</li>
+<li>当 <strong>while</strong> <strong>为 True 时</strong>运行【语句块】，【语句块】运行结束后，再次进入 进行 判断，如果 结果为 <strong>True</strong> 则再次运行【语句块】, 以此循环直到 结果为 <strong>False</strong> 结束循环。</li>
+</ul>
+<p><strong>为什么finished&#x3D;1后就不会在if语句中输出？并结束while循环？</strong></p>
+<p>finished&#x3D;1就是true，if(!finished)就是非true，即false，因此不会输出</p>
+<p>结束时！finished就是非true，即false，因此才能退出循环</p>
+
       
     </div>
     <footer class="article-footer">
@@ -108,6 +161,8 @@
       
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
+
     </footer>
   </div>
   
