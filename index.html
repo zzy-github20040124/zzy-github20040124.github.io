@@ -78,6 +78,199 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-类型转换" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/09/11/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" class="article-date">
+  <time class="dt-published" datetime="2022-09-11T03:56:28.000Z" itemprop="datePublished">2022-09-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/09/11/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/">类型转换</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong>1.强制类型转换</strong><em>(强制转换的优先级高于四则运算)</em></p>
+<p>(转换的类型)数值</p>
+<p>double a&#x3D;1.0;</p>
+<p>double b&#x3D;2.0;</p>
+<p>int i &#x3D;(int)a&#x2F;b;</p>
+<p>这里会先把a转换成int类型在除以b；</p>
+<p>如果要先除可以int i&#x3D;（int)(a&#x2F;b);</p>
+<p><strong>2.自动类型转换</strong></p>
+<p>当运算符的两边出现不一致的类型时，会自动转换成<br>较大的类型<br>·大的意思是能表达的数的范围更大<br> char–&gt; short–&gt; int –&gt; long —&gt; long long<br>·int –&gt; float –&gt; double</p>
+<p>对于printf，任何小于int的类型会被转换成int；float会被转换成double；</p>
+<p>但scanf不会，要输入short，需要%hd；</p>
+<p><strong>3.逻辑运算</strong></p>
+<p>！    逻辑非     !a      如果a是true结果就是false，如果a是false结果就是true。</p>
+<p>&amp;&amp;   逻辑与     a&amp;&amp;b    如果a和b都是ture，结果就是ture否则就是false。</p>
+<p>||     逻辑或      a||b    有一个是ture就是ture否则就是false。</p>
+<p>优先级：！&gt;&amp;&amp;&gt;||</p>
+<p><strong>如果要表达一个范围</strong></p>
+<p>x&gt;4 &amp;&amp; x&lt;6就是数学中的4&lt;x&lt;6;</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/09/11/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" data-id="cl7x2hvbi0005ikvn0dm00yki" data-title="类型转换" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-整数表达" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/09/10/%E6%95%B4%E6%95%B0%E8%A1%A8%E8%BE%BE/" class="article-date">
+  <time class="dt-published" datetime="2022-09-10T13:07:06.000Z" itemprop="datePublished">2022-09-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/09/10/%E6%95%B4%E6%95%B0%E8%A1%A8%E8%BE%BE/">整数表达</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong>1.char</strong></p>
+<p>char输出的是字符串。</p>
+<p>char c;</p>
+<p>scanf(“%c”,&amp;c);输入：1</p>
+<p>printf(“c&#x3D;%d”,c);输出：49（当以d输出时显示的的是ASCLL码，在电脑内部字符“1”是用这个数代替）</p>
+<p>printf(“c&#x3D;%c”,c);输出：1（现在输出的是字符1）</p>
+<p>如果是用int则：</p>
+<p>int i;</p>
+<p>char c;</p>
+<p>scanf(“%d”,&amp;i);输入49</p>
+<p>c&#x3D;i;</p>
+<p>prinf(“c&#x3D;%c”,c);输出：C&#x3D;1（这时又把数字49转换成了字符1）</p>
+<p>printf(“c&#x3D;%d”,c);输出：c&#x3D;49（49类型本来就是整数，直接输出）</p>
+<p><strong>2.如何输入1这个字符给char c?</strong><br>·scanf(“%c”, &amp;c);&gt;1<br>• scan(“%d’,&amp;i): c&#x3D;i;&gt;49<br>·1的ASCII编码是49，所以当c&#x3D;&#x3D;49时，它代表’1<br>•printf(“%i %c\n”,c,c);<br>一个49各自表述!</p>
+<p><strong>3.有无空格的区别</strong>(在输入端有无空格的区别)</p>
+<p>int a;</p>
+<p>char c;</p>
+<p>scanf(“%d %c”,&amp;a,&amp;c);  或者  scanf(“%d%c”,&amp;a,&amp;c);</p>
+<p>printf(“a&#x3D;%d c&#x3D;%d c&#x3D;%c”,a,c,c);</p>
+<p><em><strong>有空格指读到整数后面加空格，然后把下一个数字给下一个变量。</strong></em></p>
+<p><em><strong>无空格指读完整数直接跳过所以后面的变量就是空格（如果是字母则可以给下一个变量）</strong></em></p>
+<p>（忘了就打开存c-字符计算实验几遍，没特殊需求加空格）</p>
+<p><strong>4.第四点也是让我最震惊的字符加减可以变成别的字符</strong></p>
+<p>char c&#x3D;’A’;</p>
+<p>c++;</p>
+<p>printf(“%c\n”,c);</p>
+<p>第一次输出：B</p>
+<p>第二次输出：C</p>
+<p>……….以此类推</p>
+<p>因为A的ASCLL的编号是32，B的编号是33。</p>
+<p>所以可以在整数和字符串之间转换。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/09/10/%E6%95%B4%E6%95%B0%E8%A1%A8%E8%BE%BE/" data-id="cl7x2hvb90000ikvn5zj48wjr" data-title="整数表达" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-最大公约数题目" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/09/10/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0%E9%A2%98%E7%9B%AE/" class="article-date">
+  <time class="dt-published" datetime="2022-09-10T04:03:56.000Z" itemprop="datePublished">2022-09-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/09/10/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0%E9%A2%98%E7%9B%AE/">最大公约数题目</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong>最大公约数-解法</strong></p>
+<p>1.枚举法一个一个列举出来然后得到最大公约数。</p>
+<p>for(i&#x3D;1;i&lt;min;i++){</p>
+<p>​    if(i&#x3D;&#x3D;min){</p>
+<p>​        if(i&#x3D;&#x3D;max){</p>
+<p>​              ret&#x3D;i</p>
+<p>​        }</p>
+<p>​    }</p>
+<p>​    printf(“%d”,ret)</p>
+<p>}</p>
+<ol start="2">
+<li></li>
+</ol>
+<p>*如果b等于0，计算结束，a就是最大公约数；否则，计算a除以b的余数，让a等于b，而b等于那个余数;回到第一步。</p>
+<p>while(b!&#x3D;0){</p>
+<p>​    t&#x3D;min%max;</p>
+<p>​    min&#x3D;max;</p>
+<p>​     b&#x3D;t;</p>
+<p>}</p>
+<p>printf(“%d”,a)</p>
+<p>原理：min   max    t</p>
+<p>​            12       18     12</p>
+<p>​            18       12      6</p>
+<p>​              6         0</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/09/10/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0%E9%A2%98%E7%9B%AE/" data-id="cl7x2hvbe0002ikvnfgrq86we" data-title="最大公约数题目" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80%E9%A2%98%E7%9B%AE/" rel="tag">C语言题目</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-循环" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/09/08/%E5%BE%AA%E7%8E%AF/" class="article-date">
@@ -153,6 +346,8 @@
 <p><strong>为什么finished&#x3D;1后就不会在if语句中输出？并结束while循环？</strong></p>
 <p>finished&#x3D;1就是true，if(!finished)就是非true，即false，因此不会输出</p>
 <p>结束时！finished就是非true，即false，因此才能退出循环</p>
+<p><strong>4.sizeof()</strong></p>
+<p>判断字节数，了解所占内存</p>
 
       
     </div>
@@ -524,100 +719,12 @@
 
 
   
-    <article id="jiz-blog" class="h-entry article article-type-jiz" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/08/27/blog/" class="article-date">
-  <time class="dt-published" datetime="2022-08-27T04:56:21.000Z" itemprop="datePublished">2022-08-27</time>
-</a>
+
+
+  <nav id="page-nav">
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/08/27/blog/">jiz的第一篇博客</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>  一、现在是2022年8月27日14点27分，我搭建了自己的第一个自己的博客网站。当然更多的是对计算机的好奇和探索，希望我能一直在这条路走下去吧。（18岁搭建的网站，马上上大一能有一个自己的博客多是一件美事啊）</p>
-<p>![加油]加油</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/27/blog/" data-id="cl7detijz0000bcvn1gd7hkru" data-title="jiz的第一篇博客" class="article-share-link">分享</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%83%B3%E8%AF%B4%E7%9A%84%E8%AF%9D/" rel="tag">想说的话</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/08/27/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2022-08-27T03:38:37.247Z" itemprop="datePublished">2022-08-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/08/27/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/27/hello-world/" data-id="cl7detik20001bcvn9ernclkf" data-title="Hello World" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
+  </nav>
 
 </section>
         
@@ -630,7 +737,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web%E5%89%8D%E7%AB%AF/" rel="tag">web前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%83%B3%E8%AF%B4%E7%9A%84%E8%AF%9D/" rel="tag">想说的话</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" rel="tag">解决方案</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80%E9%A2%98%E7%9B%AE/" rel="tag">C语言题目</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web%E5%89%8D%E7%AB%AF/" rel="tag">web前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%83%B3%E8%AF%B4%E7%9A%84%E8%AF%9D/" rel="tag">想说的话</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" rel="tag">解决方案</a></li></ul>
     </div>
   </div>
 
@@ -640,7 +747,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 20px;">C语言</a> <a href="/tags/web%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">web前端</a> <a href="/tags/%E6%83%B3%E8%AF%B4%E7%9A%84%E8%AF%9D/" style="font-size: 10px;">想说的话</a> <a href="/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" style="font-size: 10px;">解决方案</a>
+      <a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 20px;">C语言</a> <a href="/tags/C%E8%AF%AD%E8%A8%80%E9%A2%98%E7%9B%AE/" style="font-size: 10px;">C语言题目</a> <a href="/tags/web%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">web前端</a> <a href="/tags/%E6%83%B3%E8%AF%B4%E7%9A%84%E8%AF%9D/" style="font-size: 10px;">想说的话</a> <a href="/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" style="font-size: 10px;">解决方案</a>
     </div>
   </div>
 
@@ -662,23 +769,23 @@
       <ul>
         
           <li>
+            <a href="/2022/09/11/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/">类型转换</a>
+          </li>
+        
+          <li>
+            <a href="/2022/09/10/%E6%95%B4%E6%95%B0%E8%A1%A8%E8%BE%BE/">整数表达</a>
+          </li>
+        
+          <li>
+            <a href="/2022/09/10/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0%E9%A2%98%E7%9B%AE/">最大公约数题目</a>
+          </li>
+        
+          <li>
             <a href="/2022/09/08/%E5%BE%AA%E7%8E%AF/">循环</a>
           </li>
         
           <li>
             <a href="/2022/09/08/%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5/">判断语句</a>
-          </li>
-        
-          <li>
-            <a href="/2022/09/07/%E5%A4%8D%E5%90%88%E8%B5%8B%E5%80%BC/">关于C语言-复合赋值</a>
-          </li>
-        
-          <li>
-            <a href="/2022/09/05/%E5%85%B3%E4%BA%8EC%E8%AF%AD%E8%A8%80-%E5%8F%98%E9%87%8F/">关于C语言--变量，浮点数和变量交换</a>
-          </li>
-        
-          <li>
-            <a href="/2022/09/05/%E5%85%B3%E4%BA%8Ec%E8%AF%AD%E8%A8%80/">关于c语言-格式和计算</a>
           </li>
         
       </ul>

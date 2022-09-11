@@ -4,19 +4,19 @@
   <meta charset="utf-8">
   
   
-  <title>关于自学web的一些笔记 | jiz的个人博客</title>
+  <title>类型转换 | jiz的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="自己在学HTML中的一点笔记和心得。 1.图片导入— 找到图片保持存在同一个文件夹，可以直接img scr&#x3D;‘’图片名称‘’。如果在子文件夹返回上一级img scr&#x3D;‘..&#x2F;xxx’再输入图片所在文件夹。（用软件img scr&#x3D;’‘可选路径’‘） 2.网站的跳转 — &lt;a href&#x3D;’’想要跳转的网站’’&gt;放入信息（可以是文字可以是图片">
+  <meta name="description" content="1.强制类型转换(强制转换的优先级高于四则运算) (转换的类型)数值 double a&#x3D;1.0; double b&#x3D;2.0; int i &#x3D;(int)a&#x2F;b; 这里会先把a转换成int类型在除以b； 如果要先除可以int i&#x3D;（int)(a&#x2F;b); 2.自动类型转换 当运算符的两边出现不一致的类型时，会自动转换成较大的类型·大的意思是能表">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于自学web的一些笔记">
-<meta property="og:url" content="http://example.com/2022/08/27/web/index.html">
+<meta property="og:title" content="类型转换">
+<meta property="og:url" content="http://example.com/2022/09/11/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/index.html">
 <meta property="og:site_name" content="jiz的个人博客">
-<meta property="og:description" content="自己在学HTML中的一点笔记和心得。 1.图片导入— 找到图片保持存在同一个文件夹，可以直接img scr&#x3D;‘’图片名称‘’。如果在子文件夹返回上一级img scr&#x3D;‘..&#x2F;xxx’再输入图片所在文件夹。（用软件img scr&#x3D;’‘可选路径’‘） 2.网站的跳转 — &lt;a href&#x3D;’’想要跳转的网站’’&gt;放入信息（可以是文字可以是图片">
+<meta property="og:description" content="1.强制类型转换(强制转换的优先级高于四则运算) (转换的类型)数值 double a&#x3D;1.0; double b&#x3D;2.0; int i &#x3D;(int)a&#x2F;b; 这里会先把a转换成int类型在除以b； 如果要先除可以int i&#x3D;（int)(a&#x2F;b); 2.自动类型转换 当运算符的两边出现不一致的类型时，会自动转换成较大的类型·大的意思是能表">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-08-27T06:45:28.000Z">
-<meta property="article:modified_time" content="2022-09-04T02:08:32.062Z">
+<meta property="article:published_time" content="2022-09-11T03:56:28.000Z">
+<meta property="article:modified_time" content="2022-09-11T07:30:56.936Z">
 <meta property="article:author" content="jiz">
-<meta property="article:tag" content="web前端">
+<meta property="article:tag" content="C语言">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="jiz的个人博客" type="application/atom+xml">
@@ -78,10 +78,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-web" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-类型转换" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/08/27/web/" class="article-date">
-  <time class="dt-published" datetime="2022-08-27T06:45:28.000Z" itemprop="datePublished">2022-08-27</time>
+    <a href="/2022/09/11/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" class="article-date">
+  <time class="dt-published" datetime="2022-09-11T03:56:28.000Z" itemprop="datePublished">2022-09-11</time>
 </a>
     
   </div>
@@ -92,7 +92,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      关于自学web的一些笔记
+      类型转换
     </h1>
   
 
@@ -100,29 +100,33 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>自己在学HTML中的一点笔记和心得。</p>
-<p>1.图片导入— 找到图片保持存在同一个文件夹，可以直接img scr&#x3D;‘’图片名称‘’。如果在子文件夹返回上一级img scr&#x3D;‘..&#x2F;xxx’再输入图片所在文件夹。（用软件img scr&#x3D;’‘可选路径’‘）</p>
-<p>2.网站的跳转 — &lt;a href&#x3D;’’想要跳转的网站’’&gt;放入信息（可以是文字可以是图片）title&#x3D;’鼠标悬停上去后的提示信息’ target&#x3D;’规定在何处打开文档‘&lt;&#x2F;a&gt;</p>
-<p>3.&lt;from method&#x3D;’get或者post’ action&#x3D;’向何处发送表单数据’&gt;</p>
-<p>​         &lt;input  type&#x3D;’定义输入框类型‘&gt;是输入框&lt;&#x2F;input&gt;</p>
-<p>   &lt;&#x2F;from&gt;</p>
-<p>4.在外部创建css文件再导入HTML文件。导入方法&lt;link rel&#x3D;’stylesheet’ type&#x3D;’css&#x2F;text’ href&#x3D;’css文件名路径’这样就可以把外部css文件样式导入内部。</p>
-<p>5.可以把样式赋给一个值然后再把值赋给别人。</p>
-<p>&lt;style&gt;</p>
-<p>​         .ibm{</p>
-<p>​              background-color: yellowgreen;</p>
-<p>}</p>
-<p>&lt;&#x2F;style&gt;</p>
-<div class="ibm" &gt;xxxxxxx< div&gt; <p>关于前端的一些粗糙的笔记但容易看懂，覆盖了HTML大部分基础对初学者很有参考价值。（把这些了解可以做点简单的网站了，当然如果要美观和丰富还要继续学习css和js啦）<p></p>
-</div>
+        <p><strong>1.强制类型转换</strong><em>(强制转换的优先级高于四则运算)</em></p>
+<p>(转换的类型)数值</p>
+<p>double a&#x3D;1.0;</p>
+<p>double b&#x3D;2.0;</p>
+<p>int i &#x3D;(int)a&#x2F;b;</p>
+<p>这里会先把a转换成int类型在除以b；</p>
+<p>如果要先除可以int i&#x3D;（int)(a&#x2F;b);</p>
+<p><strong>2.自动类型转换</strong></p>
+<p>当运算符的两边出现不一致的类型时，会自动转换成<br>较大的类型<br>·大的意思是能表达的数的范围更大<br> char–&gt; short–&gt; int –&gt; long —&gt; long long<br>·int –&gt; float –&gt; double</p>
+<p>对于printf，任何小于int的类型会被转换成int；float会被转换成double；</p>
+<p>但scanf不会，要输入short，需要%hd；</p>
+<p><strong>3.逻辑运算</strong></p>
+<p>！    逻辑非     !a      如果a是true结果就是false，如果a是false结果就是true。</p>
+<p>&amp;&amp;   逻辑与     a&amp;&amp;b    如果a和b都是ture，结果就是ture否则就是false。</p>
+<p>||     逻辑或      a||b    有一个是ture就是ture否则就是false。</p>
+<p>优先级：！&gt;&amp;&amp;&gt;||</p>
+<p><strong>如果要表达一个范围</strong></p>
+<p>x&gt;4 &amp;&amp; x&lt;6就是数学中的4&lt;x&lt;6;</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/27/web/" data-id="cl7detik40003bcvn8o7r7drg" data-title="关于自学web的一些笔记" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2022/09/11/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" data-id="cl7x2hvbi0005ikvn0dm00yki" data-title="类型转换" class="article-share-link">分享</a>
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web%E5%89%8D%E7%AB%AF/" rel="tag">web前端</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
 
     </footer>
   </div>
@@ -130,19 +134,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2022/08/28/%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">前一篇</strong>
-      <div class="article-nav-title">
-        
-          hexo的困难
-        
-      </div>
-    </a>
   
-  
-    <a href="/2022/08/27/blog/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2022/09/10/%E6%95%B4%E6%95%B0%E8%A1%A8%E8%BE%BE/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">后一篇</strong>
-      <div class="article-nav-title">jiz的第一篇博客</div>
+      <div class="article-nav-title">整数表达</div>
     </a>
   
 </nav>
