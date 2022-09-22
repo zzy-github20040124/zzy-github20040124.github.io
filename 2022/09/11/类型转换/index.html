@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>类型转换 | jiz的个人博客</title>
+  <title>类型转换-逻辑运算-变量范围 | jiz的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="1.强制类型转换(强制转换的优先级高于四则运算) (转换的类型)数值 double a&#x3D;1.0; double b&#x3D;2.0; int i &#x3D;(int)a&#x2F;b; 这里会先把a转换成int类型在除以b； 如果要先除可以int i&#x3D;（int)(a&#x2F;b); 2.自动类型转换 当运算符的两边出现不一致的类型时，会自动转换成较大的类型·大的意思是能表">
 <meta property="og:type" content="article">
-<meta property="og:title" content="类型转换">
+<meta property="og:title" content="类型转换-逻辑运算-变量范围">
 <meta property="og:url" content="http://example.com/2022/09/11/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/index.html">
 <meta property="og:site_name" content="jiz的个人博客">
 <meta property="og:description" content="1.强制类型转换(强制转换的优先级高于四则运算) (转换的类型)数值 double a&#x3D;1.0; double b&#x3D;2.0; int i &#x3D;(int)a&#x2F;b; 这里会先把a转换成int类型在除以b； 如果要先除可以int i&#x3D;（int)(a&#x2F;b); 2.自动类型转换 当运算符的两边出现不一致的类型时，会自动转换成较大的类型·大的意思是能表">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-09-11T03:56:28.000Z">
-<meta property="article:modified_time" content="2022-09-11T07:30:56.936Z">
+<meta property="article:modified_time" content="2022-09-11T14:30:59.679Z">
 <meta property="article:author" content="jiz">
 <meta property="article:tag" content="C语言">
 <meta name="twitter:card" content="summary">
@@ -92,7 +92,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      类型转换
+      类型转换-逻辑运算-变量范围
     </h1>
   
 
@@ -118,11 +118,16 @@
 <p>优先级：！&gt;&amp;&amp;&gt;||</p>
 <p><strong>如果要表达一个范围</strong></p>
 <p>x&gt;4 &amp;&amp; x&lt;6就是数学中的4&lt;x&lt;6;</p>
+<p><strong>4.函数定义的范围局域在{}中</strong></p>
+<p>在函数中定义一个变量只能在同一个{}起作用出了大括号就不被定义了。</p>
+<p>int main(){int a&#x3D;1; int b&#x3D;2;}(在这个函数中我定义了两个变量但在其他函数中就不能用)</p>
+<p>viod sum(){a+&#x3D;b;}(就会报错因为在sum函数中a和b没有被定义)</p>
+<p>会优先使用范围更小的变量</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/09/11/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" data-id="cl7x2hvbi0005ikvn0dm00yki" data-title="类型转换" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2022/09/11/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" data-id="cl7x2hvbi0005ikvn0dm00yki" data-title="类型转换-逻辑运算-变量范围" class="article-share-link">分享</a>
       
       
       
@@ -133,6 +138,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2022/09/12/%E6%95%B0%E7%BB%84/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          数组
+        
+      </div>
+    </a>
   
   
     <a href="/2022/09/10/%E6%95%B4%E6%95%B0%E8%A1%A8%E8%BE%BE/" id="article-nav-older" class="article-nav-link-wrap">
@@ -189,7 +203,11 @@
       <ul>
         
           <li>
-            <a href="/2022/09/11/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/">类型转换</a>
+            <a href="/2022/09/12/%E6%95%B0%E7%BB%84/">数组</a>
+          </li>
+        
+          <li>
+            <a href="/2022/09/11/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/">类型转换-逻辑运算-变量范围</a>
           </li>
         
           <li>
@@ -202,10 +220,6 @@
         
           <li>
             <a href="/2022/09/08/%E5%BE%AA%E7%8E%AF/">循环</a>
-          </li>
-        
-          <li>
-            <a href="/2022/09/08/%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5/">判断语句</a>
           </li>
         
       </ul>
