@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>指针 | jiz的个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="1.指针（指针是能存放别的变量地址的变量） &amp;取地址符号，有了这个才能取出地址。w *把普通变量变成指针和提取指针所代指地址变量的值，如int *p就是定义了一个指针。int **q就是定义了一个指向指针的指针。 我们不能把两个函数中的变量混为一谈，就算他们叫同一个名字也并不是一个东西。 但我们可以通过指针来完成数据的传输。比如定义一个void addness(int *p)将一个地址传给">
+<meta property="og:type" content="article">
+<meta property="og:title" content="指针">
+<meta property="og:url" content="http://example.com/2022/09/23/%E6%8C%87%E9%92%88/index.html">
+<meta property="og:site_name" content="jiz的个人博客">
+<meta property="og:description" content="1.指针（指针是能存放别的变量地址的变量） &amp;取地址符号，有了这个才能取出地址。w *把普通变量变成指针和提取指针所代指地址变量的值，如int *p就是定义了一个指针。int **q就是定义了一个指向指针的指针。 我们不能把两个函数中的变量混为一谈，就算他们叫同一个名字也并不是一个东西。 但我们可以通过指针来完成数据的传输。比如定义一个void addness(int *p)将一个地址传给">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-09-23T14:48:38.000Z">
+<meta property="article:modified_time" content="2022-09-27T06:10:57.472Z">
+<meta property="article:author" content="jiz">
+<meta property="article:tag" content="C语言">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="jiz的个人博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">jiz的个人博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">记录</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-指针" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/09/23/%E6%8C%87%E9%92%88/" class="article-date">
+  <time class="dt-published" datetime="2022-09-23T14:48:38.000Z" itemprop="datePublished">2022-09-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      指针
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong>1.指针</strong>（指针是能存放别的变量地址的变量）</p>
+<p>&amp;取地址符号，有了这个才能取出地址。w</p>
+<p>*把普通变量变成指针和提取指针所代指地址变量的值，如int *p就是定义了一个指针。int **q就是定义了一个指向指针的指针。</p>
+<p><em>我们不能把两个函数中的变量混为一谈，就算他们叫同一个名字也并不是一个东西。</em></p>
+<p>但我们可以通过指针来完成数据的传输。比如定义一个void addness(int *p)将一个地址传给p就可以，</p>
+<p>addness(&amp;a)我就可以把a传入addness函数里。</p>
+<p><strong>数组指针</strong>（int *p[ ]&#x3D;{“x”,”x”};)</p>
+<p>*p&#x3D;a&#x3D;a[]&#x3D;a[0];数组的第一个数组的地址被叫做基地址。</p>
+<p><strong>&amp;A[i]&#x3D;(A+i),  A[i]&#x3D;*(A+i)</strong></p>
+<p>当我们把数组当作一个参数传入另一个函数，它并不会传入所有的数组到一个新函数里而是把基地址传入。可以理解为并不是传入了一个数组而是一个指针。所以在这样的情况下int*A&#x3D;int A[]。（所以要在存数组的地方算出数组的长度，再传进函数。</p>
+<p>如果我们单纯用数组的话我们存放的东西会有一定限制比如char a[] []就是我们在内存中划去了一个固定的范围来存放字符串，但如果我们用数组指针char *a[]则是创建了一个数组指针里面的所有东西都是一个地址，这些地址指向了不同的字符串这个时候字符串的长度就是没有限制的了。</p>
+<p><strong>2.字符串与指针</strong></p>
+<p>定义一个字符串数组，char C[20];如果我们的字符串有四个字节那么我们就需要5个字节来存放字符串数组，因为多余的一个字符串要存放\0来代表我的字符串已经结束，不然就会一直进行打出乱码。</p>
+<p>在这个时候我们在使用sizeof(a)时总会比填写的字符串大一个（因为要存放\0），所以我们可以用strlen(a)来获取字符串的字节长度。</p>
+<p><strong>3.动态内存，在内存中我们分为不同的板块，主要用于存东西的就是栈和堆。那我们如何把东西存在堆里呢</strong></p>
+<p>我们要用到三个函数（malloc calloc realloc)被定义出来的内存类似一个数组可以用对待数组的方式对待。</p>
+<p>malloc-void malloc(n*放需要多少内存)  (和realloc函数不同的点在于realloc函数会把数据初始化为0，malloc不会。)</p>
+<p>calloc-void calloc(需要几个这样的内存(x)，需要的内存(y) )简而言之就是x*y。</p>
+<p>realloc 函数我觉得应该属于是增加已有内存的函数。</p>
+<p>realloc-void realloc(需要增加的内存的地址，需要增加多少)。</p>
+<p>我们都知道void函数是不会返还任何东西的，所以我们在把一个指针指向我们预留的地址时可以做一个强制类型转换。</p>
+<p>int *p&#x3D;(int *)malloc(10 *sizeof(int))</p>
+<p>我们最好用sizeof来表示我们要用多少内存因为只是一个数组容易让人类读者不理解且每个编译器的编码位数不相同。</p>
+<p>只是我们定义了一个指针指向了heap中预留的内存，在里面*(p)&#x3D;p[o];</p>
+<p>为什么我们需要堆而不把内存都给栈呢？我的理解是有些数据可能就是一个过度用的或者短暂的，如果长时间存放就会消耗内存为了效率我们有了动态内存。</p>
+<p>那我们如何把heap中的不要的去掉呢？free函数。</p>
+<p>当我们不需要用到这一块内存时我们可以free(a)将他从heap中删掉。</p>
+<p><strong>在外面前面学到的数组中，我们不能把一个会变的变量当成数组的个数就像int a&#x3D;10;int b[n];这样是不被允许的但在动态内存中可以实现。</strong></p>
+<p>int n;</p>
+<p>scanf(“%d”,&amp;n);</p>
+<p>int *A&#x3D;malloc(n *sizeof(int));</p>
+<p>在这当中数组的长度就是可以随着你n的变化而改变的。</p>
+<p><strong>（记得加#include&lt;stdlib.h&gt;)</strong></p>
+<p><strong>4.内存泄漏</strong></p>
+<p>思考一个问题，在前面我们说到如果在堆上面分配内存是需要删除的，那么我们在频繁的调用一个函数的情况下内存是否会变化。</p>
+<p>函数中有一个指向heap的指针，如果被频繁调动就会一直在和heap上申请内存，所以会导致内存越来越大。</p>
+<p>在stack中函数的删减否不需要程序员操心，在一个函数运行完成的情况下会将他删除直到下一次的调用。如果写一个经常被调用的函数就会知道，每次你所创建的指针所指向的地址都是不同的。切记用完free掉。</p>
+<p><strong>内存泄漏总是因为堆中未使用和未应用的内存块才发生的，栈上的内存是自动回收的，栈的大小是固定的，最多就是发生栈溢出。</strong></p>
+<p><strong>5.函数返回指针</strong></p>
+<p><strong><u>其实我一直有个问题那就是为什么要分为栈和堆，难道把他们合并不会更方便一点吗？我把所有数据都放在栈上不就可以避开指针避开动态内存了吗？</u></strong></p>
+<p>其实我们都知道在栈中除了main函数其他的函数只有在使用的时候会分配内存，在其他情况下则是会被抹去。那么再让我们思考一个问题，如果我定义了一个函数返回了一个值这个值的地址是100，且我又定义了一个别的函数，这个函数的内存把100覆盖了我们会输出一个怎么样的值呢？会输出乱码因为其他的函数把100覆盖了，再栈当中不需要程序员主动去删除不需要的函数系统会完成一切，但问题也就是如果我定义了两个及以上的函数且返回值被另一个函数覆盖那么我们不会得到任何东西，放在堆中就不一样。</p>
+<p><strong>从栈底向上传是可以的，但不可以从栈顶往下传。但如果我们在堆中或全局变量中有变量就可以安全返回。</strong></p>
+<p><strong>5.函数指针</strong></p>
+<p>int add(int a,int b){return a+b;}     (这里我们定义了一个函数)</p>
+<p>int (*P)(int,int); p&#x3D;&amp;add (定义一个指针要加括号，后面那个括号里面数据类型要和所指向函数后面括号的类型相同)</p>
+<p>然后通过这个指针我们就可以只用这个函数了。</p>
+<p>int c;  c&#x3D;(*P)(2,3);</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/09/23/%E6%8C%87%E9%92%88/" data-id="cl8r9lh9q00011gvn7wkm3gu9" data-title="指针" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/09/30/string/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          string
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/09/12/%E6%95%B0%E7%BB%84/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">数组</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80%E9%A2%98%E7%9B%AE/" rel="tag">C语言题目</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web%E5%89%8D%E7%AB%AF/" rel="tag">web前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%83%B3%E8%AF%B4%E7%9A%84%E8%AF%9D/" rel="tag">想说的话</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" rel="tag">解决方案</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 20px;">C语言</a> <a href="/tags/C%E8%AF%AD%E8%A8%80%E9%A2%98%E7%9B%AE/" style="font-size: 10px;">C语言题目</a> <a href="/tags/web%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">web前端</a> <a href="/tags/%E6%83%B3%E8%AF%B4%E7%9A%84%E8%AF%9D/" style="font-size: 10px;">想说的话</a> <a href="/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" style="font-size: 10px;">解决方案</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">八月 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/09/30/string/">string</a>
+          </li>
+        
+          <li>
+            <a href="/2022/09/23/%E6%8C%87%E9%92%88/">指针</a>
+          </li>
+        
+          <li>
+            <a href="/2022/09/12/%E6%95%B0%E7%BB%84/">数组</a>
+          </li>
+        
+          <li>
+            <a href="/2022/09/11/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/">类型转换-逻辑运算-变量范围</a>
+          </li>
+        
+          <li>
+            <a href="/2022/09/10/%E6%95%B4%E6%95%B0%E8%A1%A8%E8%BE%BE/">整数表达</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 jiz<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
