@@ -6,15 +6,15 @@
   
   <title>指针 | jiz的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="1.指针（指针是能存放别的变量地址的变量） &amp;取地址符号，有了这个才能取出地址。w *把普通变量变成指针和提取指针所代指地址变量的值，如int *p就是定义了一个指针。int **q就是定义了一个指向指针的指针。 我们不能把两个函数中的变量混为一谈，就算他们叫同一个名字也并不是一个东西。 但我们可以通过指针来完成数据的传输。比如定义一个void addness(int *p)将一个地址传给">
+  <meta name="description" content="1.指针（指针是能存放别的变量地址的变量） &amp;取地址符号，有了这个才能取出地址。w *把普通变量变成指针和提取指针所代指地址变量的值，如int *p就是定义了一个指针。int **q就是定义了一个指向指针的指针。 我们不能把两个函数中的变量混为一谈，就算他们叫同一个名字也并不是一个东西。 但我们可以通过指针来完成数据的传输。比如定义一个void a d d n e s s (int *p)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="指针">
 <meta property="og:url" content="http://example.com/2022/09/23/%E6%8C%87%E9%92%88/index.html">
 <meta property="og:site_name" content="jiz的个人博客">
-<meta property="og:description" content="1.指针（指针是能存放别的变量地址的变量） &amp;取地址符号，有了这个才能取出地址。w *把普通变量变成指针和提取指针所代指地址变量的值，如int *p就是定义了一个指针。int **q就是定义了一个指向指针的指针。 我们不能把两个函数中的变量混为一谈，就算他们叫同一个名字也并不是一个东西。 但我们可以通过指针来完成数据的传输。比如定义一个void addness(int *p)将一个地址传给">
+<meta property="og:description" content="1.指针（指针是能存放别的变量地址的变量） &amp;取地址符号，有了这个才能取出地址。w *把普通变量变成指针和提取指针所代指地址变量的值，如int *p就是定义了一个指针。int **q就是定义了一个指向指针的指针。 我们不能把两个函数中的变量混为一谈，就算他们叫同一个名字也并不是一个东西。 但我们可以通过指针来完成数据的传输。比如定义一个void a d d n e s s (int *p)">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-09-23T14:48:38.000Z">
-<meta property="article:modified_time" content="2022-09-27T06:10:57.472Z">
+<meta property="article:modified_time" content="2022-10-03T06:33:03.126Z">
 <meta property="article:author" content="jiz">
 <meta property="article:tag" content="C语言">
 <meta name="twitter:card" content="summary">
@@ -104,8 +104,8 @@
 <p>&amp;取地址符号，有了这个才能取出地址。w</p>
 <p>*把普通变量变成指针和提取指针所代指地址变量的值，如int *p就是定义了一个指针。int **q就是定义了一个指向指针的指针。</p>
 <p><em>我们不能把两个函数中的变量混为一谈，就算他们叫同一个名字也并不是一个东西。</em></p>
-<p>但我们可以通过指针来完成数据的传输。比如定义一个void addness(int *p)将一个地址传给p就可以，</p>
-<p>addness(&amp;a)我就可以把a传入addness函数里。</p>
+<p>但我们可以通过指针来完成数据的传输。比如定义一个void a d d n e s s (int *p)将一个地址传给p就可以，</p>
+<p>a d d n e s s (&amp;a)我就可以把a传入a d d n e s s函数里。</p>
 <p><strong>数组指针</strong>（int *p[ ]&#x3D;{“x”,”x”};)</p>
 <p>*p&#x3D;a&#x3D;a[]&#x3D;a[0];数组的第一个数组的地址被叫做基地址。</p>
 <p><strong>&amp;A[i]&#x3D;(A+i),  A[i]&#x3D;*(A+i)</strong></p>
@@ -113,26 +113,26 @@
 <p>如果我们单纯用数组的话我们存放的东西会有一定限制比如char a[] []就是我们在内存中划去了一个固定的范围来存放字符串，但如果我们用数组指针char *a[]则是创建了一个数组指针里面的所有东西都是一个地址，这些地址指向了不同的字符串这个时候字符串的长度就是没有限制的了。</p>
 <p><strong>2.字符串与指针</strong></p>
 <p>定义一个字符串数组，char C[20];如果我们的字符串有四个字节那么我们就需要5个字节来存放字符串数组，因为多余的一个字符串要存放\0来代表我的字符串已经结束，不然就会一直进行打出乱码。</p>
-<p>在这个时候我们在使用sizeof(a)时总会比填写的字符串大一个（因为要存放\0），所以我们可以用strlen(a)来获取字符串的字节长度。</p>
+<p>在这个时候我们在使用s i z e o f(a)时总会比填写的字符串大一个（因为要存放\0），所以我们可以用s t r l e n(a)来获取字符串的字节长度。</p>
 <p><strong>3.动态内存，在内存中我们分为不同的板块，主要用于存东西的就是栈和堆。那我们如何把东西存在堆里呢</strong></p>
-<p>我们要用到三个函数（malloc calloc realloc)被定义出来的内存类似一个数组可以用对待数组的方式对待。</p>
-<p>malloc-void malloc(n*放需要多少内存)  (和realloc函数不同的点在于realloc函数会把数据初始化为0，malloc不会。)</p>
-<p>calloc-void calloc(需要几个这样的内存(x)，需要的内存(y) )简而言之就是x*y。</p>
-<p>realloc 函数我觉得应该属于是增加已有内存的函数。</p>
-<p>realloc-void realloc(需要增加的内存的地址，需要增加多少)。</p>
+<p>我们要用到三个函数（m a l l o c, c a l l o c , r e a l l o c)被定义出来的内存类似一个数组可以用对待数组的方式对待。</p>
+<p>m a l l o c-void m a l l o c(n*放需要多少内存)  (和r e a l l o c函数不同的点在于r e a l l o c函数会把数据初始化为0，m a l l o c不会。)</p>
+<p>c a l l o c-void c a l l o c(需要几个这样的内存(x)，需要的内存(y) )简而言之就是x*y。</p>
+<p>r e a l l o c 函数我觉得应该属于是增加已有内存的函数。</p>
+<p>r e a l l o c-void r e a l l o c(需要增加的内存的地址，需要增加多少)。</p>
 <p>我们都知道void函数是不会返还任何东西的，所以我们在把一个指针指向我们预留的地址时可以做一个强制类型转换。</p>
-<p>int *p&#x3D;(int *)malloc(10 *sizeof(int))</p>
-<p>我们最好用sizeof来表示我们要用多少内存因为只是一个数组容易让人类读者不理解且每个编译器的编码位数不相同。</p>
+<p>int *p&#x3D;(int *)m a l l o c(10 *s i z e o f(int))</p>
+<p>我们最好用s i z e o f来表示我们要用多少内存因为只是一个数组容易让人类读者不理解且每个编译器的编码位数不相同。</p>
 <p>只是我们定义了一个指针指向了heap中预留的内存，在里面*(p)&#x3D;p[o];</p>
 <p>为什么我们需要堆而不把内存都给栈呢？我的理解是有些数据可能就是一个过度用的或者短暂的，如果长时间存放就会消耗内存为了效率我们有了动态内存。</p>
 <p>那我们如何把heap中的不要的去掉呢？free函数。</p>
 <p>当我们不需要用到这一块内存时我们可以free(a)将他从heap中删掉。</p>
 <p><strong>在外面前面学到的数组中，我们不能把一个会变的变量当成数组的个数就像int a&#x3D;10;int b[n];这样是不被允许的但在动态内存中可以实现。</strong></p>
 <p>int n;</p>
-<p>scanf(“%d”,&amp;n);</p>
-<p>int *A&#x3D;malloc(n *sizeof(int));</p>
+<p>s c a n f (“%d”,&amp;n);</p>
+<p>int *A&#x3D;m a l l o c(n *s i z e o f(int));</p>
 <p>在这当中数组的长度就是可以随着你n的变化而改变的。</p>
-<p><strong>（记得加#include&lt;stdlib.h&gt;)</strong></p>
+<p><strong>（记得加#include &lt;s t d l i b  .h&gt;)</strong></p>
 <p><strong>4.内存泄漏</strong></p>
 <p>思考一个问题，在前面我们说到如果在堆上面分配内存是需要删除的，那么我们在频繁的调用一个函数的情况下内存是否会变化。</p>
 <p>函数中有一个指向heap的指针，如果被频繁调动就会一直在和heap上申请内存，所以会导致内存越来越大。</p>
@@ -162,15 +162,6 @@
   
     
 <nav id="article-nav">
-  
-    <a href="/2022/09/30/string/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">前一篇</strong>
-      <div class="article-nav-title">
-        
-          string
-        
-      </div>
-    </a>
   
   
     <a href="/2022/09/12/%E6%95%B0%E7%BB%84/" id="article-nav-older" class="article-nav-link-wrap">
@@ -227,10 +218,6 @@
       <ul>
         
           <li>
-            <a href="/2022/09/30/string/">string</a>
-          </li>
-        
-          <li>
             <a href="/2022/09/23/%E6%8C%87%E9%92%88/">指针</a>
           </li>
         
@@ -244,6 +231,10 @@
         
           <li>
             <a href="/2022/09/10/%E6%95%B4%E6%95%B0%E8%A1%A8%E8%BE%BE/">整数表达</a>
+          </li>
+        
+          <li>
+            <a href="/2022/09/10/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0%E9%A2%98%E7%9B%AE/">最大公约数题目</a>
           </li>
         
       </ul>
