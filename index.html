@@ -78,6 +78,117 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-java" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/12/03/java/" class="article-date">
+  <time class="dt-published" datetime="2022-12-03T07:34:13.000Z" itemprop="datePublished">2022-12-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/12/03/java/">java</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Java是面向对象的语言学了C语言后学习Java还算轻松，学到面向对象做笔记记录一下。</p>
+<p>1.java所有的操作都在类里（目前为止），类的关键词class是主要。</p>
+<p><strong>public class 类名（加了public的类要与文件名一样）{</strong></p>
+<p>​           <strong>public static void main(){</strong></p>
+<p>​                       <strong>具体方法；</strong></p>
+<p>​      <strong>}</strong></p>
+<p><strong>}</strong><br>与C语言不一样的是C语言只有main和其他函数，而java在不同的类中可以有很多函数。类似于结构体但java可以包含函数及属性。</p>
+<p>2.函数输出：System.out.println(…)  和System.out.print(….)区别在于是否换行。可额外加&#x2F;n换行。</p>
+<p>   函数输入：先要导包类似于C语言头文件一样的。import java.util.Scanner</p>
+<p>然后把这个包赋给一个值类似于 Scanner scan&#x3D;new Scanner(System.in)</p>
+<p>然后就可以用scan从键盘上读入了类似：int n&#x3D;scan.nextInt()</p>
+<p>3.类型；char字符只能读一个，String字符串可以读很多，int整形，float浮点。<strong>类型问题需要特别注意比如：short i&#x3D;n+1这是不行的因为1会被认定成int型。浮点型也是默认为double而不是float；</strong></p>
+<p>4.面向对象class出一个新的类</p>
+<p>类就像抽象的-</p>
+<p>class 类名{</p>
+<p>​        可以存放属性如：</p>
+<p>​         int number；</p>
+<p>​         可以创建一个方法</p>
+<p>​            public void do(可以放形参){</p>
+<p>​                 写方法；</p>
+<p>​    }</p>
+<p>}</p>
+<p>（1）：创建类，设计类的成员</p>
+<p>（2）：创建类的对象</p>
+<p>（3）：通过“对象.属性”或者“对象.方法 ”来调用对象的结构。</p>
+<p>比如在main里 类名 变量名 &#x3D; new 类名（）</p>
+<p>这个变量名就是对象可以通过它来带调用；</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/12/03/java/" data-id="clb82blio0000w4vn5k6l6g32" data-title="java" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-地址符" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/10/22/%E5%9C%B0%E5%9D%80%E7%AC%A6/" class="article-date">
+  <time class="dt-published" datetime="2022-10-22T05:39:52.000Z" itemprop="datePublished">2022-10-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/10/22/%E5%9C%B0%E5%9D%80%E7%AC%A6/">地址符</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong>1.在顺序表当中我不是很理解为什么在实现函数作用的时候要加上&amp;</strong></p>
+<p>比如linklist(struct &amp;L);</p>
+<p>我就不理解为什么要传进去的是L的地址而不是L。</p>
+<p>后来我看到一种解释说<strong>L前面加&amp;才能表示引用参数，函数内部的改变跳出后依然可以有效。如果不加&amp;，函数内部的改变则无法改变外部的</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/10/22/%E5%9C%B0%E5%9D%80%E7%AC%A6/" data-id="clb82blit0001w4vng3hw1ord" data-title="地址符" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" rel="tag">数据结构与算法</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-string" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/10/20/string/" class="article-date">
@@ -623,125 +734,6 @@
 
 
   
-    <article id="post-复合赋值" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/09/07/%E5%A4%8D%E5%90%88%E8%B5%8B%E5%80%BC/" class="article-date">
-  <time class="dt-published" datetime="2022-09-07T05:41:20.000Z" itemprop="datePublished">2022-09-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/09/07/%E5%A4%8D%E5%90%88%E8%B5%8B%E5%80%BC/">关于C语言-复合赋值</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p> <strong>1.复合赋值</strong></p>
-<p>total+&#x3D;(sun+100)&#x2F;2  和相同  total&#x3D;total+(sun+100)&#x2F;2</p>
-<p><strong>2.递增递减运算符</strong></p>
-<p>++”和“–”是两个很特殊的运算符，它们是单目运算符，这个算子还必须是变量。这两个运算符分别叫做递增和递减运算符，他们的作用就是给这个变量+1或者-1。</p>
-<p><strong>count++;</strong><br><strong>count +&#x3D;；</strong><br><strong>count &#x3D; count + 1;</strong></p>
-<p><u>++和–可以放在变量的前面，叫做前缀形式，也可以放在变量的后面，叫做后缀形式。</u><br><u>a++的值是a加|以前的值，而++a的值是加了1以后的值，无论哪个，a自己的值都加了1了。</u></p>
-<p>按我自己的理解就是:</p>
-<p><strong>a&#x3D;0</strong>  </p>
-<p><strong>printf(“a++&#x3D;%d”,a++)</strong></p>
-<p><strong>printf(“a&#x3D;%d”,a)</strong></p>
-<p><strong>输出：a++&#x3D;0  a&#x3D;1</strong></p>
-<p><strong>printf(“++a&#x3D;%d”,++a)</strong></p>
-<p><strong>printf(“a&#x3D;%d”,a)</strong></p>
-<p><strong>输出：++a&#x3D;1  a&#x3D;1</strong></p>
-<p><strong>3.运算优先级</strong></p>
-<p><em>单目&gt;乘除&gt;加减&gt;对比&gt;赋值</em></p>
-<p><strong>运算一定要遵循运算优先级,对比如果正确则输出1反之输出2</strong></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/09/07/%E5%A4%8D%E5%90%88%E8%B5%8B%E5%80%BC/" data-id="cl7rj9qy40000esvn6hw9c8zp" data-title="关于C语言-复合赋值" class="article-share-link">分享</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-关于C语言-变量" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/09/05/%E5%85%B3%E4%BA%8EC%E8%AF%AD%E8%A8%80-%E5%8F%98%E9%87%8F/" class="article-date">
-  <time class="dt-published" datetime="2022-09-05T09:44:00.000Z" itemprop="datePublished">2022-09-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/09/05/%E5%85%B3%E4%BA%8EC%E8%AF%AD%E8%A8%80-%E5%8F%98%E9%87%8F/">关于C语言--变量，浮点数和变量交换</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>1.<strong>&lt;类型名称&gt;  &lt;变量名称&gt;&#x3D; &lt;初始值&gt;</strong></p>
-<p>如：int price&#x3D; 0;**</p>
-<p>​        int amount &#x3D; 100;</p>
-<p>1.1<strong>组合变量定义的时候，也可以在这个定义中单个赋值。</strong></p>
-<p>​     int price &#x3D; 0, amount &#x3D; 100;   或者  int price,amount&#x3D;0; </p>
-<p>1.2 <strong>不一定要在最初赋值但一定要在使用前赋值。C99协议变量可以在任何地方定义</strong></p>
-<ol start="2">
-<li><h6 id="const"><a href="#const" class="headerlink" title="const"></a><strong>const</strong></h6><p>const是一个修饰符，加在int的前面，用来给这个变量加上一个const（不变的）的属性。这个const的属性表示这个变量的值一旦初始化，就不能再修改了。</p>
-<p>如果你把锁定了的变量放在左边这会报错。</p>
-</li>
-<li><p><strong>浮点数.</strong></p>
-<p>在浮点数里scranf()中获取数值要用%lf，但用printf()依然用%f，</p>
-<p><strong>3.1 double</strong><br>inch是定义为int类型的变量，如果把int换成double，我们就把它改为double类型的浮点数变量了。<br>double的意思是“双”，它本来是“双精度浮点数”的第一个单词，人们用来表示浮点数类型。除了double，还有float（意思就是浮点！）表示单精度浮点数。</p>
-</li>
-<li><p><strong>交换变量</strong></p>
-<p><em>交换变量需要一个新的容器（另一个变量）。</em></p>
-<p>如：a&#x3D;1 b&#x3D;2 直接 a&#x3D;b b&#x3D;a 不能直接交换而是会顺序运算。</p>
-<p><em>正确应该引进一个新变量c</em></p>
-<p>如： a&#x3D;1 b&#x3D;2 引进一个c  </p>
-<p>a&#x3D;c a&#x3D;b b&#x3D;c  就可以完成交换。</p>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/09/05/%E5%85%B3%E4%BA%8EC%E8%AF%AD%E8%A8%80-%E5%8F%98%E9%87%8F/" data-id="cl7on1rsn0000lwvnee0973u5" data-title="关于C语言--变量，浮点数和变量交换" class="article-share-link">分享</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -760,7 +752,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80%E9%A2%98%E7%9B%AE/" rel="tag">C语言题目</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web%E5%89%8D%E7%AB%AF/" rel="tag">web前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%83%B3%E8%AF%B4%E7%9A%84%E8%AF%9D/" rel="tag">想说的话</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" rel="tag">解决方案</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80%E9%A2%98%E7%9B%AE/" rel="tag">C语言题目</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web%E5%89%8D%E7%AB%AF/" rel="tag">web前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%83%B3%E8%AF%B4%E7%9A%84%E8%AF%9D/" rel="tag">想说的话</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" rel="tag">数据结构与算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" rel="tag">解决方案</a></li></ul>
     </div>
   </div>
 
@@ -770,7 +762,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 20px;">C语言</a> <a href="/tags/C%E8%AF%AD%E8%A8%80%E9%A2%98%E7%9B%AE/" style="font-size: 10px;">C语言题目</a> <a href="/tags/web%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">web前端</a> <a href="/tags/%E6%83%B3%E8%AF%B4%E7%9A%84%E8%AF%9D/" style="font-size: 15px;">想说的话</a> <a href="/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" style="font-size: 10px;">解决方案</a>
+      <a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 20px;">C语言</a> <a href="/tags/C%E8%AF%AD%E8%A8%80%E9%A2%98%E7%9B%AE/" style="font-size: 10px;">C语言题目</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/web%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">web前端</a> <a href="/tags/%E6%83%B3%E8%AF%B4%E7%9A%84%E8%AF%9D/" style="font-size: 15px;">想说的话</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" style="font-size: 10px;">数据结构与算法</a> <a href="/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" style="font-size: 10px;">解决方案</a>
     </div>
   </div>
 
@@ -779,7 +771,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">八月 2022</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">十二月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">八月 2022</a></li></ul>
     </div>
   </div>
 
@@ -792,6 +784,14 @@
       <ul>
         
           <li>
+            <a href="/2022/12/03/java/">java</a>
+          </li>
+        
+          <li>
+            <a href="/2022/10/22/%E5%9C%B0%E5%9D%80%E7%AC%A6/">地址符</a>
+          </li>
+        
+          <li>
             <a href="/2022/10/20/string/">大丈夫</a>
           </li>
         
@@ -801,14 +801,6 @@
         
           <li>
             <a href="/2022/09/12/%E6%95%B0%E7%BB%84/">数组</a>
-          </li>
-        
-          <li>
-            <a href="/2022/09/11/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/">类型转换-逻辑运算-变量范围</a>
-          </li>
-        
-          <li>
-            <a href="/2022/09/10/%E6%95%B4%E6%95%B0%E8%A1%A8%E8%BE%BE/">整数表达</a>
           </li>
         
       </ul>
