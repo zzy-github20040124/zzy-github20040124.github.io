@@ -4,19 +4,19 @@
   <meta charset="utf-8">
   
   
-  <title>java | jiz的个人博客</title>
+  <title>Golang | jiz的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Java是面向对象的语言学了C语言后学习Java还算轻松，学到面向对象做笔记记录一下。 1.java所有的操作都在类里（目前为止），类的关键词class是主要。 public class 类名（加了public的类要与文件名一样）{ ​           public static void main(){ ​                       具体方法； ​      } }与C语言">
+  <meta name="description" content="1.golang数据类型，int float32(单精度) float64（双精度）string也被列入了基本数据类型 2.定义一个变量有3种方法 （1）：var 变量名 数据类型 （2）：变量名  数据类型 :&#x3D; 参数 （3）：变量名 :&#x3D; 参数 (golang会自己猜测你的函数类型) 2.生成有个可执行的exe文件，先要go mod文件，在终端go mod init (mo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java">
-<meta property="og:url" content="http://example.com/2022/12/03/java/index.html">
+<meta property="og:title" content="Golang">
+<meta property="og:url" content="http://example.com/2022/12/18/Golang/index.html">
 <meta property="og:site_name" content="jiz的个人博客">
-<meta property="og:description" content="Java是面向对象的语言学了C语言后学习Java还算轻松，学到面向对象做笔记记录一下。 1.java所有的操作都在类里（目前为止），类的关键词class是主要。 public class 类名（加了public的类要与文件名一样）{ ​           public static void main(){ ​                       具体方法； ​      } }与C语言">
+<meta property="og:description" content="1.golang数据类型，int float32(单精度) float64（双精度）string也被列入了基本数据类型 2.定义一个变量有3种方法 （1）：var 变量名 数据类型 （2）：变量名  数据类型 :&#x3D; 参数 （3）：变量名 :&#x3D; 参数 (golang会自己猜测你的函数类型) 2.生成有个可执行的exe文件，先要go mod文件，在终端go mod init (mo">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-12-03T07:34:13.000Z">
-<meta property="article:modified_time" content="2022-12-03T08:19:31.078Z">
+<meta property="article:published_time" content="2022-12-18T01:51:42.000Z">
+<meta property="article:modified_time" content="2022-12-23T11:53:43.923Z">
 <meta property="article:author" content="jiz">
-<meta property="article:tag" content="java">
+<meta property="article:tag" content="Golang">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="jiz的个人博客" type="application/atom+xml">
@@ -78,10 +78,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-java" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-Golang" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/12/03/java/" class="article-date">
-  <time class="dt-published" datetime="2022-12-03T07:34:13.000Z" itemprop="datePublished">2022-12-03</time>
+    <a href="/2022/12/18/Golang/" class="article-date">
+  <time class="dt-published" datetime="2022-12-18T01:51:42.000Z" itemprop="datePublished">2022-12-18</time>
 </a>
     
   </div>
@@ -92,7 +92,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      java
+      Golang
     </h1>
   
 
@@ -100,42 +100,21 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>Java是面向对象的语言学了C语言后学习Java还算轻松，学到面向对象做笔记记录一下。</p>
-<p>1.java所有的操作都在类里（目前为止），类的关键词class是主要。</p>
-<p><strong>public class 类名（加了public的类要与文件名一样）{</strong></p>
-<p>​           <strong>public static void main(){</strong></p>
-<p>​                       <strong>具体方法；</strong></p>
-<p>​      <strong>}</strong></p>
-<p><strong>}</strong><br>与C语言不一样的是C语言只有main和其他函数，而java在不同的类中可以有很多函数。类似于结构体但java可以包含函数及属性。</p>
-<p>2.函数输出：System.out.println(…)  和System.out.print(….)区别在于是否换行。可额外加&#x2F;n换行。</p>
-<p>   函数输入：先要导包类似于C语言头文件一样的。import java.util.Scanner</p>
-<p>然后把这个包赋给一个值类似于 Scanner scan&#x3D;new Scanner(System.in)</p>
-<p>然后就可以用scan从键盘上读入了类似：int n&#x3D;scan.nextInt()</p>
-<p>3.类型；char字符只能读一个，String字符串可以读很多，int整形，float浮点。<strong>类型问题需要特别注意比如：short i&#x3D;n+1这是不行的因为1会被认定成int型。浮点型也是默认为double而不是float；</strong></p>
-<p>4.面向对象class出一个新的类</p>
-<p>类就像抽象的-</p>
-<p>class 类名{</p>
-<p>​        可以存放属性如：</p>
-<p>​         int number；</p>
-<p>​         可以创建一个方法</p>
-<p>​            public void do(可以放形参){</p>
-<p>​                 写方法；</p>
-<p>​    }</p>
-<p>}</p>
-<p>（1）：创建类，设计类的成员</p>
-<p>（2）：创建类的对象</p>
-<p>（3）：通过“对象.属性”或者“对象.方法 ”来调用对象的结构。</p>
-<p>比如在main里 类名 变量名 &#x3D; new 类名（）</p>
-<p>这个变量名就是对象可以通过它来带调用；</p>
+        <p><strong>1.golang数据类型，int float32(单精度) float64（双精度）string也被列入了基本数据类型</strong></p>
+<p>2.定义一个变量有3种方法</p>
+<p>（1）：var 变量名 数据类型</p>
+<p>（2）：变量名  数据类型 :&#x3D; 参数</p>
+<p>（3）：变量名 :&#x3D; 参数 (golang会自己猜测你的函数类型)</p>
+<p><strong>2.生成有个可执行的exe文件，先要go mod文件，在终端go mod init (module 名字）用于文件之间的协同。然后go build即可</strong></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/12/03/java/" data-id="clb82blio0000w4vn5k6l6g32" data-title="java" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2022/12/18/Golang/" data-id="clcdekeq200000kvnf21e8b8d" data-title="Golang" class="article-share-link">分享</a>
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Golang/" rel="tag">Golang</a></li></ul>
 
     </footer>
   </div>
@@ -143,19 +122,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2022/12/18/Golang/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2022/12/31/%E5%B8%B8%E7%94%A8%E5%BA%93%E5%87%BD%E6%95%B0/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">前一篇</strong>
       <div class="article-nav-title">
         
-          Golang
+          常用库函数
         
       </div>
     </a>
   
   
-    <a href="/2022/10/22/%E5%9C%B0%E5%9D%80%E7%AC%A6/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2022/12/03/java/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">后一篇</strong>
-      <div class="article-nav-title">地址符</div>
+      <div class="article-nav-title">java</div>
     </a>
   
 </nav>

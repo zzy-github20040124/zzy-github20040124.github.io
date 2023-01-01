@@ -4,19 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>java | jiz的个人博客</title>
+  <title>标签: 题目 | jiz的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Java是面向对象的语言学了C语言后学习Java还算轻松，学到面向对象做笔记记录一下。 1.java所有的操作都在类里（目前为止），类的关键词class是主要。 public class 类名（加了public的类要与文件名一样）{ ​           public static void main(){ ​                       具体方法； ​      } }与C语言">
-<meta property="og:type" content="article">
-<meta property="og:title" content="java">
-<meta property="og:url" content="http://example.com/2022/12/03/java/index.html">
+  <meta name="description" content="记录笔记和生活">
+<meta property="og:type" content="website">
+<meta property="og:title" content="jiz的个人博客">
+<meta property="og:url" content="http://example.com/tags/%E9%A2%98%E7%9B%AE/index.html">
 <meta property="og:site_name" content="jiz的个人博客">
-<meta property="og:description" content="Java是面向对象的语言学了C语言后学习Java还算轻松，学到面向对象做笔记记录一下。 1.java所有的操作都在类里（目前为止），类的关键词class是主要。 public class 类名（加了public的类要与文件名一样）{ ​           public static void main(){ ​                       具体方法； ​      } }与C语言">
+<meta property="og:description" content="记录笔记和生活">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-12-03T07:34:13.000Z">
-<meta property="article:modified_time" content="2022-12-03T08:19:31.078Z">
 <meta property="article:author" content="jiz">
-<meta property="article:tag" content="java">
+<meta property="article:tag" content="个人博客">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="jiz的个人博客" type="application/atom+xml">
@@ -78,90 +76,58 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-java" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/12/03/java/" class="article-date">
-  <time class="dt-published" datetime="2022-12-03T07:34:13.000Z" itemprop="datePublished">2022-12-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+        <section id="main">
   
-    <h1 class="p-name article-title" itemprop="headline name">
-      java
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2023" class="archive-year">2023</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2023/01/01/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E5%88%A4%E6%96%AD%E6%9B%BC%E5%93%88%E9%A1%BF%E8%B7%9D%E7%A6%BB/" class="archive-article-date">
+  <time class="dt-published" datetime="2023-01-01T06:42:25.000Z" itemprop="datePublished">1月 1</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2023/01/01/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E5%88%A4%E6%96%AD%E6%9B%BC%E5%93%88%E9%A1%BF%E8%B7%9D%E7%A6%BB/">二维数组判断曼哈顿距离</a>
     </h1>
   
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Java是面向对象的语言学了C语言后学习Java还算轻松，学到面向对象做笔记记录一下。</p>
-<p>1.java所有的操作都在类里（目前为止），类的关键词class是主要。</p>
-<p><strong>public class 类名（加了public的类要与文件名一样）{</strong></p>
-<p>​           <strong>public static void main(){</strong></p>
-<p>​                       <strong>具体方法；</strong></p>
-<p>​      <strong>}</strong></p>
-<p><strong>}</strong><br>与C语言不一样的是C语言只有main和其他函数，而java在不同的类中可以有很多函数。类似于结构体但java可以包含函数及属性。</p>
-<p>2.函数输出：System.out.println(…)  和System.out.print(….)区别在于是否换行。可额外加&#x2F;n换行。</p>
-<p>   函数输入：先要导包类似于C语言头文件一样的。import java.util.Scanner</p>
-<p>然后把这个包赋给一个值类似于 Scanner scan&#x3D;new Scanner(System.in)</p>
-<p>然后就可以用scan从键盘上读入了类似：int n&#x3D;scan.nextInt()</p>
-<p>3.类型；char字符只能读一个，String字符串可以读很多，int整形，float浮点。<strong>类型问题需要特别注意比如：short i&#x3D;n+1这是不行的因为1会被认定成int型。浮点型也是默认为double而不是float；</strong></p>
-<p>4.面向对象class出一个新的类</p>
-<p>类就像抽象的-</p>
-<p>class 类名{</p>
-<p>​        可以存放属性如：</p>
-<p>​         int number；</p>
-<p>​         可以创建一个方法</p>
-<p>​            public void do(可以放形参){</p>
-<p>​                 写方法；</p>
-<p>​    }</p>
-<p>}</p>
-<p>（1）：创建类，设计类的成员</p>
-<p>（2）：创建类的对象</p>
-<p>（3）：通过“对象.属性”或者“对象.方法 ”来调用对象的结构。</p>
-<p>比如在main里 类名 变量名 &#x3D; new 类名（）</p>
-<p>这个变量名就是对象可以通过它来带调用；</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/12/03/java/" data-id="clb82blio0000w4vn5k6l6g32" data-title="java" class="article-share-link">分享</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
-
-    </footer>
+    </header>
   </div>
+</article>
   
     
-<nav id="article-nav">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2023/01/01/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/" class="archive-article-date">
+  <time class="dt-published" datetime="2023-01-01T06:35:32.000Z" itemprop="datePublished">1月 1</time>
+</a>
+      
   
-    <a href="/2022/12/18/Golang/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">前一篇</strong>
-      <div class="article-nav-title">
-        
-          Golang
-        
-      </div>
-    </a>
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2023/01/01/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/">判断字符串中有多少个相同子字符串</a>
+    </h1>
   
-  
-    <a href="/2022/10/22/%E5%9C%B0%E5%9D%80%E7%AC%A6/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">后一篇</strong>
-      <div class="article-nav-title">地址符</div>
-    </a>
-  
-</nav>
 
-  
+    </header>
+  </div>
 </article>
+  
+  
+    </div></section>
+  
 
 
 </section>
