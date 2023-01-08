@@ -78,6 +78,560 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-最大公约数题目" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/09/10/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0%E9%A2%98%E7%9B%AE/" class="article-date">
+  <time class="dt-published" datetime="2022-09-10T04:03:56.000Z" itemprop="datePublished">2022-09-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/09/10/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0%E9%A2%98%E7%9B%AE/">最大公约数题目</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong>最大公约数-解法</strong></p>
+<p>1.枚举法一个一个列举出来然后得到最大公约数。</p>
+<p>for(i&#x3D;1;i&lt;min;i++){</p>
+<p>​    if(i&#x3D;&#x3D;min){</p>
+<p>​        if(i&#x3D;&#x3D;max){</p>
+<p>​              ret&#x3D;i</p>
+<p>​        }</p>
+<p>​    }</p>
+<p>​    printf(“%d”,ret)</p>
+<p>}</p>
+<ol start="2">
+<li></li>
+</ol>
+<p>*如果b等于0，计算结束，a就是最大公约数；否则，计算a除以b的余数，让a等于b，而b等于那个余数;回到第一步。</p>
+<p>while(b!&#x3D;0){</p>
+<p>​    t&#x3D;min%max;</p>
+<p>​    min&#x3D;max;</p>
+<p>​     b&#x3D;t;</p>
+<p>}</p>
+<p>printf(“%d”,a)</p>
+<p>原理：min   max    t</p>
+<p>​            12       18     12</p>
+<p>​            18       12      6</p>
+<p>​              6         0</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/09/10/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0%E9%A2%98%E7%9B%AE/" data-id="cl7x2hvbe0002ikvnfgrq86we" data-title="最大公约数题目" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80%E9%A2%98%E7%9B%AE/" rel="tag">C语言题目</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-循环" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/09/08/%E5%BE%AA%E7%8E%AF/" class="article-date">
+  <time class="dt-published" datetime="2022-09-08T07:42:58.000Z" itemprop="datePublished">2022-09-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/09/08/%E5%BE%AA%E7%8E%AF/">循环</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong>1.while函数的格式</strong></p>
+<p>需要执行的语句</p>
+<p>while（判断条件）{</p>
+<p>​      需要执行的语句（直到条件不再符合这个判断）}</p>
+<p>（反正在whlie函数前应该再加一个相同的执行语句，就是在进入循环前需要把被执行的语句重复一遍在进入循环）</p>
+<p><strong>1.1do…while</strong></p>
+<p>do{需要执行的语句;}while（判断条件）;</p>
+<p>与单while的区别是不用在前面多加一个相同的执行语句。</p>
+<p><strong>2.for循环</strong></p>
+<p>for(初始动作;循环继续的条件;循环每一轮要做的事){</p>
+<p>​     需要执行的语句</p>
+<p>}</p>
+<p><strong>3.总结</strong></p>
+<p><strong>循环的计算和选择</strong></p>
+<ul>
+<li>如果有固定次数，用for</li>
+<li>如果必须执行一次，用do_while</li>
+<li>其他情况用while</li>
+</ul>
+<p><strong>循环控制</strong></p>
+<ul>
+<li>break 跳出循环</li>
+<li>continue 跳过剩下的语句进入下一轮</li>
+<li>break和continue只在它所在的那层循环作用</li>
+</ul>
+<p><strong>从嵌套循环跳出</strong></p>
+<p>在多层循环下使用goto</p>
+<p>操作：层内goto out;  配合层外out:使用，然后加上return 0;</p>
+<ul>
+<li><p>求符合给定条件的整数集</p>
+</li>
+<li><p>给定不超过6的正整数，考虑从a开始的连续4个数字，输出所有能用它们组成的无重复的3位数</p>
+</li>
+<li><p>格式：从小到大，每行6个整数，中间用空格隔开 但行末不能有多余空格</p>
+</li>
+<li><p>样例：输入2，输出234,235,243,245…</p>
+</li>
+<li><p>思路：需要3位数，也就是3重循环，每一位都可能是a,a+1,a+2,a+3</p>
+</li>
+<li><p>3重循环 如果满足i,j,k互不相等的条件，则输出3位数</p>
+</li>
+<li><p>定义count用于记录次数，count&#x3D;&#x3D;6则换行，然后count值清零进入下次循环，如果count不等于6，else输出空格</p>
+</li>
+</ul>
+<p>注意事项：</p>
+<ul>
+<li>编程语言里0就是false，非0就是true，在！面前只有true和false</li>
+<li>if 为false时候 大括号里的语句不执行</li>
+<li>当 <strong>while</strong> <strong>为 True 时</strong>运行【语句块】，【语句块】运行结束后，再次进入 进行 判断，如果 结果为 <strong>True</strong> 则再次运行【语句块】, 以此循环直到 结果为 <strong>False</strong> 结束循环。</li>
+</ul>
+<p><strong>为什么finished&#x3D;1后就不会在if语句中输出？并结束while循环？</strong></p>
+<p>finished&#x3D;1就是true，if(!finished)就是非true，即false，因此不会输出</p>
+<p>结束时！finished就是非true，即false，因此才能退出循环</p>
+<p><strong>4.sizeof()</strong></p>
+<p>判断字节数，了解所占内存</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/09/08/%E5%BE%AA%E7%8E%AF/" data-id="cl7tvak6y00011ovn1j45f5td" data-title="循环" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-判断语句" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/09/08/%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5/" class="article-date">
+  <time class="dt-published" datetime="2022-09-08T05:20:59.000Z" itemprop="datePublished">2022-09-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/09/08/%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5/">判断语句</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong>1.if…else if..else语句</strong></p>
+<p>基本格式：</p>
+<p>if（判断条件）{所要执行的命令；}</p>
+<p>else if（判断条件）{所要执行的命令；}</p>
+<p>else {（上面的全都不满足时要执行的命令）所要执行的命令；}</p>
+<p><strong>1.1嵌套式条件判断</strong></p>
+<p>if（判断条件）{</p>
+<p>​    if（二次判断的条件）</p>
+<p>​    {所要执行的命令；}</p>
+<p>   else</p>
+<p>   {所要执行的命令；}</p>
+<p>else if  ……(以此类推)</p>
+<p>}</p>
+<p><strong>2.switch-case语句</strong></p>
+<p>switch(控制表达式){</p>
+<p>  case 常量：</p>
+<p>​         语句；</p>
+<p>​         break;</p>
+<p>​    case 常量：</p>
+<p>​         语句；</p>
+<p>​         break;</p>
+<p>……….以此类推</p>
+<p>​    default:</p>
+<p>​           语句；</p>
+<p>}（表达式必须是int类型） </p>
+<p>**两者的区别就是if是挨个判断，switch是直接跳转到所选的内容。</p>
+<p>switch语句可以看作是一种基于计算的跳转，计算控制表达式的值后，程序会跳转到相匹配的case（分支标号）处。分支标号只是说明switch内部位置的路标，在执行完分支中的最后一条语句后,如果后面没有break，就会顺序执行到下面的case里去，直到遇到一个break，或者switch结束为止。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/09/08/%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5/" data-id="cl7tvak6u00001ovnc8br634m" data-title="判断语句" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-复合赋值" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/09/07/%E5%A4%8D%E5%90%88%E8%B5%8B%E5%80%BC/" class="article-date">
+  <time class="dt-published" datetime="2022-09-07T05:41:20.000Z" itemprop="datePublished">2022-09-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/09/07/%E5%A4%8D%E5%90%88%E8%B5%8B%E5%80%BC/">关于C语言-复合赋值</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p> <strong>1.复合赋值</strong></p>
+<p>total+&#x3D;(sun+100)&#x2F;2  和相同  total&#x3D;total+(sun+100)&#x2F;2</p>
+<p><strong>2.递增递减运算符</strong></p>
+<p>++”和“–”是两个很特殊的运算符，它们是单目运算符，这个算子还必须是变量。这两个运算符分别叫做递增和递减运算符，他们的作用就是给这个变量+1或者-1。</p>
+<p><strong>count++;</strong><br><strong>count +&#x3D;；</strong><br><strong>count &#x3D; count + 1;</strong></p>
+<p><u>++和–可以放在变量的前面，叫做前缀形式，也可以放在变量的后面，叫做后缀形式。</u><br><u>a++的值是a加|以前的值，而++a的值是加了1以后的值，无论哪个，a自己的值都加了1了。</u></p>
+<p>按我自己的理解就是:</p>
+<p><strong>a&#x3D;0</strong>  </p>
+<p><strong>printf(“a++&#x3D;%d”,a++)</strong></p>
+<p><strong>printf(“a&#x3D;%d”,a)</strong></p>
+<p><strong>输出：a++&#x3D;0  a&#x3D;1</strong></p>
+<p><strong>printf(“++a&#x3D;%d”,++a)</strong></p>
+<p><strong>printf(“a&#x3D;%d”,a)</strong></p>
+<p><strong>输出：++a&#x3D;1  a&#x3D;1</strong></p>
+<p><strong>3.运算优先级</strong></p>
+<p><em>单目&gt;乘除&gt;加减&gt;对比&gt;赋值</em></p>
+<p><strong>运算一定要遵循运算优先级,对比如果正确则输出1反之输出2</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/09/07/%E5%A4%8D%E5%90%88%E8%B5%8B%E5%80%BC/" data-id="cl7rj9qy40000esvn6hw9c8zp" data-title="关于C语言-复合赋值" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-关于C语言-变量" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/09/05/%E5%85%B3%E4%BA%8EC%E8%AF%AD%E8%A8%80-%E5%8F%98%E9%87%8F/" class="article-date">
+  <time class="dt-published" datetime="2022-09-05T09:44:00.000Z" itemprop="datePublished">2022-09-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/09/05/%E5%85%B3%E4%BA%8EC%E8%AF%AD%E8%A8%80-%E5%8F%98%E9%87%8F/">关于C语言--变量，浮点数和变量交换</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>1.<strong>&lt;类型名称&gt;  &lt;变量名称&gt;&#x3D; &lt;初始值&gt;</strong></p>
+<p>如：int price&#x3D; 0;**</p>
+<p>​        int amount &#x3D; 100;</p>
+<p>1.1<strong>组合变量定义的时候，也可以在这个定义中单个赋值。</strong></p>
+<p>​     int price &#x3D; 0, amount &#x3D; 100;   或者  int price,amount&#x3D;0; </p>
+<p>1.2 <strong>不一定要在最初赋值但一定要在使用前赋值。C99协议变量可以在任何地方定义</strong></p>
+<ol start="2">
+<li><h6 id="const"><a href="#const" class="headerlink" title="const"></a><strong>const</strong></h6><p>const是一个修饰符，加在int的前面，用来给这个变量加上一个const（不变的）的属性。这个const的属性表示这个变量的值一旦初始化，就不能再修改了。</p>
+<p>如果你把锁定了的变量放在左边这会报错。</p>
+</li>
+<li><p><strong>浮点数.</strong></p>
+<p>在浮点数里scranf()中获取数值要用%lf，但用printf()依然用%f，</p>
+<p><strong>3.1 double</strong><br>inch是定义为int类型的变量，如果把int换成double，我们就把它改为double类型的浮点数变量了。<br>double的意思是“双”，它本来是“双精度浮点数”的第一个单词，人们用来表示浮点数类型。除了double，还有float（意思就是浮点！）表示单精度浮点数。</p>
+</li>
+<li><p><strong>交换变量</strong></p>
+<p><em>交换变量需要一个新的容器（另一个变量）。</em></p>
+<p>如：a&#x3D;1 b&#x3D;2 直接 a&#x3D;b b&#x3D;a 不能直接交换而是会顺序运算。</p>
+<p><em>正确应该引进一个新变量c</em></p>
+<p>如： a&#x3D;1 b&#x3D;2 引进一个c  </p>
+<p>a&#x3D;c a&#x3D;b b&#x3D;c  就可以完成交换。</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/09/05/%E5%85%B3%E4%BA%8EC%E8%AF%AD%E8%A8%80-%E5%8F%98%E9%87%8F/" data-id="cl7on1rsn0000lwvnee0973u5" data-title="关于C语言--变量，浮点数和变量交换" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-关于c语言" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/09/05/%E5%85%B3%E4%BA%8Ec%E8%AF%AD%E8%A8%80/" class="article-date">
+  <time class="dt-published" datetime="2022-09-05T06:53:45.000Z" itemprop="datePublished">2022-09-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/09/05/%E5%85%B3%E4%BA%8Ec%E8%AF%AD%E8%A8%80/">关于c语言-格式和计算</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>基本格式</li>
+</ol>
+<p>#include&lt;stdio.h&gt;</p>
+<p>int main()</p>
+<p>{</p>
+<p>​      “内容’‘</p>
+<p>​       return 0;</p>
+<p>}</p>
+<p>2.1 做点计算，如：</p>
+<p>#include&lt;stdio.h&gt;</p>
+<p>int main()</p>
+<p>{</p>
+<p>​       printf(“%d”,12+23)</p>
+<p>​       return 0;</p>
+<p>}</p>
+<p>在”xxx”下的字符串不会被理解，输出：35</p>
+<p>2.2 如：</p>
+<p>#include&lt;stdio.h&gt;</p>
+<p>int main()</p>
+<p>{</p>
+<p>​       printf(“12+23&#x3D;%d”,12+23)</p>
+<p>​       return 0;</p>
+<p>}</p>
+<p>输出：12+23&#x3D;35</p>
+<p>2.3 运算都和普通计算一样(%表示两个数相除后取余数)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/09/05/%E5%85%B3%E4%BA%8Ec%E8%AF%AD%E8%A8%80/" data-id="cl7ogydey00009cvn7a9q2e8b" data-title="关于c语言-格式和计算" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-注意事项" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/08/28/%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" class="article-date">
+  <time class="dt-published" datetime="2022-08-27T16:32:51.000Z" itemprop="datePublished">2022-08-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/08/28/%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/">hexo的困难</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>​    第一次搭建博客真的遇见了好多困难，一次次的报错真的叫人崩溃，还好现在成熟的网络想找到答案也不是一件困难事。</p>
+<p>1.fatal port 4000 has been used.这个代表你用的域名你现在还不能用。</p>
+<p>可以等到一个可以用的时机或者换一个域名(使用命令hexo server -p 加上你想更改的端口)</p>
+<p>2.can not read a block mapping.（这是一个很小的错误但是我们往往会忘记）</p>
+<p>在配置文件里面，都是按照属性名+英文冒号+英文空格+属性值，这个形式进行属性设置的，所以千万不要忘记空格不然报错真的很心累。</p>
+<p>（我确实也没想到hexo能使用HTML中的语法markdown，倒是很好用）</p>
+<p>3.困阻我最久的当属hexo的部署问题在下属文件夹中要改的东西不多，但众说纷纭各有各的说法我挨个摸索确实耗费了大量精力。如果有部署方面的问题可以来问我vx：zzy18771857592，当然也欢迎各位加我共同成长。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/08/28/%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" data-id="cl7detik50004bcvn2tc55gr2" data-title="hexo的困难" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" rel="tag">解决方案</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-web" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/08/27/web/" class="article-date">
+  <time class="dt-published" datetime="2022-08-27T06:45:28.000Z" itemprop="datePublished">2022-08-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/08/27/web/">关于自学web的一些笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>自己在学HTML中的一点笔记和心得。</p>
+<p>1.图片导入— 找到图片保持存在同一个文件夹，可以直接img scr&#x3D;‘’图片名称‘’。如果在子文件夹返回上一级img scr&#x3D;‘..&#x2F;xxx’再输入图片所在文件夹。（用软件img scr&#x3D;’‘可选路径’‘）</p>
+<p>2.网站的跳转 — &lt;a href&#x3D;’’想要跳转的网站’’&gt;放入信息（可以是文字可以是图片）title&#x3D;’鼠标悬停上去后的提示信息’ target&#x3D;’规定在何处打开文档‘&lt;&#x2F;a&gt;</p>
+<p>3.&lt;from method&#x3D;’get或者post’ action&#x3D;’向何处发送表单数据’&gt;</p>
+<p>​         &lt;input  type&#x3D;’定义输入框类型‘&gt;是输入框&lt;&#x2F;input&gt;</p>
+<p>   &lt;&#x2F;from&gt;</p>
+<p>4.在外部创建css文件再导入HTML文件。导入方法&lt;link rel&#x3D;’stylesheet’ type&#x3D;’css&#x2F;text’ href&#x3D;’css文件名路径’这样就可以把外部css文件样式导入内部。</p>
+<p>5.可以把样式赋给一个值然后再把值赋给别人。</p>
+<p>&lt;style&gt;</p>
+<p>​         .ibm{</p>
+<p>​              background-color: yellowgreen;</p>
+<p>}</p>
+<p>&lt;&#x2F;style&gt;</p>
+<div class="ibm" &gt;xxxxxxx< div&gt; <p>关于前端的一些粗糙的笔记但容易看懂，覆盖了HTML大部分基础对初学者很有参考价值。（把这些了解可以做点简单的网站了，当然如果要美观和丰富还要继续学习css和js啦）<p></p>
+</div>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/08/27/web/" data-id="cl7detik40003bcvn8o7r7drg" data-title="关于自学web的一些笔记" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web%E5%89%8D%E7%AB%AF/" rel="tag">web前端</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="jiz-blog" class="h-entry article article-type-jiz" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/08/27/blog/" class="article-date">
+  <time class="dt-published" datetime="2022-08-27T04:56:21.000Z" itemprop="datePublished">2022-08-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/08/27/blog/">jiz的第一篇博客</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>  一、现在是2022年8月27日14点27分，我搭建了自己的第一个自己的博客网站。当然更多的是对计算机的好奇和探索，希望我能一直在这条路走下去吧。（18岁搭建的网站，马上上大一能有一个自己的博客多是一件美事啊）</p>
+<p>![加油]加油</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/08/27/blog/" data-id="cl7detijz0000bcvn1gd7hkru" data-title="jiz的第一篇博客" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%83%B3%E8%AF%B4%E7%9A%84%E8%AF%9D/" rel="tag">想说的话</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/08/27/hello-world/" class="article-date">
@@ -147,7 +701,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80%E9%A2%98%E7%9B%AE/" rel="tag">C语言题目</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Golang/" rel="tag">Golang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web%E5%89%8D%E7%AB%AF/" rel="tag">web前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%83%B3%E8%AF%B4%E7%9A%84%E8%AF%9D/" rel="tag">想说的话</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" rel="tag">数据结构与算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" rel="tag">解决方案</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A2%98%E7%9B%AE/" rel="tag">题目</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80%E9%A2%98%E7%9B%AE/" rel="tag">C语言题目</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Golang/" rel="tag">Golang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web%E5%89%8D%E7%AB%AF/" rel="tag">web前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%83%B3%E8%AF%B4%E7%9A%84%E8%AF%9D/" rel="tag">想说的话</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" rel="tag">数据结构与算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" rel="tag">解决方案</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A2%98%E7%9B%AE/" rel="tag">题目</a></li></ul>
     </div>
   </div>
 
@@ -157,7 +711,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 20px;">C语言</a> <a href="/tags/C%E8%AF%AD%E8%A8%80%E9%A2%98%E7%9B%AE/" style="font-size: 15px;">C语言题目</a> <a href="/tags/Golang/" style="font-size: 10px;">Golang</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/web%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">web前端</a> <a href="/tags/%E6%83%B3%E8%AF%B4%E7%9A%84%E8%AF%9D/" style="font-size: 15px;">想说的话</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" style="font-size: 10px;">数据结构与算法</a> <a href="/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" style="font-size: 10px;">解决方案</a> <a href="/tags/%E9%A2%98%E7%9B%AE/" style="font-size: 15px;">题目</a>
+      <a href="/tags/C/" style="font-size: 13.33px;">C++</a> <a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 20px;">C语言</a> <a href="/tags/C%E8%AF%AD%E8%A8%80%E9%A2%98%E7%9B%AE/" style="font-size: 13.33px;">C语言题目</a> <a href="/tags/Golang/" style="font-size: 10px;">Golang</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/web%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">web前端</a> <a href="/tags/%E6%83%B3%E8%AF%B4%E7%9A%84%E8%AF%9D/" style="font-size: 13.33px;">想说的话</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" style="font-size: 10px;">数据结构与算法</a> <a href="/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" style="font-size: 10px;">解决方案</a> <a href="/tags/%E9%A2%98%E7%9B%AE/" style="font-size: 16.67px;">题目</a>
     </div>
   </div>
 
@@ -179,23 +733,23 @@
       <ul>
         
           <li>
-            <a href="/2023/01/01/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E5%88%A4%E6%96%AD%E6%9B%BC%E5%93%88%E9%A1%BF%E8%B7%9D%E7%A6%BB/">二维数组判断曼哈顿距离</a>
+            <a href="/2023/01/08/%E5%90%88%E5%B9%B6%E6%9E%9C%E5%AD%90%EF%BC%88%E8%B4%AA%E5%BF%83%EF%BC%8C%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97%EF%BC%89/">合并果子（贪心，优先队列）</a>
           </li>
         
           <li>
-            <a href="/2023/01/01/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/">判断字符串中有多少个相同子字符串</a>
+            <a href="/2023/01/08/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/">优先队列</a>
           </li>
         
           <li>
-            <a href="/2022/12/31/%E5%B8%B8%E7%94%A8%E5%BA%93%E5%87%BD%E6%95%B0/">常用库函数</a>
+            <a href="/2023/01/06/judge/">模拟judge</a>
           </li>
         
           <li>
-            <a href="/2022/12/18/Golang/">Golang</a>
+            <a href="/2023/01/06/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF/">约瑟夫环</a>
           </li>
         
           <li>
-            <a href="/2022/12/03/java/">java</a>
+            <a href="/2023/01/05/%E7%AB%9E%E8%B5%9B%E7%BB%86%E8%8A%82/">竞赛细节</a>
           </li>
         
       </ul>

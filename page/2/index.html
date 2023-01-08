@@ -78,6 +78,515 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-字符串匹配" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/01/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/" class="article-date">
+  <time class="dt-published" datetime="2023-01-01T06:35:32.000Z" itemprop="datePublished">2023-01-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/01/01/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/">判断字符串中有多少个相同子字符串</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong>题目：</strong></p>
+<p><strong>请你输出字符串S内，有多少个子串xmy。（区分大小写）</strong> </p>
+<p><strong>一个字符串内包含的字符串叫做这个字符串的子串。（字符串自己也是自己的子串）</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> cnt=<span class="number">0</span>;</span><br><span class="line">    string a;</span><br><span class="line">    <span class="built_in">getline</span>(cin,a);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;a.<span class="built_in">size</span>();i++)<span class="keyword">if</span>(a.<span class="built_in">substr</span>(i,<span class="number">3</span>)==<span class="string">&quot;xmy&quot;</span>)cnt++;</span><br><span class="line">    cout&lt;&lt;cnt;``</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>getline(cin,string)是从键盘读入字符串；</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/01/01/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/" data-id="clcdekeqc00030kvne31va6og" data-title="判断字符串中有多少个相同子字符串" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%A2%98%E7%9B%AE/" rel="tag">题目</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-常用库函数" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/12/31/%E5%B8%B8%E7%94%A8%E5%BA%93%E5%87%BD%E6%95%B0/" class="article-date">
+  <time class="dt-published" datetime="2022-12-31T03:24:25.000Z" itemprop="datePublished">2022-12-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/12/31/%E5%B8%B8%E7%94%A8%E5%BA%93%E5%87%BD%E6%95%B0/">常用库函数</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> <span class="built_in">sort</span>(arr,arr+arr.length)给数组排序；</span><br><span class="line"><span class="comment">//降序：</span></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">cmpInt</span> <span class="params">(<span class="type">int</span> a,<span class="type">int</span> b)</span></span>&#123;</span><br><span class="line">                <span class="keyword">return</span> a&gt;b;</span><br><span class="line">&#125;</span><br><span class="line">  <span class="built_in">sprt</span>(arr,arr+arr.length,cmpInt)<span class="comment">//输出出来的是降序</span></span><br><span class="line"><span class="number">2.</span> <span class="built_in">max</span>(nub1,nub2)返回最大值；</span><br><span class="line"></span><br><span class="line"><span class="number">3</span>，<span class="built_in">strstr</span>(arrchar1,arrchar2)如果arrcahr2中有arrcahr1的相同字符串返回并返回arrchar1后面的字符串，否则则返回<span class="literal">NULL</span>；</span><br><span class="line"></span><br><span class="line"><span class="number">3.1</span>，<span class="built_in">strchr</span>(arrchar,<span class="type">char</span>)查找<span class="type">char</span>再arrcahr的位置 <span class="keyword">return</span> <span class="type">char</span>后面的所有字符包括<span class="type">char</span></span><br><span class="line"></span><br><span class="line"><span class="number">3.2</span>，如果想得字符在字符串的位置可以<span class="built_in">strchr</span>(str,<span class="type">char</span>)-str+<span class="number">1</span>;<span class="keyword">if</span> str=<span class="string">&quot;qwe&quot;</span> <span class="type">char</span>=<span class="string">&#x27;w&#x27;</span> <span class="keyword">return</span> <span class="number">2</span>; </span><br><span class="line"></span><br><span class="line"><span class="number">4.</span>strcmp（arr1,arr2)一个字符一个字符按ascll码比较<span class="keyword">if</span> arr1==arr2 <span class="keyword">return</span> <span class="number">0</span> <span class="keyword">if</span> arr1&gt;arr2 <span class="keyword">return</span> <span class="number">1</span> <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line"><span class="number">5.</span> <span class="built_in">strcat</span>(arr1,arr2)会把俩个字符串串联起来比如“qwe”，“das”-&gt;qwedsa;</span><br><span class="line"></span><br><span class="line"><span class="number">6.</span> <span class="built_in">strlen</span>(arr1)返回字符串长度；</span><br><span class="line"></span><br><span class="line"><span class="number">7.</span> <span class="built_in">pow</span>(f1，f2/f3)返回的是一个浮点型，<span class="keyword">if</span> pow（<span class="number">8.0</span>，<span class="number">1.0</span>/<span class="number">3.0</span>)意思是<span class="number">8</span>的三分之一次方。</span><br><span class="line"></span><br><span class="line"><span class="number">8.</span> <span class="built_in">fabs</span>(nub)把nub变成一个正数。</span><br><span class="line"></span><br><span class="line"><span class="number">9.</span> <span class="built_in">fmod</span>(f1,f2)==f1/f2 取余数，<span class="keyword">return</span>小数。</span><br><span class="line"></span><br><span class="line"><span class="number">10.</span> <span class="built_in">sqrt</span>(nub)开方；</span><br><span class="line"></span><br><span class="line"><span class="number">11.</span> substr有<span class="number">2</span>种用法：</span><br><span class="line">假设：string s = <span class="string">&quot;0123456789&quot;</span>;</span><br><span class="line"></span><br><span class="line">string sub1 = s.<span class="built_in">substr</span>(<span class="number">5</span>); <span class="comment">//只有一个数字5表示从下标为5开始一直到结尾：sub1 = &quot;56789&quot;</span></span><br><span class="line"></span><br><span class="line">string sub2 = s.<span class="built_in">substr</span>(<span class="number">5</span>, <span class="number">3</span>); <span class="comment">//从下标为5开始截取长度为3位：sub2 = &quot;567&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="number">12.</span> str.<span class="built_in">size</span>() 能返回字符串str的长度。</span><br><span class="line"></span><br><span class="line"><span class="number">13.</span> <span class="built_in">accumulate</span>(arr,arr+nub,<span class="number">0.0</span>)累加函数把数组a到a+nub累加后面的是额外多加的数是一个浮点数。</span><br><span class="line"></span><br><span class="line">如：<span class="type">int</span> a[]=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;<span class="built_in">accumulate</span>(a,a+<span class="number">3</span>,<span class="number">1.0</span>)==<span class="number">7</span>;</span><br><span class="line"></span><br><span class="line"><span class="number">14.</span> <span class="built_in">atoi</span>(string)用来将字符串形式的数字转化为整形。</span><br><span class="line"></span><br><span class="line"><span class="number">15.</span>（<span class="number">1</span>）.cin.<span class="built_in">getline</span>(<span class="type">char</span>*v,字符串最大长度)；从键盘读取一串字符串赋值给string。</span><br><span class="line"></span><br><span class="line">(<span class="number">2.</span>).<span class="built_in">getline</span>(cin,str)直接读入一个string给str。 </span><br><span class="line"></span><br><span class="line"><span class="number">16.</span> <span class="built_in">memset</span>(str,<span class="number">0</span>,<span class="built_in">sizeof</span>(str));将字符串暴力清空然后赋值为中间的数</span><br><span class="line"></span><br><span class="line"><span class="number">17.</span> <span class="built_in">strcopy</span>(s1,s2)把s2赋给s1;</span><br><span class="line"></span><br><span class="line"><span class="number">18.</span>(v)<span class="built_in">reverse</span>(arr.<span class="built_in">begin</span>()，arr.<span class="built_in">end</span>());<span class="comment">//反转数组O(n);</span></span><br><span class="line"></span><br><span class="line"><span class="number">19.</span>(v)<span class="built_in">nth_element</span>(arr.<span class="built_in">begin</span>(),arr.begin+nub,arr.<span class="built_in">end</span>())</span><br><span class="line">    arr.begin+nub把比它大的放左边比它小的放右边。</span><br><span class="line"><span class="number">20.</span> <span class="built_in">unique</span>(arr1.<span class="built_in">begin</span>(),arr1.<span class="built_in">end</span>())</span><br><span class="line">    <span class="comment">//把没有重复的数字的排前面如&#123;1，1，2，2，4&#125;-&gt;&#123;1，2，4，1，2&#125;；</span></span><br><span class="line">     想要获取不重复的数组长度：<span class="type">int</span> newsize=<span class="built_in">unique</span>(arr1.<span class="built_in">begin</span>(),arr1.<span class="built_in">end</span>())-arr1.<span class="built_in">begin</span>();</span><br><span class="line"><span class="number">21.</span> <span class="built_in">lower_boound</span>(arr.<span class="built_in">begin</span>(),arr.<span class="built_in">end</span>(),nub)-arr.<span class="built_in">begin</span>()<span class="comment">//保证arr是有序的。</span></span><br><span class="line">    <span class="built_in">upper_bound</span>(arr.<span class="built_in">begin</span>(),arr.<span class="built_in">end</span>(),nub)-arr.<span class="built_in">begin</span>();<span class="comment">//原理为二分法查找。</span></span><br><span class="line">    <span class="comment">//找到插入nub且顺序数组不变的数组。</span></span><br><span class="line">    <span class="comment">//lower：找到第一个nub所在位置在前面插入一个（从0开始）</span></span><br><span class="line">    <span class="comment">//upper：找到最后一个nub所在位置在后面插入一个（总0开始）</span></span><br><span class="line">    <span class="comment">//比如：arr&#123;1，1，2，2，3，4，5&#125;</span></span><br><span class="line">    <span class="comment">//lower(...,...,2)return 2;</span></span><br><span class="line">    <span class="comment">//upper(...,...,2)return 4;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>**<string>**、</string></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//可以把string理解成一个vector,vector的操作在string也能用</span></span><br><span class="line">string.<span class="built_in">insert</span>(str.<span class="built_in">begin</span>()/<span class="number">1</span>,<span class="string">&#x27;a&#x27;</span>)<span class="comment">//在迭代器处/位置1处插入一个字符或字符串O(n)</span></span><br><span class="line">    str.<span class="built_in">append</span>(str2);<span class="comment">//把str拼接到str后面==str+=str2；</span></span><br><span class="line">str+=<span class="string">&#x27;a&#x27;</span>==str.<span class="built_in">push_back</span>(<span class="string">&#x27;a&#x27;</span>);</span><br><span class="line">str.<span class="built_in">find</span>(str1)str1在str中的位置如果存在返回位置不存在返回：<span class="number">-1</span>；</span><br><span class="line">find:从前往后查找子串或字符出现的位置。</span><br><span class="line">rfind:从后往前查找子串或字符出现的位置。</span><br><span class="line">find_first_of:从前往后查找何处出现另一个字符串中包含的字符。例如：s1.<span class="built_in">find_first_of</span>(<span class="string">&quot;abc&quot;</span>);<span class="comment">//查找s1中第一次出现&quot;abc&quot;中任一字符的位置find_last_of:从后往前查找何处出现另一个字符串中包含的字符。</span></span><br><span class="line">find _first_not_of:从前往后查找何处出现另一个字符串中没有包含的字符。</span><br><span class="line">find_last_not_of:从后往前查找何处出现另一个字符串中没有包含的字符。</span><br><span class="line">    str.<span class="built_in">erase</span>(nub,nub1);从nub1删到nub2；</span><br></pre></td></tr></table></figure>
+
+<p><strong><stack></stack></strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">stack&lt;<span class="type">int</span>&gt; sta;</span><br><span class="line">std.<span class="built_in">push</span>(<span class="number">1</span>);</span><br><span class="line"><span class="type">int</span> topElemrnt=sta.<span class="built_in">top</span>();</span><br><span class="line">sta.<span class="built_in">pop</span>();</span><br><span class="line">sta.<span class="built_in">empty</span>();</span><br><span class="line">sta.<span class="built_in">size</span>();</span><br><span class="line"><span class="comment">//聪明如你一定知道他的用途我就不多说了</span></span><br></pre></td></tr></table></figure>
+
+<p><strong><queue></queue></strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">queue&lt;<span class="type">int</span>&gt; que;</span><br><span class="line">que.<span class="built_in">push</span>(<span class="number">1</span>);</span><br><span class="line"><span class="type">int</span> frontElement=que.<span class="built_in">front</span>();</span><br><span class="line">que.<span class="built_in">pop</span>();</span><br><span class="line">que.<span class="built_in">empty</span>();</span><br><span class="line">que.<span class="built_in">szie</span>();</span><br><span class="line"><span class="comment">//到这里为止聪明如你肯定知道他的意思和用法</span></span><br><span class="line"><span class="comment">//优先队列</span></span><br><span class="line">priority_queue&lt;<span class="type">int</span>&gt;  que2;</span><br><span class="line">que2.<span class="built_in">push</span>(<span class="number">1</span>);</span><br><span class="line"><span class="type">int</span> minElement=que2.<span class="built_in">top</span>();</span><br><span class="line">que2.<span class="built_in">pop</span>();</span><br><span class="line">que2.<span class="built_in">empty</span>();</span><br><span class="line">que.<span class="built_in">szie</span>();</span><br><span class="line"><span class="comment">//和stack的用法一样</span></span><br></pre></td></tr></table></figure>
+
+<p><strong><set></set></strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//集合（数学意义上的）</span></span><br><span class="line">set&lt;<span class="type">int</span>&gt; st;</span><br><span class="line">st.<span class="built_in">insert</span>(<span class="number">1</span>)；</span><br><span class="line">st.<span class="built_in">find</span>(<span class="number">1</span>);</span><br><span class="line">st.<span class="built_in">erase</span>(<span class="number">1</span>);</span><br><span class="line"><span class="comment">//多重集</span></span><br><span class="line">multiset&lt;<span class="type">int</span>&gt; mst;</span><br><span class="line">mst.<span class="built_in">insert</span>(<span class="number">1</span>);</span><br><span class="line">mst.<span class="built_in">count</span>(<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/12/31/%E5%B8%B8%E7%94%A8%E5%BA%93%E5%87%BD%E6%95%B0/" data-id="clcdekeqe00060kvndcdt6i0x" data-title="常用库函数" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80%E9%A2%98%E7%9B%AE/" rel="tag">C语言题目</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Golang" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/12/18/Golang/" class="article-date">
+  <time class="dt-published" datetime="2022-12-18T01:51:42.000Z" itemprop="datePublished">2022-12-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/12/18/Golang/">Golang</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong>1.golang数据类型，int float32(单精度) float64（双精度）string也被列入了基本数据类型</strong></p>
+<p>2.定义一个变量有3种方法</p>
+<p>（1）：var 变量名 数据类型</p>
+<p>（2）：变量名  数据类型 :&#x3D; 参数</p>
+<p>（3）：变量名 :&#x3D; 参数 (golang会自己猜测你的函数类型)</p>
+<p><strong>2.生成有个可执行的exe文件，先要go mod文件，在终端go mod init (module 名字）用于文件之间的协同。然后go build即可</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/12/18/Golang/" data-id="clcdekeq200000kvnf21e8b8d" data-title="Golang" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Golang/" rel="tag">Golang</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-java" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/12/03/java/" class="article-date">
+  <time class="dt-published" datetime="2022-12-03T07:34:13.000Z" itemprop="datePublished">2022-12-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/12/03/java/">java</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Java是面向对象的语言学了C语言后学习Java还算轻松，学到面向对象做笔记记录一下。</p>
+<p>1.java所有的操作都在类里（目前为止），类的关键词class是主要。</p>
+<p><strong>public class 类名（加了public的类要与文件名一样）{</strong></p>
+<p>​           <strong>public static void main(){</strong></p>
+<p>​                       <strong>具体方法；</strong></p>
+<p>​      <strong>}</strong></p>
+<p><strong>}</strong><br>与C语言不一样的是C语言只有main和其他函数，而java在不同的类中可以有很多函数。类似于结构体但java可以包含函数及属性。</p>
+<p>2.函数输出：System.out.println(…)  和System.out.print(….)区别在于是否换行。可额外加&#x2F;n换行。</p>
+<p>   函数输入：先要导包类似于C语言头文件一样的。import java.util.Scanner</p>
+<p>然后把这个包赋给一个值类似于 Scanner scan&#x3D;new Scanner(System.in)</p>
+<p>然后就可以用scan从键盘上读入了类似：int n&#x3D;scan.nextInt()</p>
+<p>3.类型；char字符只能读一个，String字符串可以读很多，int整形，float浮点。<strong>类型问题需要特别注意比如：short i&#x3D;n+1这是不行的因为1会被认定成int型。浮点型也是默认为double而不是float；</strong></p>
+<p>4.面向对象class出一个新的类</p>
+<p>类就像抽象的-</p>
+<p>class 类名{</p>
+<p>​        可以存放属性如：</p>
+<p>​         int number；</p>
+<p>​         可以创建一个方法</p>
+<p>​            public void do(可以放形参){</p>
+<p>​                 写方法；</p>
+<p>​    }</p>
+<p>}</p>
+<p>（1）：创建类，设计类的成员</p>
+<p>（2）：创建类的对象</p>
+<p>（3）：通过“对象.属性”或者“对象.方法 ”来调用对象的结构。</p>
+<p>比如在main里 类名 变量名 &#x3D; new 类名（）</p>
+<p>这个变量名就是对象可以通过它来带调用；</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/12/03/java/" data-id="clb82blio0000w4vn5k6l6g32" data-title="java" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-地址符" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/10/22/%E5%9C%B0%E5%9D%80%E7%AC%A6/" class="article-date">
+  <time class="dt-published" datetime="2022-10-22T05:39:52.000Z" itemprop="datePublished">2022-10-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/10/22/%E5%9C%B0%E5%9D%80%E7%AC%A6/">地址符</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong>1.在顺序表当中我不是很理解为什么在实现函数作用的时候要加上&amp;</strong></p>
+<p>比如linklist(struct &amp;L);</p>
+<p>我就不理解为什么要传进去的是L的地址而不是L。</p>
+<p>后来我看到一种解释说<strong>L前面加&amp;才能表示引用参数，函数内部的改变跳出后依然可以有效。如果不加&amp;，函数内部的改变则无法改变外部的</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/10/22/%E5%9C%B0%E5%9D%80%E7%AC%A6/" data-id="clb82blit0001w4vng3hw1ord" data-title="地址符" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" rel="tag">数据结构与算法</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-string" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/10/20/string/" class="article-date">
+  <time class="dt-published" datetime="2022-10-20T03:17:55.000Z" itemprop="datePublished">2022-10-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/10/20/string/">大丈夫</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong>大丈夫生居天地之间，岂能郁郁久居人下！</strong></p>
+<p><strong>大丈夫之志应如长江东奔大海，何苦怀恋于温柔之乡。</strong></p>
+<p><strong>大丈夫处世碌碌无为，与朽木腐草何异。</strong></p>
+<p><strong>大丈夫抱惊世奇才，岂可空老于临泉之下。</strong></p>
+<p><strong>大丈夫行于乱世当光明磊落，即使处于逆境也当屈身守份以待天时。</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/10/20/string/" data-id="cl8sezd0r0000fovnbwdk4r4a" data-title="大丈夫" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%83%B3%E8%AF%B4%E7%9A%84%E8%AF%9D/" rel="tag">想说的话</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-指针" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/09/23/%E6%8C%87%E9%92%88/" class="article-date">
+  <time class="dt-published" datetime="2022-09-23T14:48:38.000Z" itemprop="datePublished">2022-09-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/09/23/%E6%8C%87%E9%92%88/">指针</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong>1.指针</strong>（指针是能存放别的变量地址的变量）</p>
+<p>&amp;取地址符号，有了这个才能取出地址。w</p>
+<p>*把普通变量变成指针和提取指针所代指地址变量的值，如int *p就是定义了一个指针。int **q就是定义了一个指向指针的指针。</p>
+<p><em>我们不能把两个函数中的变量混为一谈，就算他们叫同一个名字也并不是一个东西。</em></p>
+<p>但我们可以通过指针来完成数据的传输。比如定义一个void a d d n e s s (int *p)将一个地址传给p就可以，</p>
+<p>a d d n e s s (&amp;a)我就可以把a传入a d d n e s s函数里。</p>
+<p><strong>数组指针</strong>（int *p[ ]&#x3D;{“x”,”x”};)</p>
+<p>*p&#x3D;a&#x3D;a[]&#x3D;a[0];数组的第一个数组的地址被叫做基地址。</p>
+<p><strong>&amp;A[i]&#x3D;(A+i),  A[i]&#x3D;*(A+i)</strong></p>
+<p>当我们把数组当作一个参数传入另一个函数，它并不会传入所有的数组到一个新函数里而是把基地址传入。可以理解为并不是传入了一个数组而是一个指针。所以在这样的情况下int*A&#x3D;int A[]。（所以要在存数组的地方算出数组的长度，再传进函数。</p>
+<p>如果我们单纯用数组的话我们存放的东西会有一定限制比如char a[] []就是我们在内存中划去了一个固定的范围来存放字符串，但如果我们用数组指针char *a[]则是创建了一个数组指针里面的所有东西都是一个地址，这些地址指向了不同的字符串这个时候字符串的长度就是没有限制的了。</p>
+<p><strong>2.字符串与指针</strong></p>
+<p>定义一个字符串数组，char C[20];如果我们的字符串有四个字节那么我们就需要5个字节来存放字符串数组，因为多余的一个字符串要存放\0来代表我的字符串已经结束，不然就会一直进行打出乱码。</p>
+<p>在这个时候我们在使用s i z e o f(a)时总会比填写的字符串大一个（因为要存放\0），所以我们可以用s t r l e n(a)来获取字符串的字节长度。</p>
+<p><strong>3.动态内存，在内存中我们分为不同的板块，主要用于存东西的就是栈和堆。那我们如何把东西存在堆里呢</strong></p>
+<p>我们要用到三个函数（m a l l o c, c a l l o c , r e a l l o c)被定义出来的内存类似一个数组可以用对待数组的方式对待。</p>
+<p>m a l l o c-void m a l l o c(n*放需要多少内存)  (和r e a l l o c函数不同的点在于r e a l l o c函数会把数据初始化为0，m a l l o c不会。)</p>
+<p>c a l l o c-void c a l l o c(需要几个这样的内存(x)，需要的内存(y) )简而言之就是x*y。</p>
+<p>r e a l l o c 函数我觉得应该属于是增加已有内存的函数。</p>
+<p>r e a l l o c-void r e a l l o c(需要增加的内存的地址，需要增加多少)。</p>
+<p>我们都知道void函数是不会返还任何东西的，所以我们在把一个指针指向我们预留的地址时可以做一个强制类型转换。</p>
+<p>int *p&#x3D;(int *)m a l l o c(10 *s i z e o f(int))</p>
+<p>我们最好用s i z e o f来表示我们要用多少内存因为只是一个数组容易让人类读者不理解且每个编译器的编码位数不相同。</p>
+<p>只是我们定义了一个指针指向了heap中预留的内存，在里面*(p)&#x3D;p[o];</p>
+<p>为什么我们需要堆而不把内存都给栈呢？我的理解是有些数据可能就是一个过度用的或者短暂的，如果长时间存放就会消耗内存为了效率我们有了动态内存。</p>
+<p>那我们如何把heap中的不要的去掉呢？free函数。</p>
+<p>当我们不需要用到这一块内存时我们可以free(a)将他从heap中删掉。</p>
+<p><strong>在外面前面学到的数组中，我们不能把一个会变的变量当成数组的个数就像int a&#x3D;10;int b[n];这样是不被允许的但在动态内存中可以实现。</strong></p>
+<p>int n;</p>
+<p>s c a n f (“%d”,&amp;n);</p>
+<p>int *A&#x3D;m a l l o c(n *s i z e o f(int));</p>
+<p>在这当中数组的长度就是可以随着你n的变化而改变的。</p>
+<p><strong>（记得加#include &lt;s t d l i b  .h&gt;)</strong></p>
+<p><strong>4.内存泄漏</strong></p>
+<p>思考一个问题，在前面我们说到如果在堆上面分配内存是需要删除的，那么我们在频繁的调用一个函数的情况下内存是否会变化。</p>
+<p>函数中有一个指向heap的指针，如果被频繁调动就会一直在和heap上申请内存，所以会导致内存越来越大。</p>
+<p>在stack中函数的删减否不需要程序员操心，在一个函数运行完成的情况下会将他删除直到下一次的调用。如果写一个经常被调用的函数就会知道，每次你所创建的指针所指向的地址都是不同的。切记用完free掉。</p>
+<p><strong>内存泄漏总是因为堆中未使用和未应用的内存块才发生的，栈上的内存是自动回收的，栈的大小是固定的，最多就是发生栈溢出。</strong></p>
+<p><strong>5.函数返回指针</strong></p>
+<p><strong><u>其实我一直有个问题那就是为什么要分为栈和堆，难道把他们合并不会更方便一点吗？我把所有数据都放在栈上不就可以避开指针避开动态内存了吗？</u></strong></p>
+<p>其实我们都知道在栈中除了main函数其他的函数只有在使用的时候会分配内存，在其他情况下则是会被抹去。那么再让我们思考一个问题，如果我定义了一个函数返回了一个值这个值的地址是100，且我又定义了一个别的函数，这个函数的内存把100覆盖了我们会输出一个怎么样的值呢？会输出乱码因为其他的函数把100覆盖了，再栈当中不需要程序员主动去删除不需要的函数系统会完成一切，但问题也就是如果我定义了两个及以上的函数且返回值被另一个函数覆盖那么我们不会得到任何东西，放在堆中就不一样。</p>
+<p><strong>从栈底向上传是可以的，但不可以从栈顶往下传。但如果我们在堆中或全局变量中有变量就可以安全返回。</strong></p>
+<p><strong>5.函数指针</strong></p>
+<p>int add(int a,int b){return a+b;}     (这里我们定义了一个函数)</p>
+<p>int (*P)(int,int); p&#x3D;&amp;add (定义一个指针要加括号，后面那个括号里面数据类型要和所指向函数后面括号的类型相同)</p>
+<p>然后通过这个指针我们就可以只用这个函数了。</p>
+<p>int c;  c&#x3D;(*P)(2,3);</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/09/23/%E6%8C%87%E9%92%88/" data-id="cl8r9lh9q00011gvn7wkm3gu9" data-title="指针" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-数组" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/09/12/%E6%95%B0%E7%BB%84/" class="article-date">
+  <time class="dt-published" datetime="2022-09-12T13:57:50.000Z" itemprop="datePublished">2022-09-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/09/12/%E6%95%B0%E7%BB%84/">数组</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong>1.数组</strong></p>
+<p>数据类型  数组名称[数组个数];(这是最基本的数组格式)</p>
+<p>如：int a[10];(就是定义了一个有十个位置的数组，但这些位置并没有被初始化。)</p>
+<p>还可以：int a[10]&#x3D;{1,1,1,1,1,1,1,1,1,1…..}（会依次占位）</p>
+<p>如果只定义了一个那么其他的就会自动初始化为0。</p>
+<p>如：int a[10]&#x3D;{1}(则在a[0]位置上的是1，其他位置是0。自动补零)</p>
+<p>也可以指定占位</p>
+<p><strong>2.数组的大小</strong></p>
+<p><strong>i&#x3D;sizeof(a)&#x2F;sizeof(a[0])</strong>     (i就是数组大小，思想是用所有字节大小除以单个字节大小得到数组个数)</p>
+<p><strong>3.二维数组</strong></p>
+<p>int a[i] [j]&#x3D;{ }(这是一个二维数组的基本模型)</p>
+<p>·列数是必须给出的，行数可以由编译器来数<br>·每行一个)，逗号分隔最后的逗号可以存在，有古老的传统。<br>·如果省略，表示补零<br>·也可以用定位(C99 ONLY)</p>
+<p><strong>在大括号中还可以有大括号</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/09/12/%E6%95%B0%E7%BB%84/" data-id="cl8d46t110000qsvnbd9x7puz" data-title="数组" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-类型转换" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/09/11/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" class="article-date">
+  <time class="dt-published" datetime="2022-09-11T03:56:28.000Z" itemprop="datePublished">2022-09-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/09/11/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/">类型转换-逻辑运算-变量范围</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong>1.强制类型转换</strong><em>(强制转换的优先级高于四则运算)</em></p>
+<p>(转换的类型)数值</p>
+<p>double a&#x3D;1.0;</p>
+<p>double b&#x3D;2.0;</p>
+<p>int i &#x3D;(int)a&#x2F;b;</p>
+<p>这里会先把a转换成int类型在除以b；</p>
+<p>如果要先除可以int i&#x3D;（int)(a&#x2F;b);</p>
+<p><strong>2.自动类型转换</strong></p>
+<p>当运算符的两边出现不一致的类型时，会自动转换成<br>较大的类型<br>·大的意思是能表达的数的范围更大<br> char–&gt; short–&gt; int –&gt; long —&gt; long long<br>·int –&gt; float –&gt; double</p>
+<p>对于printf，任何小于int的类型会被转换成int；float会被转换成double；</p>
+<p>但scanf不会，要输入short，需要%hd；</p>
+<p><strong>3.逻辑运算</strong></p>
+<p>！    逻辑非     !a      如果a是true结果就是false，如果a是false结果就是true。</p>
+<p>&amp;&amp;   逻辑与     a&amp;&amp;b    如果a和b都是ture，结果就是ture否则就是false。</p>
+<p>||     逻辑或      a||b    有一个是ture就是ture否则就是false。</p>
+<p>优先级：！&gt;&amp;&amp;&gt;||</p>
+<p><strong>如果要表达一个范围</strong></p>
+<p>x&gt;4 &amp;&amp; x&lt;6就是数学中的4&lt;x&lt;6;</p>
+<p><strong>4.函数定义的范围局域在{}中</strong></p>
+<p>在函数中定义一个变量只能在同一个{}起作用出了大括号就不被定义了。</p>
+<p>int main(){int a&#x3D;1; int b&#x3D;2;}(在这个函数中我定义了两个变量但在其他函数中就不能用)</p>
+<p>viod sum(){a+&#x3D;b;}(就会报错因为在sum函数中a和b没有被定义)</p>
+<p>会优先使用范围更小的变量</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/09/11/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" data-id="cl7x2hvbi0005ikvn0dm00yki" data-title="类型转换-逻辑运算-变量范围" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-整数表达" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/09/10/%E6%95%B4%E6%95%B0%E8%A1%A8%E8%BE%BE/" class="article-date">
@@ -149,560 +658,6 @@
 
 
   
-    <article id="post-最大公约数题目" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/09/10/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0%E9%A2%98%E7%9B%AE/" class="article-date">
-  <time class="dt-published" datetime="2022-09-10T04:03:56.000Z" itemprop="datePublished">2022-09-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/09/10/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0%E9%A2%98%E7%9B%AE/">最大公约数题目</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><strong>最大公约数-解法</strong></p>
-<p>1.枚举法一个一个列举出来然后得到最大公约数。</p>
-<p>for(i&#x3D;1;i&lt;min;i++){</p>
-<p>​    if(i&#x3D;&#x3D;min){</p>
-<p>​        if(i&#x3D;&#x3D;max){</p>
-<p>​              ret&#x3D;i</p>
-<p>​        }</p>
-<p>​    }</p>
-<p>​    printf(“%d”,ret)</p>
-<p>}</p>
-<ol start="2">
-<li></li>
-</ol>
-<p>*如果b等于0，计算结束，a就是最大公约数；否则，计算a除以b的余数，让a等于b，而b等于那个余数;回到第一步。</p>
-<p>while(b!&#x3D;0){</p>
-<p>​    t&#x3D;min%max;</p>
-<p>​    min&#x3D;max;</p>
-<p>​     b&#x3D;t;</p>
-<p>}</p>
-<p>printf(“%d”,a)</p>
-<p>原理：min   max    t</p>
-<p>​            12       18     12</p>
-<p>​            18       12      6</p>
-<p>​              6         0</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/09/10/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0%E9%A2%98%E7%9B%AE/" data-id="cl7x2hvbe0002ikvnfgrq86we" data-title="最大公约数题目" class="article-share-link">分享</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80%E9%A2%98%E7%9B%AE/" rel="tag">C语言题目</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-循环" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/09/08/%E5%BE%AA%E7%8E%AF/" class="article-date">
-  <time class="dt-published" datetime="2022-09-08T07:42:58.000Z" itemprop="datePublished">2022-09-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/09/08/%E5%BE%AA%E7%8E%AF/">循环</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><strong>1.while函数的格式</strong></p>
-<p>需要执行的语句</p>
-<p>while（判断条件）{</p>
-<p>​      需要执行的语句（直到条件不再符合这个判断）}</p>
-<p>（反正在whlie函数前应该再加一个相同的执行语句，就是在进入循环前需要把被执行的语句重复一遍在进入循环）</p>
-<p><strong>1.1do…while</strong></p>
-<p>do{需要执行的语句;}while（判断条件）;</p>
-<p>与单while的区别是不用在前面多加一个相同的执行语句。</p>
-<p><strong>2.for循环</strong></p>
-<p>for(初始动作;循环继续的条件;循环每一轮要做的事){</p>
-<p>​     需要执行的语句</p>
-<p>}</p>
-<p><strong>3.总结</strong></p>
-<p><strong>循环的计算和选择</strong></p>
-<ul>
-<li>如果有固定次数，用for</li>
-<li>如果必须执行一次，用do_while</li>
-<li>其他情况用while</li>
-</ul>
-<p><strong>循环控制</strong></p>
-<ul>
-<li>break 跳出循环</li>
-<li>continue 跳过剩下的语句进入下一轮</li>
-<li>break和continue只在它所在的那层循环作用</li>
-</ul>
-<p><strong>从嵌套循环跳出</strong></p>
-<p>在多层循环下使用goto</p>
-<p>操作：层内goto out;  配合层外out:使用，然后加上return 0;</p>
-<ul>
-<li><p>求符合给定条件的整数集</p>
-</li>
-<li><p>给定不超过6的正整数，考虑从a开始的连续4个数字，输出所有能用它们组成的无重复的3位数</p>
-</li>
-<li><p>格式：从小到大，每行6个整数，中间用空格隔开 但行末不能有多余空格</p>
-</li>
-<li><p>样例：输入2，输出234,235,243,245…</p>
-</li>
-<li><p>思路：需要3位数，也就是3重循环，每一位都可能是a,a+1,a+2,a+3</p>
-</li>
-<li><p>3重循环 如果满足i,j,k互不相等的条件，则输出3位数</p>
-</li>
-<li><p>定义count用于记录次数，count&#x3D;&#x3D;6则换行，然后count值清零进入下次循环，如果count不等于6，else输出空格</p>
-</li>
-</ul>
-<p>注意事项：</p>
-<ul>
-<li>编程语言里0就是false，非0就是true，在！面前只有true和false</li>
-<li>if 为false时候 大括号里的语句不执行</li>
-<li>当 <strong>while</strong> <strong>为 True 时</strong>运行【语句块】，【语句块】运行结束后，再次进入 进行 判断，如果 结果为 <strong>True</strong> 则再次运行【语句块】, 以此循环直到 结果为 <strong>False</strong> 结束循环。</li>
-</ul>
-<p><strong>为什么finished&#x3D;1后就不会在if语句中输出？并结束while循环？</strong></p>
-<p>finished&#x3D;1就是true，if(!finished)就是非true，即false，因此不会输出</p>
-<p>结束时！finished就是非true，即false，因此才能退出循环</p>
-<p><strong>4.sizeof()</strong></p>
-<p>判断字节数，了解所占内存</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/09/08/%E5%BE%AA%E7%8E%AF/" data-id="cl7tvak6y00011ovn1j45f5td" data-title="循环" class="article-share-link">分享</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-判断语句" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/09/08/%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5/" class="article-date">
-  <time class="dt-published" datetime="2022-09-08T05:20:59.000Z" itemprop="datePublished">2022-09-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/09/08/%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5/">判断语句</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><strong>1.if…else if..else语句</strong></p>
-<p>基本格式：</p>
-<p>if（判断条件）{所要执行的命令；}</p>
-<p>else if（判断条件）{所要执行的命令；}</p>
-<p>else {（上面的全都不满足时要执行的命令）所要执行的命令；}</p>
-<p><strong>1.1嵌套式条件判断</strong></p>
-<p>if（判断条件）{</p>
-<p>​    if（二次判断的条件）</p>
-<p>​    {所要执行的命令；}</p>
-<p>   else</p>
-<p>   {所要执行的命令；}</p>
-<p>else if  ……(以此类推)</p>
-<p>}</p>
-<p><strong>2.switch-case语句</strong></p>
-<p>switch(控制表达式){</p>
-<p>  case 常量：</p>
-<p>​         语句；</p>
-<p>​         break;</p>
-<p>​    case 常量：</p>
-<p>​         语句；</p>
-<p>​         break;</p>
-<p>……….以此类推</p>
-<p>​    default:</p>
-<p>​           语句；</p>
-<p>}（表达式必须是int类型） </p>
-<p>**两者的区别就是if是挨个判断，switch是直接跳转到所选的内容。</p>
-<p>switch语句可以看作是一种基于计算的跳转，计算控制表达式的值后，程序会跳转到相匹配的case（分支标号）处。分支标号只是说明switch内部位置的路标，在执行完分支中的最后一条语句后,如果后面没有break，就会顺序执行到下面的case里去，直到遇到一个break，或者switch结束为止。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/09/08/%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5/" data-id="cl7tvak6u00001ovnc8br634m" data-title="判断语句" class="article-share-link">分享</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-复合赋值" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/09/07/%E5%A4%8D%E5%90%88%E8%B5%8B%E5%80%BC/" class="article-date">
-  <time class="dt-published" datetime="2022-09-07T05:41:20.000Z" itemprop="datePublished">2022-09-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/09/07/%E5%A4%8D%E5%90%88%E8%B5%8B%E5%80%BC/">关于C语言-复合赋值</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p> <strong>1.复合赋值</strong></p>
-<p>total+&#x3D;(sun+100)&#x2F;2  和相同  total&#x3D;total+(sun+100)&#x2F;2</p>
-<p><strong>2.递增递减运算符</strong></p>
-<p>++”和“–”是两个很特殊的运算符，它们是单目运算符，这个算子还必须是变量。这两个运算符分别叫做递增和递减运算符，他们的作用就是给这个变量+1或者-1。</p>
-<p><strong>count++;</strong><br><strong>count +&#x3D;；</strong><br><strong>count &#x3D; count + 1;</strong></p>
-<p><u>++和–可以放在变量的前面，叫做前缀形式，也可以放在变量的后面，叫做后缀形式。</u><br><u>a++的值是a加|以前的值，而++a的值是加了1以后的值，无论哪个，a自己的值都加了1了。</u></p>
-<p>按我自己的理解就是:</p>
-<p><strong>a&#x3D;0</strong>  </p>
-<p><strong>printf(“a++&#x3D;%d”,a++)</strong></p>
-<p><strong>printf(“a&#x3D;%d”,a)</strong></p>
-<p><strong>输出：a++&#x3D;0  a&#x3D;1</strong></p>
-<p><strong>printf(“++a&#x3D;%d”,++a)</strong></p>
-<p><strong>printf(“a&#x3D;%d”,a)</strong></p>
-<p><strong>输出：++a&#x3D;1  a&#x3D;1</strong></p>
-<p><strong>3.运算优先级</strong></p>
-<p><em>单目&gt;乘除&gt;加减&gt;对比&gt;赋值</em></p>
-<p><strong>运算一定要遵循运算优先级,对比如果正确则输出1反之输出2</strong></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/09/07/%E5%A4%8D%E5%90%88%E8%B5%8B%E5%80%BC/" data-id="cl7rj9qy40000esvn6hw9c8zp" data-title="关于C语言-复合赋值" class="article-share-link">分享</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-关于C语言-变量" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/09/05/%E5%85%B3%E4%BA%8EC%E8%AF%AD%E8%A8%80-%E5%8F%98%E9%87%8F/" class="article-date">
-  <time class="dt-published" datetime="2022-09-05T09:44:00.000Z" itemprop="datePublished">2022-09-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/09/05/%E5%85%B3%E4%BA%8EC%E8%AF%AD%E8%A8%80-%E5%8F%98%E9%87%8F/">关于C语言--变量，浮点数和变量交换</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>1.<strong>&lt;类型名称&gt;  &lt;变量名称&gt;&#x3D; &lt;初始值&gt;</strong></p>
-<p>如：int price&#x3D; 0;**</p>
-<p>​        int amount &#x3D; 100;</p>
-<p>1.1<strong>组合变量定义的时候，也可以在这个定义中单个赋值。</strong></p>
-<p>​     int price &#x3D; 0, amount &#x3D; 100;   或者  int price,amount&#x3D;0; </p>
-<p>1.2 <strong>不一定要在最初赋值但一定要在使用前赋值。C99协议变量可以在任何地方定义</strong></p>
-<ol start="2">
-<li><h6 id="const"><a href="#const" class="headerlink" title="const"></a><strong>const</strong></h6><p>const是一个修饰符，加在int的前面，用来给这个变量加上一个const（不变的）的属性。这个const的属性表示这个变量的值一旦初始化，就不能再修改了。</p>
-<p>如果你把锁定了的变量放在左边这会报错。</p>
-</li>
-<li><p><strong>浮点数.</strong></p>
-<p>在浮点数里scranf()中获取数值要用%lf，但用printf()依然用%f，</p>
-<p><strong>3.1 double</strong><br>inch是定义为int类型的变量，如果把int换成double，我们就把它改为double类型的浮点数变量了。<br>double的意思是“双”，它本来是“双精度浮点数”的第一个单词，人们用来表示浮点数类型。除了double，还有float（意思就是浮点！）表示单精度浮点数。</p>
-</li>
-<li><p><strong>交换变量</strong></p>
-<p><em>交换变量需要一个新的容器（另一个变量）。</em></p>
-<p>如：a&#x3D;1 b&#x3D;2 直接 a&#x3D;b b&#x3D;a 不能直接交换而是会顺序运算。</p>
-<p><em>正确应该引进一个新变量c</em></p>
-<p>如： a&#x3D;1 b&#x3D;2 引进一个c  </p>
-<p>a&#x3D;c a&#x3D;b b&#x3D;c  就可以完成交换。</p>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/09/05/%E5%85%B3%E4%BA%8EC%E8%AF%AD%E8%A8%80-%E5%8F%98%E9%87%8F/" data-id="cl7on1rsn0000lwvnee0973u5" data-title="关于C语言--变量，浮点数和变量交换" class="article-share-link">分享</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-关于c语言" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/09/05/%E5%85%B3%E4%BA%8Ec%E8%AF%AD%E8%A8%80/" class="article-date">
-  <time class="dt-published" datetime="2022-09-05T06:53:45.000Z" itemprop="datePublished">2022-09-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/09/05/%E5%85%B3%E4%BA%8Ec%E8%AF%AD%E8%A8%80/">关于c语言-格式和计算</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <ol>
-<li>基本格式</li>
-</ol>
-<p>#include&lt;stdio.h&gt;</p>
-<p>int main()</p>
-<p>{</p>
-<p>​      “内容’‘</p>
-<p>​       return 0;</p>
-<p>}</p>
-<p>2.1 做点计算，如：</p>
-<p>#include&lt;stdio.h&gt;</p>
-<p>int main()</p>
-<p>{</p>
-<p>​       printf(“%d”,12+23)</p>
-<p>​       return 0;</p>
-<p>}</p>
-<p>在”xxx”下的字符串不会被理解，输出：35</p>
-<p>2.2 如：</p>
-<p>#include&lt;stdio.h&gt;</p>
-<p>int main()</p>
-<p>{</p>
-<p>​       printf(“12+23&#x3D;%d”,12+23)</p>
-<p>​       return 0;</p>
-<p>}</p>
-<p>输出：12+23&#x3D;35</p>
-<p>2.3 运算都和普通计算一样(%表示两个数相除后取余数)</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/09/05/%E5%85%B3%E4%BA%8Ec%E8%AF%AD%E8%A8%80/" data-id="cl7ogydey00009cvn7a9q2e8b" data-title="关于c语言-格式和计算" class="article-share-link">分享</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-注意事项" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/08/28/%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" class="article-date">
-  <time class="dt-published" datetime="2022-08-27T16:32:51.000Z" itemprop="datePublished">2022-08-28</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/08/28/%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/">hexo的困难</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>​    第一次搭建博客真的遇见了好多困难，一次次的报错真的叫人崩溃，还好现在成熟的网络想找到答案也不是一件困难事。</p>
-<p>1.fatal port 4000 has been used.这个代表你用的域名你现在还不能用。</p>
-<p>可以等到一个可以用的时机或者换一个域名(使用命令hexo server -p 加上你想更改的端口)</p>
-<p>2.can not read a block mapping.（这是一个很小的错误但是我们往往会忘记）</p>
-<p>在配置文件里面，都是按照属性名+英文冒号+英文空格+属性值，这个形式进行属性设置的，所以千万不要忘记空格不然报错真的很心累。</p>
-<p>（我确实也没想到hexo能使用HTML中的语法markdown，倒是很好用）</p>
-<p>3.困阻我最久的当属hexo的部署问题在下属文件夹中要改的东西不多，但众说纷纭各有各的说法我挨个摸索确实耗费了大量精力。如果有部署方面的问题可以来问我vx：zzy18771857592，当然也欢迎各位加我共同成长。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/28/%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" data-id="cl7detik50004bcvn2tc55gr2" data-title="hexo的困难" class="article-share-link">分享</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" rel="tag">解决方案</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-web" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/08/27/web/" class="article-date">
-  <time class="dt-published" datetime="2022-08-27T06:45:28.000Z" itemprop="datePublished">2022-08-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/08/27/web/">关于自学web的一些笔记</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>自己在学HTML中的一点笔记和心得。</p>
-<p>1.图片导入— 找到图片保持存在同一个文件夹，可以直接img scr&#x3D;‘’图片名称‘’。如果在子文件夹返回上一级img scr&#x3D;‘..&#x2F;xxx’再输入图片所在文件夹。（用软件img scr&#x3D;’‘可选路径’‘）</p>
-<p>2.网站的跳转 — &lt;a href&#x3D;’’想要跳转的网站’’&gt;放入信息（可以是文字可以是图片）title&#x3D;’鼠标悬停上去后的提示信息’ target&#x3D;’规定在何处打开文档‘&lt;&#x2F;a&gt;</p>
-<p>3.&lt;from method&#x3D;’get或者post’ action&#x3D;’向何处发送表单数据’&gt;</p>
-<p>​         &lt;input  type&#x3D;’定义输入框类型‘&gt;是输入框&lt;&#x2F;input&gt;</p>
-<p>   &lt;&#x2F;from&gt;</p>
-<p>4.在外部创建css文件再导入HTML文件。导入方法&lt;link rel&#x3D;’stylesheet’ type&#x3D;’css&#x2F;text’ href&#x3D;’css文件名路径’这样就可以把外部css文件样式导入内部。</p>
-<p>5.可以把样式赋给一个值然后再把值赋给别人。</p>
-<p>&lt;style&gt;</p>
-<p>​         .ibm{</p>
-<p>​              background-color: yellowgreen;</p>
-<p>}</p>
-<p>&lt;&#x2F;style&gt;</p>
-<div class="ibm" &gt;xxxxxxx< div&gt; <p>关于前端的一些粗糙的笔记但容易看懂，覆盖了HTML大部分基础对初学者很有参考价值。（把这些了解可以做点简单的网站了，当然如果要美观和丰富还要继续学习css和js啦）<p></p>
-</div>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/27/web/" data-id="cl7detik40003bcvn8o7r7drg" data-title="关于自学web的一些笔记" class="article-share-link">分享</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web%E5%89%8D%E7%AB%AF/" rel="tag">web前端</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="jiz-blog" class="h-entry article article-type-jiz" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/08/27/blog/" class="article-date">
-  <time class="dt-published" datetime="2022-08-27T04:56:21.000Z" itemprop="datePublished">2022-08-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/08/27/blog/">jiz的第一篇博客</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>  一、现在是2022年8月27日14点27分，我搭建了自己的第一个自己的博客网站。当然更多的是对计算机的好奇和探索，希望我能一直在这条路走下去吧。（18岁搭建的网站，马上上大一能有一个自己的博客多是一件美事啊）</p>
-<p>![加油]加油</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/27/blog/" data-id="cl7detijz0000bcvn1gd7hkru" data-title="jiz的第一篇博客" class="article-share-link">分享</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%83%B3%E8%AF%B4%E7%9A%84%E8%AF%9D/" rel="tag">想说的话</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -721,7 +676,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80%E9%A2%98%E7%9B%AE/" rel="tag">C语言题目</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Golang/" rel="tag">Golang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web%E5%89%8D%E7%AB%AF/" rel="tag">web前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%83%B3%E8%AF%B4%E7%9A%84%E8%AF%9D/" rel="tag">想说的话</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" rel="tag">数据结构与算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" rel="tag">解决方案</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A2%98%E7%9B%AE/" rel="tag">题目</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80%E9%A2%98%E7%9B%AE/" rel="tag">C语言题目</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Golang/" rel="tag">Golang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web%E5%89%8D%E7%AB%AF/" rel="tag">web前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%83%B3%E8%AF%B4%E7%9A%84%E8%AF%9D/" rel="tag">想说的话</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" rel="tag">数据结构与算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" rel="tag">解决方案</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A2%98%E7%9B%AE/" rel="tag">题目</a></li></ul>
     </div>
   </div>
 
@@ -731,7 +686,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 20px;">C语言</a> <a href="/tags/C%E8%AF%AD%E8%A8%80%E9%A2%98%E7%9B%AE/" style="font-size: 15px;">C语言题目</a> <a href="/tags/Golang/" style="font-size: 10px;">Golang</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/web%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">web前端</a> <a href="/tags/%E6%83%B3%E8%AF%B4%E7%9A%84%E8%AF%9D/" style="font-size: 15px;">想说的话</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" style="font-size: 10px;">数据结构与算法</a> <a href="/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" style="font-size: 10px;">解决方案</a> <a href="/tags/%E9%A2%98%E7%9B%AE/" style="font-size: 15px;">题目</a>
+      <a href="/tags/C/" style="font-size: 13.33px;">C++</a> <a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 20px;">C语言</a> <a href="/tags/C%E8%AF%AD%E8%A8%80%E9%A2%98%E7%9B%AE/" style="font-size: 13.33px;">C语言题目</a> <a href="/tags/Golang/" style="font-size: 10px;">Golang</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/web%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">web前端</a> <a href="/tags/%E6%83%B3%E8%AF%B4%E7%9A%84%E8%AF%9D/" style="font-size: 13.33px;">想说的话</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" style="font-size: 10px;">数据结构与算法</a> <a href="/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" style="font-size: 10px;">解决方案</a> <a href="/tags/%E9%A2%98%E7%9B%AE/" style="font-size: 16.67px;">题目</a>
     </div>
   </div>
 
@@ -753,23 +708,23 @@
       <ul>
         
           <li>
-            <a href="/2023/01/01/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E5%88%A4%E6%96%AD%E6%9B%BC%E5%93%88%E9%A1%BF%E8%B7%9D%E7%A6%BB/">二维数组判断曼哈顿距离</a>
+            <a href="/2023/01/08/%E5%90%88%E5%B9%B6%E6%9E%9C%E5%AD%90%EF%BC%88%E8%B4%AA%E5%BF%83%EF%BC%8C%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97%EF%BC%89/">合并果子（贪心，优先队列）</a>
           </li>
         
           <li>
-            <a href="/2023/01/01/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/">判断字符串中有多少个相同子字符串</a>
+            <a href="/2023/01/08/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/">优先队列</a>
           </li>
         
           <li>
-            <a href="/2022/12/31/%E5%B8%B8%E7%94%A8%E5%BA%93%E5%87%BD%E6%95%B0/">常用库函数</a>
+            <a href="/2023/01/06/judge/">模拟judge</a>
           </li>
         
           <li>
-            <a href="/2022/12/18/Golang/">Golang</a>
+            <a href="/2023/01/06/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF/">约瑟夫环</a>
           </li>
         
           <li>
-            <a href="/2022/12/03/java/">java</a>
+            <a href="/2023/01/05/%E7%AB%9E%E8%B5%9B%E7%BB%86%E8%8A%82/">竞赛细节</a>
           </li>
         
       </ul>

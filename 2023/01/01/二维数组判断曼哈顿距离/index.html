@@ -6,15 +6,15 @@
   
   <title>二维数组判断曼哈顿距离 | jiz的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="小杜闲着无聊，决定冲刺“捕鱼达人”中的隐藏成就“一网捕尽”！ 已知一个n×m的矩形鱼塘和其中所有鱼的位置，小杜需要一网捕捞所有的鱼。已知k级网可以捕捉距撒网中心曼哈顿距离不超过k的所有鱼。 曼哈顿距离：我们定义两个点(x0,y0)(x0,y0)(x0,y0)与(x1,y1)(x1,y1)(x1,y1)的曼哈顿距离为∣x0−x1∣+∣y0−y1∣。 #include&lt;bits&#x2F;stdc++.">
+  <meta name="description" content="小杜闲着无聊，决定冲刺“捕鱼达人”中的隐藏成就“一网捕尽”！ 已知一个n×m的矩形鱼塘和其中所有鱼的位置，小杜需要一网捕捞所有的鱼。已知k级网可以捕捉距撒网中心曼哈顿距离不超过k的所有鱼。 曼哈顿距离：我们定义两个点(x0,y0)(x0,y0)(x0,y0)与(x1,y1)(x1,y1)(x1,y1)的曼哈顿距离为∣x0−x1∣+∣y0−y1∣。 123456789101112131415161">
 <meta property="og:type" content="article">
 <meta property="og:title" content="二维数组判断曼哈顿距离">
 <meta property="og:url" content="http://example.com/2023/01/01/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E5%88%A4%E6%96%AD%E6%9B%BC%E5%93%88%E9%A1%BF%E8%B7%9D%E7%A6%BB/index.html">
 <meta property="og:site_name" content="jiz的个人博客">
-<meta property="og:description" content="小杜闲着无聊，决定冲刺“捕鱼达人”中的隐藏成就“一网捕尽”！ 已知一个n×m的矩形鱼塘和其中所有鱼的位置，小杜需要一网捕捞所有的鱼。已知k级网可以捕捉距撒网中心曼哈顿距离不超过k的所有鱼。 曼哈顿距离：我们定义两个点(x0,y0)(x0,y0)(x0,y0)与(x1,y1)(x1,y1)(x1,y1)的曼哈顿距离为∣x0−x1∣+∣y0−y1∣。 #include&lt;bits&#x2F;stdc++.">
+<meta property="og:description" content="小杜闲着无聊，决定冲刺“捕鱼达人”中的隐藏成就“一网捕尽”！ 已知一个n×m的矩形鱼塘和其中所有鱼的位置，小杜需要一网捕捞所有的鱼。已知k级网可以捕捉距撒网中心曼哈顿距离不超过k的所有鱼。 曼哈顿距离：我们定义两个点(x0,y0)(x0,y0)(x0,y0)与(x1,y1)(x1,y1)(x1,y1)的曼哈顿距离为∣x0−x1∣+∣y0−y1∣。 123456789101112131415161">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-01-01T06:42:25.000Z">
-<meta property="article:modified_time" content="2023-01-01T07:03:51.224Z">
+<meta property="article:modified_time" content="2023-01-05T05:36:54.331Z">
 <meta property="article:author" content="jiz">
 <meta property="article:tag" content="题目">
 <meta name="twitter:card" content="summary">
@@ -101,7 +101,8 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <p> <strong>小杜闲着无聊，决定冲刺“捕鱼达人”中的隐藏成就“一网捕尽”！</strong><br> <strong>已知一个n×m的矩形鱼塘和其中所有鱼的位置，小杜需要一网捕捞所有的鱼。已知k级网可以捕捉距撒网中心曼哈顿距离不超过k的所有鱼。</strong><br> <strong>曼哈顿距离：我们定义两个点(x0,y0)(x0,y0)(x0,y0)与(x1,y1)(x1,y1)(x1,y1)的曼哈顿距离为∣x0−x1∣+∣y0−y1∣。</strong></p>
-<p><code>#include&lt;bits/stdc++.h&gt; using namespace std; char a[1002][1002]; typedef long long ll; int main()&#123;     ll n,m,cnt=0;cin&gt;&gt;n&gt;&gt;m;     for(ll i=0;i&lt;n;i++)         for(ll j=0;j&lt;m;j++)             cin&gt;&gt;a[i][j];     for(ll i=0;i&lt;n;i++)         for(ll j=0;j&lt;m;j++)             if(a[i][j]==&#39;#&#39;)&#123;             ll ret=0;             ret=max(ret,i+j);             ret=max(ret,n-i-1+j);             ret=max(ret,n+i-j-1);             ret=max(ret,n+m-j-i-2);             cnt=max(ret,cnt);         &#125;     cout&lt;&lt;cnt; &#125;</code></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">char</span> a[<span class="number">1002</span>][<span class="number">1002</span>];</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ll n,m,cnt=<span class="number">0</span>;cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">    <span class="keyword">for</span>(ll i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">        <span class="keyword">for</span>(ll j=<span class="number">0</span>;j&lt;m;j++)</span><br><span class="line">            cin&gt;&gt;a[i][j];</span><br><span class="line">    <span class="keyword">for</span>(ll i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">        <span class="keyword">for</span>(ll j=<span class="number">0</span>;j&lt;m;j++)</span><br><span class="line">            <span class="keyword">if</span>(a[i][j]==<span class="string">&#x27;#&#x27;</span>)&#123;</span><br><span class="line">            ll ret=<span class="number">0</span>;</span><br><span class="line">            ret=<span class="built_in">max</span>(ret,i+j);</span><br><span class="line">            ret=<span class="built_in">max</span>(ret,n-i<span class="number">-1</span>+j);</span><br><span class="line">            ret=<span class="built_in">max</span>(ret,n+i-j<span class="number">-1</span>);</span><br><span class="line">            ret=<span class="built_in">max</span>(ret,n+m-j-i<span class="number">-2</span>);</span><br><span class="line">            cnt=<span class="built_in">max</span>(ret,cnt);</span><br><span class="line">        &#125;</span><br><span class="line">    cout&lt;&lt;cnt&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>把图想象成一个二维数组，找到#所在的坐标再考虑最远的四个顶点，多次判断找到最大的k。</p>
 
       
@@ -118,6 +119,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2023/01/04/%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%8A%A0%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          高精度加法
+        
+      </div>
+    </a>
   
   
     <a href="/2023/01/01/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/" id="article-nav-older" class="article-nav-link-wrap">
@@ -142,7 +152,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80%E9%A2%98%E7%9B%AE/" rel="tag">C语言题目</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Golang/" rel="tag">Golang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web%E5%89%8D%E7%AB%AF/" rel="tag">web前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%83%B3%E8%AF%B4%E7%9A%84%E8%AF%9D/" rel="tag">想说的话</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" rel="tag">数据结构与算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" rel="tag">解决方案</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A2%98%E7%9B%AE/" rel="tag">题目</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80%E9%A2%98%E7%9B%AE/" rel="tag">C语言题目</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Golang/" rel="tag">Golang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web%E5%89%8D%E7%AB%AF/" rel="tag">web前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%83%B3%E8%AF%B4%E7%9A%84%E8%AF%9D/" rel="tag">想说的话</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" rel="tag">数据结构与算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" rel="tag">解决方案</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A2%98%E7%9B%AE/" rel="tag">题目</a></li></ul>
     </div>
   </div>
 
@@ -152,7 +162,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 20px;">C语言</a> <a href="/tags/C%E8%AF%AD%E8%A8%80%E9%A2%98%E7%9B%AE/" style="font-size: 15px;">C语言题目</a> <a href="/tags/Golang/" style="font-size: 10px;">Golang</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/web%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">web前端</a> <a href="/tags/%E6%83%B3%E8%AF%B4%E7%9A%84%E8%AF%9D/" style="font-size: 15px;">想说的话</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" style="font-size: 10px;">数据结构与算法</a> <a href="/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" style="font-size: 10px;">解决方案</a> <a href="/tags/%E9%A2%98%E7%9B%AE/" style="font-size: 15px;">题目</a>
+      <a href="/tags/C/" style="font-size: 13.33px;">C++</a> <a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 20px;">C语言</a> <a href="/tags/C%E8%AF%AD%E8%A8%80%E9%A2%98%E7%9B%AE/" style="font-size: 13.33px;">C语言题目</a> <a href="/tags/Golang/" style="font-size: 10px;">Golang</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/web%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">web前端</a> <a href="/tags/%E6%83%B3%E8%AF%B4%E7%9A%84%E8%AF%9D/" style="font-size: 13.33px;">想说的话</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" style="font-size: 10px;">数据结构与算法</a> <a href="/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" style="font-size: 10px;">解决方案</a> <a href="/tags/%E9%A2%98%E7%9B%AE/" style="font-size: 16.67px;">题目</a>
     </div>
   </div>
 
@@ -174,23 +184,23 @@
       <ul>
         
           <li>
-            <a href="/2023/01/01/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E5%88%A4%E6%96%AD%E6%9B%BC%E5%93%88%E9%A1%BF%E8%B7%9D%E7%A6%BB/">二维数组判断曼哈顿距离</a>
+            <a href="/2023/01/08/%E5%90%88%E5%B9%B6%E6%9E%9C%E5%AD%90%EF%BC%88%E8%B4%AA%E5%BF%83%EF%BC%8C%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97%EF%BC%89/">合并果子（贪心，优先队列）</a>
           </li>
         
           <li>
-            <a href="/2023/01/01/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/">判断字符串中有多少个相同子字符串</a>
+            <a href="/2023/01/08/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/">优先队列</a>
           </li>
         
           <li>
-            <a href="/2022/12/31/%E5%B8%B8%E7%94%A8%E5%BA%93%E5%87%BD%E6%95%B0/">常用库函数</a>
+            <a href="/2023/01/06/judge/">模拟judge</a>
           </li>
         
           <li>
-            <a href="/2022/12/18/Golang/">Golang</a>
+            <a href="/2023/01/06/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF/">约瑟夫环</a>
           </li>
         
           <li>
-            <a href="/2022/12/03/java/">java</a>
+            <a href="/2023/01/05/%E7%AB%9E%E8%B5%9B%E7%BB%86%E8%8A%82/">竞赛细节</a>
           </li>
         
       </ul>

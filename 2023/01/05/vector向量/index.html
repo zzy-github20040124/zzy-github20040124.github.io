@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>vector向量 | jiz的个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="1.基本结构: vector&lt;数据类型&gt;  名字。 vector类似一个数组链表可以通过 list[nub]的方式访问数组元素，也可当一个不限定长度的数组。 写入可以通过数组下标，也可以通过list.push_back(nub)在顶部写入一个值（参考栈）。 弹出可以用list.pop_back()把栈顶元素弹出。 2.迭代器： vector&lt;数据类型&gt;::iterator">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vector向量">
+<meta property="og:url" content="http://example.com/2023/01/05/vector%E5%90%91%E9%87%8F/index.html">
+<meta property="og:site_name" content="jiz的个人博客">
+<meta property="og:description" content="1.基本结构: vector&lt;数据类型&gt;  名字。 vector类似一个数组链表可以通过 list[nub]的方式访问数组元素，也可当一个不限定长度的数组。 写入可以通过数组下标，也可以通过list.push_back(nub)在顶部写入一个值（参考栈）。 弹出可以用list.pop_back()把栈顶元素弹出。 2.迭代器： vector&lt;数据类型&gt;::iterator">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-01-05T07:34:32.000Z">
+<meta property="article:modified_time" content="2023-01-07T15:21:11.462Z">
+<meta property="article:author" content="jiz">
+<meta property="article:tag" content="C++">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="jiz的个人博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">jiz的个人博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">记录</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-vector向量" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/05/vector%E5%90%91%E9%87%8F/" class="article-date">
+  <time class="dt-published" datetime="2023-01-05T07:34:32.000Z" itemprop="datePublished">2023-01-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      vector向量
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong>1.基本结构:</strong></p>
+<p>vector&lt;数据类型&gt;  名字。</p>
+<p><strong>vector类似一个数组链表可以通过 list[nub]的方式访问数组元素，也可当一个不限定长度的数组。</strong></p>
+<p>写入可以通过数组下标，也可以通过list.push_back(nub)在顶部写入一个值（参考栈）。</p>
+<p>弹出可以用list.pop_back()把栈顶元素弹出。</p>
+<p><strong>2.迭代器：</strong></p>
+<p>vector&lt;数据类型&gt;::iterator 名字；</p>
+<p>迭代器类似于指针指向vector型。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//迭代器于普通指针的使用方法对比</span></span><br><span class="line">vector&lt;<span class="type">int</span>&gt;::iterator p1;</span><br><span class="line"><span class="type">int</span>* p2;</span><br><span class="line"><span class="keyword">for</span>(p1=arr1.<span class="built_in">begin</span>();p1!=arr1.<span class="built_in">end</span>();p1++)&#123;</span><br><span class="line">    cout&lt;&lt;*p1&lt;&lt;<span class="string">&quot; &quot;</span>;<span class="comment">//遍历</span></span><br><span class="line">&#125;</span><br><span class="line">    <span class="comment">//这个循环结束了p1会指向arr.end()的后一位也就是空。</span></span><br><span class="line"><span class="keyword">for</span>(p2=arr2,i=<span class="number">0</span>;i&lt;<span class="number">100</span>;i++,p2++)......</span><br></pre></td></tr></table></figure>
+
+<p><strong>3.vector常见操作</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">list.<span class="built_in">size</span>()<span class="comment">//数组个数O(1)</span></span><br><span class="line">list.<span class="built_in">clear</span>()<span class="comment">//一键清空数组O(n)</span></span><br><span class="line">list.<span class="built_in">empty</span>()<span class="comment">//数组是否为空O(1)</span></span><br><span class="line">list.<span class="built_in">begin</span>()<span class="comment">//数组的首元素迭代器O(1)</span></span><br><span class="line">list.<span class="built_in">end</span>()<span class="comment">//数组的尾元素迭代器O(1)//该元素实际在数组中不存在，是最后一个值的后一位。</span></span><br><span class="line">list.<span class="built_in">erase</span>(p1)<span class="comment">//删除数组某个迭代器所在位置的元素的值O(n)</span></span><br><span class="line">list.<span class="built_in">push_back</span>(<span class="number">1</span>)<span class="comment">//往list后添加一个元素O(1)</span></span><br><span class="line">list.<span class="built_in">pop_back</span>()<span class="comment">//弹出数组最后一个元素O(1)</span></span><br><span class="line"><span class="comment">//vector和其他STL函数配合可以产生更多的combo</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/01/05/vector%E5%90%91%E9%87%8F/" data-id="clcmylgcj0002c8vn1p0ido2x" data-title="vector向量" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/01/05/%E7%AB%9E%E8%B5%9B%E7%BB%86%E8%8A%82/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          竞赛细节
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/01/05/%E9%AB%98%E7%B2%BE%E5%BA%A6%E4%B9%98%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">高精度乘法</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80%E9%A2%98%E7%9B%AE/" rel="tag">C语言题目</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Golang/" rel="tag">Golang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web%E5%89%8D%E7%AB%AF/" rel="tag">web前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%83%B3%E8%AF%B4%E7%9A%84%E8%AF%9D/" rel="tag">想说的话</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" rel="tag">数据结构与算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" rel="tag">解决方案</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A2%98%E7%9B%AE/" rel="tag">题目</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C/" style="font-size: 13.33px;">C++</a> <a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 20px;">C语言</a> <a href="/tags/C%E8%AF%AD%E8%A8%80%E9%A2%98%E7%9B%AE/" style="font-size: 13.33px;">C语言题目</a> <a href="/tags/Golang/" style="font-size: 10px;">Golang</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/web%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">web前端</a> <a href="/tags/%E6%83%B3%E8%AF%B4%E7%9A%84%E8%AF%9D/" style="font-size: 13.33px;">想说的话</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" style="font-size: 10px;">数据结构与算法</a> <a href="/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" style="font-size: 10px;">解决方案</a> <a href="/tags/%E9%A2%98%E7%9B%AE/" style="font-size: 16.67px;">题目</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">一月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">十二月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">八月 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/01/08/%E5%90%88%E5%B9%B6%E6%9E%9C%E5%AD%90%EF%BC%88%E8%B4%AA%E5%BF%83%EF%BC%8C%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97%EF%BC%89/">合并果子（贪心，优先队列）</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/08/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/">优先队列</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/06/judge/">模拟judge</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/06/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF/">约瑟夫环</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/05/%E7%AB%9E%E8%B5%9B%E7%BB%86%E8%8A%82/">竞赛细节</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 jiz<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
