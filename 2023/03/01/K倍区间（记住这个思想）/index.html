@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>K倍区间（记住这个思想） | jiz的个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="123456789101112131415161718192021222324252627282930给定一个长度为N的数列，A1, A2, ... AN，如果其中一段连续的子序列Ai, Ai+1, ... Aj(i &lt;&#x3D; j)之和是K的倍数，我们就称这个区间[i, j]是K倍区间。　　你能求出数列中总共有多少个K倍区间吗？输入格式　　-----　　第一行包含两个整数N和K。(1 &lt;&#x3D;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="K倍区间（记住这个思想）">
+<meta property="og:url" content="http://example.com/2023/03/01/K%E5%80%8D%E5%8C%BA%E9%97%B4%EF%BC%88%E8%AE%B0%E4%BD%8F%E8%BF%99%E4%B8%AA%E6%80%9D%E6%83%B3%EF%BC%89/index.html">
+<meta property="og:site_name" content="jiz的个人博客">
+<meta property="og:description" content="123456789101112131415161718192021222324252627282930给定一个长度为N的数列，A1, A2, ... AN，如果其中一段连续的子序列Ai, Ai+1, ... Aj(i &lt;&#x3D; j)之和是K的倍数，我们就称这个区间[i, j]是K倍区间。　　你能求出数列中总共有多少个K倍区间吗？输入格式　　-----　　第一行包含两个整数N和K。(1 &lt;&#x3D;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-03-01T08:10:38.000Z">
+<meta property="article:modified_time" content="2023-03-01T08:31:11.259Z">
+<meta property="article:author" content="jiz">
+<meta property="article:tag" content="题目">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="jiz的个人博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">jiz的个人博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">记录</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-K倍区间（记住这个思想）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/03/01/K%E5%80%8D%E5%8C%BA%E9%97%B4%EF%BC%88%E8%AE%B0%E4%BD%8F%E8%BF%99%E4%B8%AA%E6%80%9D%E6%83%B3%EF%BC%89/" class="article-date">
+  <time class="dt-published" datetime="2023-03-01T08:10:38.000Z" itemprop="datePublished">2023-03-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      K倍区间（记住这个思想）
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">给定一个长度为N的数列，A1, A2, ... AN，如果其中一段连续的子序列Ai, Ai+<span class="number">1</span>, ... <span class="built_in">Aj</span>(i &lt;= j)之和是K的倍数，我们就称这个区间[i, j]是K倍区间。</span><br><span class="line"></span><br><span class="line">　　你能求出数列中总共有多少个K倍区间吗？</span><br><span class="line"></span><br><span class="line">输入格式</span><br><span class="line"></span><br><span class="line">　　-----</span><br><span class="line">　　第一行包含两个整数N和K。(<span class="number">1</span> &lt;= N, K &lt;= <span class="number">100000</span>)</span><br><span class="line">　　以下N行每行包含一个整数Ai。(<span class="number">1</span> &lt;= Ai &lt;= <span class="number">100000</span>)</span><br><span class="line"></span><br><span class="line">输出格式</span><br><span class="line"></span><br><span class="line">　　-----</span><br><span class="line">　　输出一个整数，代表K倍区间的数目。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">　　例如，</span><br><span class="line"></span><br><span class="line">输入格式</span><br><span class="line"></span><br><span class="line">　　<span class="number">5</span> <span class="number">2</span></span><br><span class="line">　　<span class="number">1</span></span><br><span class="line">　　<span class="number">2</span></span><br><span class="line">　　<span class="number">3</span></span><br><span class="line">　　<span class="number">4</span></span><br><span class="line">　　<span class="number">5</span></span><br><span class="line"></span><br><span class="line">　　程序应该输出：</span><br><span class="line">　　<span class="number">6</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>先看 代码</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">100010</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line">ll n,k,s[N].cnt[n];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;n,&amp;k);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>,&amp;s[i]);</span><br><span class="line">        s[i]+=s[i<span class="number">-1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    ll res=<span class="number">0</span>;</span><br><span class="line">    cnt[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        res+=cnt[s[i]%k];</span><br><span class="line">        cnt[s[i]%k]++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>,res);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>这个题的思路很牛</strong></p>
+<p><strong>我们一步步分解</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">最开始我们的算法应该是</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;i&lt;j;j++)&#123;</span><br><span class="line">            ll cnt=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> q=j;q&lt;=i;q++)&#123;</span><br><span class="line">                cnt+=q;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(cnt%k==<span class="number">0</span>)res++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>这是我们最原始的算法三个for，第一步优化&lt;前缀和&gt;</strong></p>
+<p><strong>在输入时造一个前缀和数列</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>,&amp;s[i]);</span><br><span class="line">        s[i]+=s[i<span class="number">-1</span>];</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//然后就可以减小一个for获得更多的分</span></span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;n;i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;i;j++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(s[i]-s[j]==<span class="number">0</span>)res++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>第二步优化，引入一个思想。</strong></p>
+<p><strong>：我们求模可以写出一个方程&lt; ( s[i] - s[j] ) % k&#x3D;&#x3D;0 &gt;,那么我们可以在直接求出有多少个s[i]的模k是相同的，如果相同就代表相减模k一定等于0；</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ll res=<span class="number">0</span>;</span><br><span class="line">cnt[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    res+=cnt[s[i]%k];</span><br><span class="line">    cnt[s[i]%k]++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>,res);</span><br></pre></td></tr></table></figure>
+
+<p><strong>把( s[i] - s[j] ) % k&#x3D;&#x3D;0理解成 s[i]%k - s[j]%k &#x3D;&#x3D; 0可能好理解一点。这样我们遍历一遍就能求出有多少余数相同的了</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/03/01/K%E5%80%8D%E5%8C%BA%E9%97%B4%EF%BC%88%E8%AE%B0%E4%BD%8F%E8%BF%99%E4%B8%AA%E6%80%9D%E6%83%B3%EF%BC%89/" data-id="clesashlt0002q4vndux9egeo" data-title="K倍区间（记住这个思想）" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%A2%98%E7%9B%AE/" rel="tag">题目</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/03/03/%E5%8E%BB%E9%87%8D%E6%93%8D%E4%BD%9C-unique/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          去重操作(unique())
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/03/01/%E6%9C%80%E5%A4%A7%E4%B8%8D%E8%83%BD%E7%BB%84%E6%88%90%E7%9A%84%E6%95%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">最大不能组成的数</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GO/" rel="tag">GO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web%E5%89%8D%E7%AB%AF/" rel="tag">web前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%83%B3%E8%AF%B4%E7%9A%84%E8%AF%9D/" rel="tag">想说的话</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" rel="tag">数据结构与算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" rel="tag">解决方案</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A2%98%E7%9B%AE/" rel="tag">题目</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C/" style="font-size: 14px;">C++</a> <a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 18px;">C语言</a> <a href="/tags/GO/" style="font-size: 12px;">GO</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/web%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">web前端</a> <a href="/tags/%E6%83%B3%E8%AF%B4%E7%9A%84%E8%AF%9D/" style="font-size: 12px;">想说的话</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" style="font-size: 10px;">数据结构与算法</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 16px;">算法</a> <a href="/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" style="font-size: 12px;">解决方案</a> <a href="/tags/%E9%A2%98%E7%9B%AE/" style="font-size: 20px;">题目</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">三月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">一月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">十二月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">八月 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/03/03/%E8%B6%85%E5%B8%82%EF%BC%88%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97-%E6%80%9D%E6%83%B3%EF%BC%89/">超市（优先队列+思想）</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/03/%E7%A6%BB%E6%95%A3%E5%8C%96%E5%8F%8A%E7%9F%A5%E8%AF%86%E7%82%B9%E8%A1%A5%E5%85%85/">离散化及知识点补充</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/03/%E5%8E%BB%E9%87%8D%E6%93%8D%E4%BD%9C-unique/">去重操作(unique())</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/01/K%E5%80%8D%E5%8C%BA%E9%97%B4%EF%BC%88%E8%AE%B0%E4%BD%8F%E8%BF%99%E4%B8%AA%E6%80%9D%E6%83%B3%EF%BC%89/">K倍区间（记住这个思想）</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/01/%E6%9C%80%E5%A4%A7%E4%B8%8D%E8%83%BD%E7%BB%84%E6%88%90%E7%9A%84%E6%95%B0/">最大不能组成的数</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 jiz<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
