@@ -78,6 +78,148 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-砖块问题（反转）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/03/04/%E7%A0%96%E5%9D%97%E9%97%AE%E9%A2%98%EF%BC%88%E5%8F%8D%E8%BD%AC%EF%BC%89/" class="article-date">
+  <time class="dt-published" datetime="2023-03-04T12:08:49.000Z" itemprop="datePublished">2023-03-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/03/04/%E7%A0%96%E5%9D%97%E9%97%AE%E9%A2%98%EF%BC%88%E5%8F%8D%E8%BD%AC%EF%BC%89/">砖块问题（反转）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong>n个砖块排成一排，从左到右编号依次为 1∼n。</strong></p>
+<p><strong>每个砖块要么是黑色的，要么是白色的。</strong></p>
+<p><strong>现在你可以进行以下操作若干次（可以是 00 次）：</strong></p>
+<p><strong>选择两个相邻的砖块，反转它们的颜色。（黑变白，白变黑）</strong></p>
+<p><strong>你的目标是通过不超过 3n 次操作，将所有砖块的颜色变得一致。</strong></p>
+<p><strong>————————————————————————————————————————————</strong></p>
+<p><strong>比如有：1212121这样的，最终的结果要么是1要么是2</strong></p>
+<p><strong>所以我们就假定最后是1（2）然后求最后一个是不是1（2）就行了所以我们最多模拟两遍</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">double</span> db;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> lyh(i,a,b) for(int i=a;i&lt;=b;i++)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> hyl(i,a,b) for(int i=a;i&gt;=b;i--)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EPS 1e-8</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> INF 0x7fffffff</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> debug(a) cout&lt;&lt;#a&lt;&lt;<span class="string">&quot;=&quot;</span>&lt;&lt;a&lt;&lt;endl;</span></span><br><span class="line">string A;</span><br><span class="line"><span class="type">long</span> <span class="type">long</span> n; </span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">update</span><span class="params">(<span class="type">char</span>&amp; c)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(c==<span class="string">&#x27;W&#x27;</span>)c=<span class="string">&#x27;B&#x27;</span>;</span><br><span class="line">	<span class="keyword">else</span> c=<span class="string">&#x27;W&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">cheak</span><span class="params">(<span class="type">char</span> c)</span></span>&#123;</span><br><span class="line">	vector&lt;<span class="type">int</span>&gt; res;</span><br><span class="line">	string s=A;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i+<span class="number">1</span>&lt;n;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(s[i]!=c)&#123;</span><br><span class="line">			<span class="built_in">update</span>(s[i]);</span><br><span class="line">			<span class="built_in">update</span>(s[i+<span class="number">1</span>]);</span><br><span class="line">			res.<span class="built_in">push_back</span>(i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(s.<span class="built_in">back</span>()!=c)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	cout&lt;&lt;res.<span class="built_in">size</span>()&lt;&lt;endl;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> x:res)cout&lt;&lt;x+<span class="number">1</span>&lt;&lt;<span class="string">&#x27; &#x27;</span>;</span><br><span class="line">	<span class="keyword">if</span>(res.<span class="built_in">size</span>())cout&lt;&lt;endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> T;cin&gt;&gt;T;</span><br><span class="line">	<span class="keyword">while</span>(T--)&#123;</span><br><span class="line">		cin&gt;&gt;n&gt;&gt;A;</span><br><span class="line">		<span class="keyword">if</span>(!<span class="built_in">cheak</span>(<span class="string">&#x27;B&#x27;</span>) &amp;&amp; !<span class="built_in">cheak</span>(<span class="string">&#x27;W&#x27;</span>))<span class="built_in">puts</span>(<span class="string">&quot;-1&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/03/04/%E7%A0%96%E5%9D%97%E9%97%AE%E9%A2%98%EF%BC%88%E5%8F%8D%E8%BD%AC%EF%BC%89/" data-id="cletxm9la00030kvn5lej4rjk" data-title="砖块问题（反转）" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%A2%98%E7%9B%AE/" rel="tag">题目</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-皇后问题" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/03/04/%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98/" class="article-date">
+  <time class="dt-published" datetime="2023-03-04T06:18:48.000Z" itemprop="datePublished">2023-03-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/03/04/%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98/">皇后问题（dfs）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong>皇后问题和全排列问题 有异曲同工之妙代码也类似</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">double</span> db;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> lyh(i,a,b) for(int i=a;i&lt;=b;i++)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> hyl(i,a,b) for(int i=a;i&gt;=b;i--)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EPS 1e-8</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> INF 0x7fffffff</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> debug(a) cout&lt;&lt;#a&lt;&lt;<span class="string">&quot;=&quot;</span>&lt;&lt;a&lt;&lt;endl;</span></span><br><span class="line"><span class="type">int</span> n;</span><br><span class="line"><span class="type">char</span> str[<span class="number">20</span>][<span class="number">20</span>];</span><br><span class="line"><span class="type">bool</span> col[<span class="number">20</span>],dg[<span class="number">20</span>],udg[<span class="number">20</span>];<span class="comment">//col如果在一行内有了则跳过，dg在对角线有了就跳过，udg在反对角线有了就跳过</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> u)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(u==n)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span> ;i &lt; n ;i++)<span class="built_in">puts</span>(str[i]);</span><br><span class="line">		<span class="built_in">puts</span>(<span class="string">&quot; &quot;</span>);</span><br><span class="line">		<span class="keyword">return</span> ;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="comment">//判断是否可以落在这里</span></span><br><span class="line">		<span class="keyword">if</span>(!col[i] &amp;&amp; !dg[u+i] &amp;&amp; !udg[n-u+i])&#123;</span><br><span class="line">			str[u][i]=<span class="string">&#x27;Q&#x27;</span>;</span><br><span class="line">			col[i] = dg[u+i] = udg[n-u+i] =<span class="literal">true</span>;</span><br><span class="line">			<span class="built_in">dfs</span>(u+<span class="number">1</span>);</span><br><span class="line">			col[i] = dg[u+i] = udg[n-u+i] =<span class="literal">false</span>;</span><br><span class="line">			str[u][i]=<span class="string">&#x27;.&#x27;</span>;<span class="comment">//如果没被输出就 变成&#x27;.&#x27;；</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	cin&gt;&gt;n;</span><br><span class="line">    <span class="comment">//把str全部给上‘.’；</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;n;j++)&#123;</span><br><span class="line">			str[i][j]=<span class="string">&#x27;.&#x27;</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">dfs</span>(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/03/04/%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98/" data-id="cletxm9l900010kvne86ih3yi" data-title="皇后问题（dfs）" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%A2%98%E7%9B%AE/" rel="tag">题目</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-全排列（dfs）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/03/04/%E5%85%A8%E6%8E%92%E5%88%97%EF%BC%88dfs%EF%BC%89/" class="article-date">
+  <time class="dt-published" datetime="2023-03-04T05:20:55.000Z" itemprop="datePublished">2023-03-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/03/04/%E5%85%A8%E6%8E%92%E5%88%97%EF%BC%88dfs%EF%BC%89/">全排列（dfs）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong>全排列可以用dfs来搜索</strong></p>
+<p><strong>打个比方：我要排列三个数的全部方式</strong></p>
+<p>​                                    <strong>———</strong></p>
+<p>​        <strong>1——                    2——             3——</strong></p>
+<p><strong>1 2 —   1 3 —       2 1—    2 3 —         3 2 —     3 1 —</strong></p>
+<p><strong>把它看成看树然后一步步向下搜索</strong></p>
+<p><strong>dfs记住出去什么样下一次搜索也该什么样</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">double</span> db;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> lyh(i,a,b) for(int i=a;i&lt;=b;i++)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> hyl(i,a,b) for(int i=a;i&gt;=b;i--)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EPS 1e-8</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> INF 0x7fffffff</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> debug(a) cout&lt;&lt;#a&lt;&lt;<span class="string">&quot;=&quot;</span>&lt;&lt;a&lt;&lt;endl;</span></span><br><span class="line"><span class="type">int</span> n,solve[<span class="number">19</span>]=&#123;<span class="number">0</span>&#125;;<span class="comment">//需要n来记录长短，solve来记录数字；</span></span><br><span class="line"><span class="type">bool</span> bl[<span class="number">19</span>]=&#123;<span class="literal">false</span>&#125;;<span class="comment">//记录哪个点被用过了；</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> u)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(u==n)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,solve[i])；</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">		<span class="keyword">return</span> ;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(!bl[i])&#123;</span><br><span class="line">			solve[u]=i;<span class="comment">//把数存入；</span></span><br><span class="line">			bl[i]=<span class="literal">true</span>;<span class="comment">//标记被用过了；</span></span><br><span class="line">			<span class="built_in">dfs</span>(u+<span class="number">1</span>);<span class="comment">//继续搜索；</span></span><br><span class="line">			bl[i]=<span class="literal">false</span>;<span class="comment">//把bl变成原名来的样子；</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	cin&gt;&gt;n;</span><br><span class="line">	<span class="built_in">dfs</span>(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//如果输入3则返回</span></span><br><span class="line"><span class="comment">/*123 </span></span><br><span class="line"><span class="comment">132 </span></span><br><span class="line"><span class="comment">213 </span></span><br><span class="line"><span class="comment">231 </span></span><br><span class="line"><span class="comment">312 </span></span><br><span class="line"><span class="comment">321 */</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/03/04/%E5%85%A8%E6%8E%92%E5%88%97%EF%BC%88dfs%EF%BC%89/" data-id="cletxm9l800000kvn2xihgw78" data-title="全排列（dfs）" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%A2%98%E7%9B%AE/" rel="tag">题目</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-超市（优先队列-思想）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2023/03/03/%E8%B6%85%E5%B8%82%EF%BC%88%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97-%E6%80%9D%E6%83%B3%EF%BC%89/" class="article-date">
@@ -425,144 +567,6 @@
 
 
   
-    <article id="l1-050-倒数第N个字符串" class="h-entry article article-type-l1-050" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/02/27/%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="article-date">
-  <time class="dt-published" datetime="2023-02-27T00:21:52.000Z" itemprop="datePublished">2023-02-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/02/27/%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2/">倒数第N个字符串</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>**给定一个完全由小写英文字母组成的字符串等差递增序列，该序列中的每个字符串的长度固定为 L，从 L 个 a 开始，以 1 为步长递增。例如当 L 为 3 时，序列为 { aaa, aab, aac, …, aaz, aba, abb, …, abz, …, zzz }。这个序列的倒数第27个字符串就是 zyz。对于任意给定的 L，本题要求你给出对应序列倒数第 N 个字符串。</p>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中给出两个正整数 L（2 ≤ L ≤ 6）和 N（≤105）。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中输出对应序列倒数第 N 个字符串。题目保证这个字符串是存在的。**</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> a, m = <span class="number">26</span>,i,n;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>,&amp;n,&amp;a);</span><br><span class="line">	<span class="type">char</span> s[n];</span><br><span class="line">	m = <span class="built_in">pow</span>(m,n); <span class="comment">//进位</span></span><br><span class="line">	a=m-a;   <span class="comment">//变成正序</span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		s[i] = <span class="string">&#x27;a&#x27;</span>+a%<span class="number">26</span>;</span><br><span class="line">		a/=<span class="number">26</span>;</span><br><span class="line">	&#125; </span><br><span class="line">	<span class="keyword">for</span>(i=n<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>,s[i]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/02/27/%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2/" data-id="clemf9v50000020vn2ie10wx8" data-title="倒数第N个字符串" class="article-share-link">分享</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%A2%98%E7%9B%AE/" rel="tag">题目</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-输入错误" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/02/21/%E8%BE%93%E5%85%A5%E9%94%99%E8%AF%AF/" class="article-date">
-  <time class="dt-published" datetime="2023-02-21T12:10:51.000Z" itemprop="datePublished">2023-02-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/02/21/%E8%BE%93%E5%85%A5%E9%94%99%E8%AF%AF/">输入错误</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>**1.**输入的字符串的问题有时候回车和空格也会被当成一个字符，所以当输出不确定的时候可以试一下把回车或空格吃掉。</p>
-<p>**2.**<strong>cin&gt;&gt;输入是以空格为一段所以当输入长句子的时候可以用getline(cin,str)确保在之前的回车或空格被吸收了！！！</strong></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/02/21/%E8%BE%93%E5%85%A5%E9%94%99%E8%AF%AF/" data-id="clee7pee30003x8vn2bsaa7b9" data-title="输入错误" class="article-share-link">分享</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" rel="tag">解决方案</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-goroutine" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/02/12/goroutine/" class="article-date">
-  <time class="dt-published" datetime="2023-02-12T15:03:50.000Z" itemprop="datePublished">2023-02-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/02/12/goroutine/">goroutine</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><strong>保证数据安全有两个方法一个是加锁一个是channl</strong></p>
-<p>**1.<strong>在协程的开始加上Lock.Lock()</strong>(在snay包下)**在协程的结束加上Lock.UnLock()</p>
-<p>**2.**channl; 定义：channalname chan datatype；</p>
-<p>要给channl分配空间；</p>
-<p>channlname&#x3D;make(chan datatype ,内存大小)；</p>
-<p>也可以：channlname:&#x3D;make(chan datatype,内存大小)</p>
-<p>赋值：channlname&lt;-datatype;</p>
-<p>取值：channlname&lt;-datatype;</p>
-<p>channl类似于栈类型先进先出；</p>
-<p>如果：for var:&#x3D;range channlname;之前要close(channlname);</p>
-<p>close(channlname)之后不能再写入；</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/02/12/goroutine/" data-id="clee7pedw0000x8vn7bfifnr9" data-title="goroutine" class="article-share-link">分享</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GO/" rel="tag">GO</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -613,23 +617,23 @@
       <ul>
         
           <li>
+            <a href="/2023/03/04/%E7%A0%96%E5%9D%97%E9%97%AE%E9%A2%98%EF%BC%88%E5%8F%8D%E8%BD%AC%EF%BC%89/">砖块问题（反转）</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/04/%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98/">皇后问题（dfs）</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/04/%E5%85%A8%E6%8E%92%E5%88%97%EF%BC%88dfs%EF%BC%89/">全排列（dfs）</a>
+          </li>
+        
+          <li>
             <a href="/2023/03/03/%E8%B6%85%E5%B8%82%EF%BC%88%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97-%E6%80%9D%E6%83%B3%EF%BC%89/">超市（优先队列+思想）</a>
           </li>
         
           <li>
             <a href="/2023/03/03/%E7%A6%BB%E6%95%A3%E5%8C%96%E5%8F%8A%E7%9F%A5%E8%AF%86%E7%82%B9%E8%A1%A5%E5%85%85/">离散化及知识点补充</a>
-          </li>
-        
-          <li>
-            <a href="/2023/03/03/%E5%8E%BB%E9%87%8D%E6%93%8D%E4%BD%9C-unique/">去重操作(unique())</a>
-          </li>
-        
-          <li>
-            <a href="/2023/03/01/K%E5%80%8D%E5%8C%BA%E9%97%B4%EF%BC%88%E8%AE%B0%E4%BD%8F%E8%BF%99%E4%B8%AA%E6%80%9D%E6%83%B3%EF%BC%89/">K倍区间（记住这个思想）</a>
-          </li>
-        
-          <li>
-            <a href="/2023/03/01/%E6%9C%80%E5%A4%A7%E4%B8%8D%E8%83%BD%E7%BB%84%E6%88%90%E7%9A%84%E6%95%B0/">最大不能组成的数</a>
           </li>
         
       </ul>

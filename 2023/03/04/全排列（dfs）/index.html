@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>倒数第N个字符串 | jiz的个人博客</title>
+  <title>全排列（dfs） | jiz的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="**给定一个完全由小写英文字母组成的字符串等差递增序列，该序列中的每个字符串的长度固定为 L，从 L 个 a 开始，以 1 为步长递增。例如当 L 为 3 时，序列为 { aaa, aab, aac, …, aaz, aba, abb, …, abz, …, zzz }。这个序列的倒数第27个字符串就是 zyz。对于任意给定的 L，本题要求你给出对应序列倒数第 N 个字符串。 输入格式：输入在一行">
+  <meta name="description" content="全排列可以用dfs来搜索 打个比方：我要排列三个数的全部方式 ​                                    ——— ​        1——                    2——             3—— 1 2 —   1 3 —       2 1—    2 3 —         3 2 —     3 1 — 把它看成看树然后一步步向下搜索 df">
 <meta property="og:type" content="article">
-<meta property="og:title" content="倒数第N个字符串">
-<meta property="og:url" content="http://example.com/2023/02/27/%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2/index.html">
+<meta property="og:title" content="全排列（dfs）">
+<meta property="og:url" content="http://example.com/2023/03/04/%E5%85%A8%E6%8E%92%E5%88%97%EF%BC%88dfs%EF%BC%89/index.html">
 <meta property="og:site_name" content="jiz的个人博客">
-<meta property="og:description" content="**给定一个完全由小写英文字母组成的字符串等差递增序列，该序列中的每个字符串的长度固定为 L，从 L 个 a 开始，以 1 为步长递增。例如当 L 为 3 时，序列为 { aaa, aab, aac, …, aaz, aba, abb, …, abz, …, zzz }。这个序列的倒数第27个字符串就是 zyz。对于任意给定的 L，本题要求你给出对应序列倒数第 N 个字符串。 输入格式：输入在一行">
+<meta property="og:description" content="全排列可以用dfs来搜索 打个比方：我要排列三个数的全部方式 ​                                    ——— ​        1——                    2——             3—— 1 2 —   1 3 —       2 1—    2 3 —         3 2 —     3 1 — 把它看成看树然后一步步向下搜索 df">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-02-27T00:21:52.000Z">
-<meta property="article:modified_time" content="2023-02-27T00:23:15.170Z">
+<meta property="article:published_time" content="2023-03-04T05:20:55.000Z">
+<meta property="article:modified_time" content="2023-03-04T05:33:59.882Z">
 <meta property="article:author" content="jiz">
 <meta property="article:tag" content="题目">
 <meta name="twitter:card" content="summary">
@@ -78,10 +78,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="l1-050-倒数第N个字符串" class="h-entry article article-type-l1-050" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-全排列（dfs）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/02/27/%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="article-date">
-  <time class="dt-published" datetime="2023-02-27T00:21:52.000Z" itemprop="datePublished">2023-02-27</time>
+    <a href="/2023/03/04/%E5%85%A8%E6%8E%92%E5%88%97%EF%BC%88dfs%EF%BC%89/" class="article-date">
+  <time class="dt-published" datetime="2023-03-04T05:20:55.000Z" itemprop="datePublished">2023-03-04</time>
 </a>
     
   </div>
@@ -92,7 +92,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      倒数第N个字符串
+      全排列（dfs）
     </h1>
   
 
@@ -100,16 +100,20 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>**给定一个完全由小写英文字母组成的字符串等差递增序列，该序列中的每个字符串的长度固定为 L，从 L 个 a 开始，以 1 为步长递增。例如当 L 为 3 时，序列为 { aaa, aab, aac, …, aaz, aba, abb, …, abz, …, zzz }。这个序列的倒数第27个字符串就是 zyz。对于任意给定的 L，本题要求你给出对应序列倒数第 N 个字符串。</p>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中给出两个正整数 L（2 ≤ L ≤ 6）和 N（≤105）。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中输出对应序列倒数第 N 个字符串。题目保证这个字符串是存在的。**</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> a, m = <span class="number">26</span>,i,n;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>,&amp;n,&amp;a);</span><br><span class="line">	<span class="type">char</span> s[n];</span><br><span class="line">	m = <span class="built_in">pow</span>(m,n); <span class="comment">//进位</span></span><br><span class="line">	a=m-a;   <span class="comment">//变成正序</span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		s[i] = <span class="string">&#x27;a&#x27;</span>+a%<span class="number">26</span>;</span><br><span class="line">		a/=<span class="number">26</span>;</span><br><span class="line">	&#125; </span><br><span class="line">	<span class="keyword">for</span>(i=n<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>,s[i]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        <p><strong>全排列可以用dfs来搜索</strong></p>
+<p><strong>打个比方：我要排列三个数的全部方式</strong></p>
+<p>​                                    <strong>———</strong></p>
+<p>​        <strong>1——                    2——             3——</strong></p>
+<p><strong>1 2 —   1 3 —       2 1—    2 3 —         3 2 —     3 1 —</strong></p>
+<p><strong>把它看成看树然后一步步向下搜索</strong></p>
+<p><strong>dfs记住出去什么样下一次搜索也该什么样</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">double</span> db;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> lyh(i,a,b) for(int i=a;i&lt;=b;i++)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> hyl(i,a,b) for(int i=a;i&gt;=b;i--)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EPS 1e-8</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> INF 0x7fffffff</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> debug(a) cout&lt;&lt;#a&lt;&lt;<span class="string">&quot;=&quot;</span>&lt;&lt;a&lt;&lt;endl;</span></span><br><span class="line"><span class="type">int</span> n,solve[<span class="number">19</span>]=&#123;<span class="number">0</span>&#125;;<span class="comment">//需要n来记录长短，solve来记录数字；</span></span><br><span class="line"><span class="type">bool</span> bl[<span class="number">19</span>]=&#123;<span class="literal">false</span>&#125;;<span class="comment">//记录哪个点被用过了；</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> u)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(u==n)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,solve[i])；</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">		<span class="keyword">return</span> ;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(!bl[i])&#123;</span><br><span class="line">			solve[u]=i;<span class="comment">//把数存入；</span></span><br><span class="line">			bl[i]=<span class="literal">true</span>;<span class="comment">//标记被用过了；</span></span><br><span class="line">			<span class="built_in">dfs</span>(u+<span class="number">1</span>);<span class="comment">//继续搜索；</span></span><br><span class="line">			bl[i]=<span class="literal">false</span>;<span class="comment">//把bl变成原名来的样子；</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	cin&gt;&gt;n;</span><br><span class="line">	<span class="built_in">dfs</span>(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//如果输入3则返回</span></span><br><span class="line"><span class="comment">/*123 </span></span><br><span class="line"><span class="comment">132 </span></span><br><span class="line"><span class="comment">213 </span></span><br><span class="line"><span class="comment">231 </span></span><br><span class="line"><span class="comment">312 </span></span><br><span class="line"><span class="comment">321 */</span></span><br></pre></td></tr></table></figure>
 
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/02/27/%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2/" data-id="clemf9v50000020vn2ie10wx8" data-title="倒数第N个字符串" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2023/03/04/%E5%85%A8%E6%8E%92%E5%88%97%EF%BC%88dfs%EF%BC%89/" data-id="cletxm9l800000kvn2xihgw78" data-title="全排列（dfs）" class="article-share-link">分享</a>
       
       
       
@@ -121,19 +125,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2023/02/27/%E5%B9%B6%E6%9F%A5%E9%9B%86/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2023/03/04/%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">前一篇</strong>
       <div class="article-nav-title">
         
-          并查集
+          皇后问题（dfs）
         
       </div>
     </a>
   
   
-    <a href="/2023/02/21/%E8%BE%93%E5%85%A5%E9%94%99%E8%AF%AF/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2023/03/03/%E8%B6%85%E5%B8%82%EF%BC%88%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97-%E6%80%9D%E6%83%B3%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">后一篇</strong>
-      <div class="article-nav-title">输入错误</div>
+      <div class="article-nav-title">超市（优先队列+思想）</div>
     </a>
   
 </nav>
